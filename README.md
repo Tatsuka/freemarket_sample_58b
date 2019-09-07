@@ -1,27 +1,25 @@
-# README
-<!-- てすと -->
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# mercari DB設計
 
-Things you may want to cover:
+## usersテーブル
+|Column|Type|Options|
+|------|----|-------|
+|username|string|null: false|
+|kana|string|null: false|
+|email|string|null: false|
+|password|string|null: false|
+|phone|string|null: false|
+|birthday|string|null: false|
+|address|text|null: false|
+|image|string||
+### Association
+- has_many :items
 
-<!-- おためしプッシュ -->
-<!-- おためしプッシュ -->
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* 
+## itemsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|user_id|integer|null: false, foreign_key: true|
+|comment|text|null: false|
+|condition|text|null: false|
+|price|integer|null: false|
+### Association
+- belongs_to :user
