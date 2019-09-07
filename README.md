@@ -17,9 +17,9 @@
 ## itemsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|references|null: false,reference: true|
+|user_id|references|null: false, foreign_key: true|
 |comment|text|null: false|
-|condition|text|null: false|
+|condition|string|null: false|
 |price|integer|null: false|
 ### Association
 - belongs_to :user
