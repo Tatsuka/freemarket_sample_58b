@@ -17,7 +17,7 @@
 ## itemsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
+|user_id|references|null: false,reference: true|
 |comment|text|null: false|
 |condition|text|null: false|
 |price|integer|null: false|
