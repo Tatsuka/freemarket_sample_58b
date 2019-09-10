@@ -1,17 +1,17 @@
 class ApplicationController < ActionController::Base
   # 〜ベーシック認証に関する記述〜
-  # before_action :basic_auth, if: :production?
-  # protect_from_forgery with: :exception
+  before_action :basic_auth, if: :production?
+  protect_from_forgery with: :exception
 
-  # private
+  private
 
-  # def production?
-  #   Rails.env.production?
-  # end
+  def production?
+    Rails.env.production?
+  end
 
-  # def basic_auth
-  #   authenticate_or_request_with_http_basic do |username, password|
-  #     username == ENV["BASIC_AUTH_USER"] && password == ENV["BASIC_AUTH_PASSWORD"]
-  #   end
-  # end
+  def basic_auth
+    authenticate_or_request_with_http_basic do |username, password|
+      username == ENV["BASIC_AUTH_USER"] && password == ENV["BASIC_AUTH_PASSWORD"]
+    end
+  end
 end
