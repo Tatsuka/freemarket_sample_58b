@@ -263,20 +263,35 @@
             margin: 16px 0px 0px;
             opacity: 0.7;
           }
+        }
       }
       &__help {
         display: inline-block;
         width: auto;
         padding: 0px 40px 0px 0px;
         h2 {}
+        ul {
+          li {
+            line-height: 1.4em;
+            margin: 16px 0px 0px;
+            opacity: 0.7;
+          }
+        }
       }
       &__privacy {
         display: inline-block;
         width: auto;
         padding: 0px 40px 0px 0px;
         h2 {}
+        ul {
+          li {
+            line-height: 1.4em;
+            margin: 16px 0px 0px;
+            opacity: 0.7;
+          }
         }
       }
     }
   }
 }
+
