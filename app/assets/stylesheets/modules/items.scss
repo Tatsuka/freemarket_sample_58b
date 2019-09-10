@@ -250,27 +250,34 @@
     padding: 0px 20px 10px;
 
     &__main {
+      width: 1020px;
       margin: 0px auto;
 
       &__about {
         display: inline-block;
-        width: auto;
-        padding: 0px 40px 0px 0px;
+        margin-top: 18px;
+        vertical-align: top;
         h2 {}
         ul {
+          padding: 0px;
           li {
             line-height: 1.4em;
             margin: 16px 0px 0px;
             opacity: 0.7;
           }
+          .icon {
+            margin-top: 10px;
+            margin-right: 10px;
+          }
         }
       }
       &__help {
         display: inline-block;
-        width: auto;
-        padding: 0px 40px 0px 0px;
+        margin-top: 18px;
+        vertical-align: top;
         h2 {}
         ul {
+          padding: 0px;
           li {
             line-height: 1.4em;
             margin: 16px 0px 0px;
@@ -280,16 +287,43 @@
       }
       &__privacy {
         display: inline-block;
-        width: auto;
-        padding: 0px 40px 0px 0px;
+        margin-top: 18px;
+        vertical-align: top;
         h2 {}
         ul {
+          padding: 0px;
           li {
             line-height: 1.4em;
             margin: 16px 0px 0px;
             opacity: 0.7;
           }
         }
+      }
+      &__language {
+        display: inline-block;
+        margin-top: 18px;
+        vertical-align: top;
+        h2 {}
+        ul {
+          padding: 0px;
+          li {
+            line-height: 1.4em;
+            margin: 16px 0px 0px;
+            opacity: 0.7;
+          }
+        }
+      }
+    }
+    &__bottom {
+      margin: 20px auto 20px;
+      img {
+        height: 33px;
+        width: 124px;
+      }
+      span {
+        text-align: center;
+        padding-left: 15px;
+        width: 75%;
       }
     }
   }
