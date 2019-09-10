@@ -9,12 +9,10 @@
         -# %input{name: "submit", type: "submit", value: "検索"}/
       .header-bottom
         .header-bottom__left
-          .header-bottom__left__brand
-            %a
-              カテゴリーから探す
           .header-bottom__left__category
-            %a
-              ブランドから探す
+            カテゴリーから探す
+          .header-bottom__left__brand
+            ブランドから探す
         .header-bottom__right
           .header-bottom__right__signup
             %a{href:""}
@@ -30,26 +28,59 @@
         -#     やることリスト
         -#   %li.header-bottom__right__mypage
         -#     マイページ
-  .srider
 
-  .popularity
-    %h2
-      人気のカテゴリー
-    .popularity__category
-      %ul.popularity__category__list
-        %li.popularity__category__list__ladies
+  .main-wrapper
+    .srider
+    .popularity
+      %h2
+        人気のカテゴリー
+      .popularity__category
+        %ul.popularity__category__list
+          %li.popularity__category__list__ladies
+            %a
+              レディース
+          %li.popularity__category__list__mens
+            %a
+              メンズ
+          %li.popularity__category__list__camera
+            %a
+              家電・スマホ・カメラ
+          %li.popularity__category__list__toy
+            %a
+              おもちゃ・ホビー・グッズ
+    .category-items
+      .category-items__ladies
+        .category-items__ladies__header
           %a
-            レディース
-        %li.popularity__category__list__mens
-          %a
-            メンズ
-        %li.popularity__category__list__camera
-          %a
-            家電・スマホ・カメラ
-        %li.popularity__category__list__toy
-          %a
-            おもちゃ・ホビー・グッズ
+            レディース新着アイテム
+          %a{href:""}
+            もっと見る
+        .category-items__ladies__list
 
+
+  .fotter__contents
+    .fotter__contents__main
+      .fotter__contents__main__about
+        %h2
+          メルカリについて
+      .fotter__contents__main__help
+        %h2
+          ヘルプ＆ガイド
+        %ul
+          %li.fotter-font
+            会社概要（運営会社）
+          %li.fotter-font
+            採用情報
+          %li.fotter-font
+            プレスリリース
+          %li.fotter-font
+            公式ブログ
+          %li.fotter-font
+            メルカリロゴ利用ガイドライン
+
+      .fotter__contents__main__privacy
+        %h2
+          プライバシーと利用規約
 -# .wrapper
 -#   .chat-side
 -#     = render 'shared/side_bar'
