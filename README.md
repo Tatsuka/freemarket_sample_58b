@@ -14,16 +14,23 @@
 |first_name_kanji|string|null:false|
 |last_name_kanji|string|null:false|
 |birthday|integer|null:false|
-|postal_code|integer|null:false|
-|prefecture|integer|null:false|
-|city|string|null:false|
-|block_number|integer||
-|building_name|string||
 ### Association
 - has_many :items
 - has_many :comments
 - has_one :credit_card dependent: :destroy
 - has_one :sns_credentials dependent: :destroy
+
+## addressesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|user_id|references|null:false, foreign_key: true|
+|postal_code|integer|null:false|
+|prefecture|integer|null:false|
+|city|string|null:false|
+|block_number|integer||
+|building_name|string||
+##Association
+- belongs_to :user​​
 
 ## itemsテーブル
 |Column|Type|Options|
