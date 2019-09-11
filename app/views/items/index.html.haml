@@ -48,14 +48,45 @@
           %li.popularity__category__list__toy
             %a
               おもちゃ・ホビー・グッズ
+
     .category-items
       .category-items__ladies
         .category-items__ladies__header
-          %a
+          %h3.new-item
             レディース新着アイテム
-          %a{href:""}
-            もっと見る
-        .category-items__ladies__list
+        %a.more{href:""}
+          もっと見る ＞
+      .category-items__ladies__list
+        - (1..10).each do |i|
+          .category-items__ladies__list__item
+      .category-items__ladies
+        .category-items__ladies__header
+          %h3.new-item
+            メンズ新着アイテム
+        %a.more{href:""}
+          もっと見る ＞
+      .category-items__ladies__list
+        - (1..10).each do |i|
+          .category-items__ladies__list__item
+      .category-items__ladies
+        .category-items__ladies__header
+          %h3.new-item
+            家電・スマホ・カメラ新着アイテム
+        %a.more{href:""}
+          もっと見る ＞
+      .category-items__ladies__list
+        - (1..10).each do |i|
+          .category-items__ladies__list__item
+      .category-items__ladies
+        .category-items__ladies__header
+          %h3.new-item
+            おもちゃ・ホビー・グッズ新着アイテム
+        %a.more{href:""}
+          もっと見る ＞
+      .category-items__ladies__list
+        - (1..10).each do |i|
+          .category-items__ladies__list__item
+    .srider-bottom
 
 
   .fotter__contents
@@ -124,13 +155,18 @@
             日本
           %li.fotter-font
             United States
-          %li.fotter-font
-            中國
-          %li.fotter-font
-            한국
     .fotter__contents__bottom
       %img.mercari-bw{href: "",alt: "メルカリマーク白黒", src: "https://web-jp-assets.mercdn.net/_next/static/images/logo-white-1a0696cf557ee1ed6f3c3444661d21ad.svg"}
       %span © 2019 Mercari
+
+
+
+
+.btn-wrapper
+  =link_to "", class:"sell-btn" do
+    .sell-btn__link
+      .sell-btn__link__font 出品
+      = fa_icon "camera 4x", class: "sell-btn__link__camera"
 
 -# .wrapper
 -#   .chat-side
