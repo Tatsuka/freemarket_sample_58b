@@ -24,14 +24,13 @@
     background: #eee;
     margin: 40px auto 40px;
     width: 1020px;
-    height: 1350px;
-    padding: 0 0 40px;
-    //display: block;
-    //background-repeat: no-repeat;
-    //border-style: solid;
-    //border-width: 0;
-    //font-size: inherit;
-    //line-height: inherit;
+    height: 1260px;
+    display: block;
+    background-repeat: no-repeat;
+    border-style: solid;
+    border-width: 0;
+    font-size: inherit;
+    line-height: inherit;
   
     .content__left{
       float: left;
@@ -54,42 +53,31 @@
         line-height: inherit;
         box-sizing: inherit;
         display: block;
-        margin-block-start: 1em;
-        margin-block-end: 1em;
-        margin-inline-start: 0px;
-        margin-inline-end: 0px;
-        //padding-inline-start: 40px;
+        // margin-block-start: 1em;
+        // margin-block-end: 1em;
+        // margin-inline-start: 0px;
+        // margin-inline-end: 0px;
         color: #333;
         cursor: auto;
         font: 66.66667% sans-serif;
         border-style: solid;
         text-decoration: inherit;
-        vertical-align: inherit;
+        // vertical-align: inherit;
         box-sizing: inherit;
         border-style: solid;
         border-width: 0;
         text-decoration: inherit;
       }
         .list__mypage{
-          cursor: pointer;
-          font-weight: 600;
-          position: relative;
-          display: block;
-          min-height: 48px;
-          padding: 16px;
-          background: #fff;
-          font-size: 14px;
-          color: #333;
-          text-decoration: none;
-          touch-action: manipulation;
-          opacity: 1;
-          touch-action: manipulation
+          @extend .list__news;
         }
         .list__news{
           position: relative;
           display: block;
-          min-height: 48px;
+          height: 48px;
+          //min-height: 48px;
           padding: 16px;
+          margin: 1px;
           background: #fff;
           font-size: 14px;
           color: #333;
@@ -149,16 +137,16 @@
         line-height: inherit;
         box-sizing: inherit;
         display: block;
-        margin-block-start: 1em;
-        margin-block-end: 1em;
-        margin-inline-start: 0px;
-        margin-inline-end: 0px;
+        // margin-block-start: 1em;
+        // margin-block-end: 1em;
+        // margin-inline-start: 0px;
+        // margin-inline-end: 0px;
         font-weight: bold;  
         color: #333;
         cursor: auto;
       }
       .merpay__list{
-        margin: 8px 0 0;
+        margin: 0;
         list-style: none;
         background-repeat: no-repeat;
         padding: 0;
@@ -168,11 +156,6 @@
         line-height: inherit;
         box-sizing: inherit;
         display: block;
-        margin-block-start: 1em;
-        margin-block-end: 1em;
-        margin-inline-start: 0px;
-        margin-inline-end: 0px;
-        //padding-inline-start: 40px;
         color: #333;
 
         .merpay__transfer{
@@ -210,5 +193,60 @@
         @extend .list__news;
       }
     }
+  }
+  .content__right{
+    background: red;
+    float: right;
+    width: 700px;
+    height: 1027px;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+    border-style: solid;
+    border-width: 0;
+    font-size: inherit;
+    line-height: inherit;
+    box-sizing: inherit;
+    display: block;
+  }
+  .mypage-user-icon{
+    background: yellowgreen;
+    height: 200px;
+    width: 100%;
+    padding: 20px;
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    display: block;
+  }
+
+  .mypage-tab-container-notification-todo{
+    background: darkblue;
+    height: 405px;
+    width: 100%;
+    padding: 20px;
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    display: block; 
+  }
+
+  .mypage-tab-container{
+    margin: 40px 0 0;
+    background: #fff;
+    height: 387px;
+    width: 100%;
+    padding: 0;
+    border-style: solid;
+    border-width: 0;
+    font-size: inherit;
+    line-height: inherit;
+    box-sizing: inherit;
+    display: block;
+    color: #333;
+    cursor: auto;
+    font: 66.66667% sans-serif;
   }
 }
