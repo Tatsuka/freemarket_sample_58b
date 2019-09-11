@@ -46,11 +46,11 @@
 ## imagesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|product_id|references|null:false,foreign_key:true|
+|item_id|references|null:false,foreign_key:true|
 |image|string|null: false|
 
 ### Association
-- belongs_to :product
+- belongs_to :item
 
 ## commentsテーブル
 |Column|Type|Options|
@@ -66,13 +66,13 @@
 ## credit_cardsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null:false,foreign_key:true|
+|user_id|references|null:false,foreign_key:true|
 |card_number|integer|null:false|
 |security_code|integer|null:false|
 |expiry_year|integer|null:false|
 |expiry_month|integer|null:false|
 
-##Association
+### Association
 - belongs_to :user​​
 
 
@@ -83,5 +83,5 @@
 |uid|integer|null:false,unique: true|
 |provider|integer|null:false|
 
-##Association
+### Association
 - belongs_to :user​​
