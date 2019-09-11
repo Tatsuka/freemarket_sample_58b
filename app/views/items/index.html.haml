@@ -1,33 +1,5 @@
 .wrapper
-  .header-area
-    .header-area__wrapper
-      .header-top
-        %img{href: "", alt: "メルカリマーク", src: "//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?2482339763", width: "134", height: "36"}
-        %form{action: "", method: "post", class: "search-form"}
-          %input{name: "search", placeholder: "何かお探しですか？", type: "search", class: "search-input"}
-            = fa_icon "search", class: "icon-search"
-        -# %input{name: "submit", type: "submit", value: "検索"}/
-      .header-bottom
-        .header-bottom__left
-          .header-bottom__left__category
-            カテゴリーから探す
-          .header-bottom__left__brand
-            ブランドから探す
-        .header-bottom__right
-          .header-bottom__right__signup
-            %a{href:""}
-              新規会員登録
-          .header-bottom__right__login
-            %a{href:""}
-              ログイン
-        -# ログイン中の表示
-        -# %ul.header-bottom__right
-        -#   %li.header-bottom__right__news
-        -#     お知らせ
-        -#   %li.header-bottom__right__todo
-        -#     やることリスト
-        -#   %li.header-bottom__right__mypage
-        -#     マイページ
+  = render 'shared/header'
 
   .main-wrapper
     .srider
@@ -88,87 +60,6 @@
           .category-items__ladies__list__item
     .srider-bottom
 
-
-  .fotter__contents
-    .fotter__contents__main
-      .fotter__contents__main__about
-        %h2
-          メルカリについて
-        %ul
-          %li.fotter-font
-            会社概要（運営会社）
-          %li.fotter-font
-            採用情報
-          %li.fotter-font
-            プレスリリース
-          %li.fotter-font
-            公式ブログ
-          %li.fotter-font
-            メルカリロゴ利用ガイドライン
-          = fa_icon "twitter 2x", class: "icon"
-          = fa_icon "facebook-square 2x", class: "icon"
-      .fotter__contents__main__help
-        %h2
-          ヘルプ＆ガイド
-        %ul
-          %li.fotter-font
-            メルカリガイド
-          %li.fotter-font
-            らくらくメルカリ便
-          %li.fotter-font
-            ゆうゆうメルカリ便
-          %li.fotter-font
-            大型メルカリ便
-          %li.fotter-font
-            車体取引ガイド
-          %li.fotter-font
-            メルカリあんしん・あんぜん宣言！
-          %li.fotter-font
-            偽ブランド品撲滅への取り組み
-          %li.fotter-font
-            メルカリボックス
-      .fotter__contents__main__privacy
-        %h2
-          プライバシーと利用規約
-        %ul
-          %li.fotter-font
-            プライバシーポリシー
-          %li.fotter-font
-            メルカリ利用規約
-          %li.fotter-font
-            あんしんスマホサポート制度に関する利用特約
-          %li.fotter-font
-            コンプライアンスポリシー
-          %li.fotter-font
-            個人データの安全管理に関わる基本方針
-          %li.fotter-font
-            特定商取引に関する表記
-          %li.fotter-font
-            資金決済法に基づく表示
-          %li.fotter-font
-            法令遵守と犯罪抑止のために
-      .fotter__contents__main__language
-        %h2
-          国
-        %ul
-          %li.fotter-font
-            日本
-          %li.fotter-font
-            United States
-    .fotter__contents__bottom
-      %img.mercari-bw{href: "",alt: "メルカリマーク白黒", src: "https://web-jp-assets.mercdn.net/_next/static/images/logo-white-1a0696cf557ee1ed6f3c3444661d21ad.svg"}
-      %span © 2019 Mercari
-
-
-
-
-.btn-wrapper
-  =link_to "", class:"sell-btn" do
-    .sell-btn__link
-      .sell-btn__link__font 出品
-      = fa_icon "camera 4x", class: "sell-btn__link__camera"
-
--# .wrapper
--#   .chat-side
--#     = render 'shared/side_bar'
+  = render 'shared/footer'
+  = render 'shared/button'
 

@@ -1,0 +1,29 @@
+.header-area
+  .header-area__wrapper
+    .header-top
+      %img{href: "", alt: "メルカリマーク", src: "//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?2482339763", width: "134", height: "36"}
+      %form{action: "", method: "post", class: "search-form"}
+        %input{name: "search", placeholder: "何かお探しですか？", type: "search", class: "search-input"}
+          = fa_icon "search", class: "icon-search"
+      -# %input{name: "submit", type: "submit", value: "検索"}/
+    .header-bottom
+      .header-bottom__left
+        .header-bottom__left__category
+          カテゴリーから探す
+        .header-bottom__left__brand
+          ブランドから探す
+      .header-bottom__right
+        .header-bottom__right__signup
+          %a{href:""}
+            新規会員登録
+        .header-bottom__right__login
+          %a{href:""}
+            ログイン
+      -# ログイン中の表示
+      -# %ul.header-bottom__right
+      -#   %li.header-bottom__right__news
+      -#     お知らせ
+      -#   %li.header-bottom__right__todo
+      -#     やることリスト
+      -#   %li.header-bottom__right__mypage
+      -#     マイページ
