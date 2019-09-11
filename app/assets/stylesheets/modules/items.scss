@@ -140,7 +140,7 @@
   .main-wrapper {
 
     .srider {
-      height: 290px;
+      height: 390px;
       background: palegreen;
     }
 
@@ -213,7 +213,7 @@
       }
     }
     .category-items {
-      width: 700px;
+      width: 1020px;
       padding: 42px 0px 100px;
       margin: 0 auto;
 
@@ -223,24 +223,30 @@
         display: flex;
         justify-content: space-between;
         &__header {
-          a {
+          .new-item {
+            text-align: left;
             font-size: 24px;
             font-weight: 600;
             line-height: 1.4em;
             margin: 0;
             padding: 0;
-
           }
         }
+        .more {}
         &__list {
           &__item {
-            width: 124px;
-            height: 188px;
-            background: palegreen;
-
+            width: 168px;
+            height: 256px;
+            background: skyblue;
+            display: inline-block;
+            margin: 0 0 20px 20px;
           }
         }
       }
+    }
+    .srider-bottom {
+      height: 260px;
+      background: palegreen;
     }
   }
   .fotter__contents {
@@ -266,7 +272,7 @@
             opacity: 0.7;
           }
           .icon {
-            margin-top: 10px;
+            margin-top: 15px;
             margin-right: 10px;
           }
         }
@@ -315,7 +321,10 @@
       }
     }
     &__bottom {
-      margin: 20px auto 20px;
+      width: 1020px;
+      margin: 30px auto 20px;
+      align-items: center;
+      display: flex;
       img {
         height: 33px;
         width: 124px;
@@ -325,6 +334,22 @@
         padding-left: 15px;
         width: 75%;
       }
+    }
+  }
+}
+
+.btn-wrapper{
+  width: 160px;
+  height: 160px;
+  padding-top: 32px;
+  text-align: center;
+  color: white;
+  background-color: rgb(234, 53, 45);
+  border-radius: 50%;
+  .sell-btn {
+    &__link {
+      &__font {}
+      &__camera {}
     }
   }
 }
