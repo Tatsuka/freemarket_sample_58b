@@ -111,10 +111,23 @@
           .config__logout
             = link_to "ログアウト", destroy_user_session_path, method: :delete
     .content__right
-      .mypage-user-icon
-        %a{href:""}
+      .mypage-user-icon__area
+        .user-icon__zone
+          %a{href:""}
+          .user__icon         
+          .user__name
+            ユーザー名
+          .mypage-number
+            .user__evaluation
+              評価
+            .user__exhibits
+              出品数
       .mypage-tab-container-notification-todo
         .mypage-tabs
+          .mypage-news
+            お知らせ
+          .mypage-todo
+            やることリスト
         .tab-content
       .mypage-tab-container
   .app-banner

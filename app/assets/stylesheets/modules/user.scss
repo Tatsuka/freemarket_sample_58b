@@ -20,180 +20,8 @@
     white-space: normal;
   }
 
-  .content-area{
-    background: #eee;
-    margin: 40px auto 40px;
-    width: 1020px;
-    height: 1260px;
-    display: block;
-    background-repeat: no-repeat;
-    border-style: solid;
-    border-width: 0;
-    font-size: inherit;
-    line-height: inherit;
   
-    .content__left{
-      float: left;
-      width: 280px;
-      margin: 0 40px 0 0;
-  
-      .content__left__list{
-        background-repeat: no-repeat;
-        margin: 0;
-        padding: 0;
-      }
-      .content__left__mypage{
-        list-style: none;
-        background-repeat: no-repeat;
-        margin: 0;
-        padding: 0;
-        border-style: solid;
-        border-width: 0;
-        font-size: inherit;
-        line-height: inherit;
-        box-sizing: inherit;
-        display: block;
-        // margin-block-start: 1em;
-        // margin-block-end: 1em;
-        // margin-inline-start: 0px;
-        // margin-inline-end: 0px;
-        color: #333;
-        cursor: auto;
-        font: 66.66667% sans-serif;
-        border-style: solid;
-        text-decoration: inherit;
-        // vertical-align: inherit;
-        box-sizing: inherit;
-        border-style: solid;
-        border-width: 0;
-        text-decoration: inherit;
-      }
-        .list__mypage{
-          @extend .list__news;
-        }
-        .list__news{
-          position: relative;
-          display: block;
-          height: 48px;
-          //min-height: 48px;
-          padding: 16px;
-          margin: 1px;
-          background: #fff;
-          font-size: 14px;
-          color: #333;
-          text-decoration: none;
-          touch-action: manipulation;
-          border-style: solid;
-          line-height: inherit;
-          box-sizing: inherit;
-          cursor: pointer;
-          text-align: -webkit-match-parent;
-          list-style: none;
-        }
-        .list__todolist{
-          @extend .list__news;
-        }
-        .list__goodjob{
-          @extend .list__news;
-        }
-        .list__exhibit{
-          @extend .list__news;
-        }
-        .list__exhibitnow{
-          @extend .list__news;    
-        }
-        .clist__transactionnow{
-          @extend .list__news;  
-        }
-        .list__transactionend{
-          @extend .list__news;
-        }
-        .list__buynow{
-          @extend .list__news;
-        }
-        .list__buyend{
-          @extend .list__news;
-        }
-        .clist__newslist{
-          @extend .list__news;
-        }
-        .list__evaluation{
-          @extend .list__news;
-        }
-        .list__guide{
-          @extend .list__news;
-        }
-        .list__contact{
-          @extend .list__news;
-        }
-
-      .content__left__merpay{
-        margin: 40px 0 0;
-        font-size: 16px;
-        background-repeat: no-repeat;
-        padding: 0;
-        border-style: solid;
-        border-width: 0;
-        line-height: inherit;
-        box-sizing: inherit;
-        display: block;
-        // margin-block-start: 1em;
-        // margin-block-end: 1em;
-        // margin-inline-start: 0px;
-        // margin-inline-end: 0px;
-        font-weight: bold;  
-        color: #333;
-        cursor: auto;
-      }
-      .merpay__list{
-        margin: 0;
-        list-style: none;
-        background-repeat: no-repeat;
-        padding: 0;
-        border-style: solid;
-        border-width: 0;
-        font-size: inherit;
-        line-height: inherit;
-        box-sizing: inherit;
-        display: block;
-        color: #333;
-
-        .merpay__transfer{
-          @extend .list__news;
-        }
-        .merpay__point{
-          @extend .list__news;
-        }
-      } 
-    }
-
-    .content__left__config{
-        @extend .content__left__merpay;
-    }
-    .config__lisut{
-      .config__profile{
-        @extend .list__news;
-      }
-      .config__address{
-        @extend .list__news;
-      }
-      .config__payment{
-        @extend .list__news;
-      }
-      .config__passmail{
-        @extend .list__news;
-      }
-      .config__person{
-        @extend .list__news;
-      }
-      .config__tell{
-        @extend .list__news;
-      }
-      .config__logout{
-        @extend .list__news;
-      }
-    }
-  }
+ 
   .content__right{
     background: red;
     float: right;
@@ -209,29 +37,106 @@
     box-sizing: inherit;
     display: block;
   }
-  .mypage-user-icon{
-    background: yellowgreen;
+  .mypage-user-icon__area{
+    background: rgb(225, 241, 195);
     height: 200px;
     width: 100%;
-    padding: 20px;
+    // padding: 20px;         ???
     position: relative;
     background-repeat: no-repeat;
     background-size: cover;
     text-align: center;
     display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
+  .user-icon__zone{
+    // background: #fff;
+    width: 100%;
+    height: 111px;
+    display: block;
+    position: absolute;
+    // top: 50%;
+    left: 0;
+    right: 0;  
+  }
+    .user__icon{
+      background: tan;
+      overflow: hidden;
+      width: 60px;
+      height: 60px;
+      margin: 0 auto;
+      border-radius: 50%;
+    }
+    .user__name{
+      margin: 8px 0 0;
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 1.4;
+      background-repeat: no-repeat;
+      margin-block-start: 0.83em;
+      // margin-block-end: 0.83em;
+      margin-inline-start: 0px;
+      margin-inline-end: 0px;
+    }
+    .mypage-number{
+      width: 100%;
+    }
+      .user__evaluation{
+        display: inline-block;
+        font-size: 14px;
+        border-style: solid;
+        border-width: 0;
+      }
+      .user__exhibits{
+        display: inline-block;
+        font-size: 14px;
+        border-style: solid;
+        border-width: 0;    
+      }
+
 
   .mypage-tab-container-notification-todo{
     background: darkblue;
     height: 405px;
     width: 100%;
-    padding: 20px;
+    // padding: 20px;
     position: relative;
     background-repeat: no-repeat;
     background-size: cover;
     text-align: center;
     display: block; 
   }
+    .mypage-tabs{
+      height: 75px;
+      width: 100%;
+      border: 0;
+      font-size: 0;
+    //   margin-block-start: 1em;
+    // margin-block-end: 1em;
+    // margin-inline-start: 0px;
+    // margin-inline-end: 0px;
+    // padding-inline-start: 40px;
+
+    }
+      .mypage-news{
+        font-size: 14px;
+        color: #333;
+        height: 75px;
+        width: 50%;
+        border: 0;
+        background: white;     
+      }
+      .mypage-todo{
+        font-size: 14px;
+        color: #333;
+        height: 75px;
+        width: 350px;
+        border: 0;
+        background: palevioletred;
+
+      }
 
   .mypage-tab-container{
     margin: 40px 0 0;
@@ -248,5 +153,8 @@
     color: #333;
     cursor: auto;
     font: 66.66667% sans-serif;
-  }
+    }
+
+    @import "content-area";
+
 }
