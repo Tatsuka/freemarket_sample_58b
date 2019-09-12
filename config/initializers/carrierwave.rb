@@ -14,3 +14,4 @@ CarrierWave.configure do |config|
 
   config.fog_directory  = 'tatsuka-freemarket-sample-58b'
   config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/tatsuka-freemarket-sample-58b'
+end
