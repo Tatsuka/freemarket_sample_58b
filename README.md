@@ -15,7 +15,7 @@
 |birth_month|integer|null: false|
 |birth_day|integer|null: false|
 ### Association
-- has_many :items
+- has_many :items
 - has_many :comments
 - has_one :credit_card dependent: :destroy
 - has_one :sns_credentials dependent: :destroy
@@ -50,7 +50,7 @@
 ### Association
 - has_many :images dependent: :destory
 - has_many :comments dependent: :destory
-- belongs_to :user
+- belongs_to :user
 - belongs_to :category
 - belongs_to :brand
 - belongs_to :seller, class_name: "User"
