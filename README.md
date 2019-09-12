@@ -1,8 +1,6 @@
-
-#README
-
 # mercari DB設計
-## usersテーブル
+
+## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
 |nickname|string|null:false|
@@ -16,8 +14,7 @@
 |birth_year|integer|null: false|
 |birth_month|integer|null: false|
 |birth_day|integer|null: false|
-
-### Association
+### Association
 - has_many :items
 - has_many :comments
 - has_one :credit_card dependent: :destroy
@@ -35,27 +32,7 @@
 ### Association
 - belongs_to :user​​
 
-### Association
-- has_many :items
-- has_many :comments
-- has_one :credit_card dependent: :destroy
-- has_one :sns_credentials dependent: :destroy
-
-## addressesテーブル
-|Column|Type|Options|
-|------|----|-------|
-|user_id|references|null:false, foreign_key: true|
-
-
-|postal_code|integer|null:false|
-|prefecture|integer|null:false|
-|city|string|null:false|
-|block_number|integer||
-|building_name|string||
-### Association
-- belongs_to :user
-
-## itemsテーブル
+## itemsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |user_id|references|null:false, foreign_key: true|
@@ -70,10 +47,7 @@
 |shipping-days|integer|null: false|
 |seller_id|references|null: false|
 |buyer_id|references|null: false|
-
 ### Association
-### Association
-
 - has_many :images dependent: :destory
 - has_many :comments dependent: :destory
 - belongs_to :user
@@ -91,17 +65,13 @@
 ### Association
 - belongs_to :item
 
-
-
 ## commentsテーブル
-
 |Column|Type|Options|
 |------|----|-------|
 |user_id|references|null:false, foreign_key: true|
 |item_id|references|null:false, foreign_key: true|
 |content|text|null: false|
 |created_at|timestamps|null: false|
-
 ### Association
 - belongs_to :item
 - belongs_to :user
@@ -132,7 +102,7 @@
 |expiry_month|integer|null:false|
 
 ### Association
-- belongs_to :user
+- belongs_to :user​​
 
 
 ## sns_credentialsテーブル
@@ -143,5 +113,4 @@
 |provider|integer|null:false|
 
 ### Association
-
-- belongs_to :user
+- belongs_to :user​​
