@@ -1,6 +1,6 @@
 # mercari DB設計
 
-## usersテーブル
+## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
 |nickname|string|null:false|
@@ -32,7 +32,7 @@
 ### Association
 - belongs_to :user​​
 
-## itemsテーブル
+## itemsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |user_id|references|null:false, foreign_key: true|
@@ -65,7 +65,7 @@
 ### Association
 - belongs_to :item
 
-## commentsテーブル
+## commentsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |user_id|references|null:false, foreign_key: true|
