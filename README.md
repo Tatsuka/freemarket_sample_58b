@@ -16,7 +16,7 @@
 |birth_day|integer|null: false|
 
 ### Association
-- has_many :items
+- has_many :items
 - has_many :comments
 - has_one :address dependent: :destroy
 - has_one :credit_card dependent: :destroy
@@ -56,7 +56,7 @@
 ### Association
 - has_many :images dependent: :destory
 - has_many :comments dependent: :destory
-- belongs_to :user
+- belongs_to :user
 - belongs_to :category
 - belongs_to :brand
 - belongs_to :seller, class_name: "User"
@@ -116,7 +116,7 @@
 |expiry_month|integer|null:false|
 
 ### Association
-- belongs_to :user​​
+- belongs_to :user
 
 
 ## sns_credentialsテーブル
