@@ -1,4 +1,4 @@
-# mercari DB設計
+# README
 
 ## usersテーブル
 |Column|Type|Options|
@@ -14,11 +14,14 @@
 |birth_year|integer|null: false|
 |birth_month|integer|null: false|
 |birth_day|integer|null: false|
+
 ### Association
 - has_many :items
 - has_many :comments
+- has_one :address dependent: :destroy
 - has_one :credit_card dependent: :destroy
 - has_one :sns_credentials dependent: :destroy
+
 
 ## addressesテーブル
 |Column|Type|Options|
@@ -29,8 +32,10 @@
 |city|string|null:false|
 |block_number|integer||
 |building_name|string||
+
 ### Association
-- belongs_to :user​​
+- belongs_to :user
+
 
 ## itemsテーブル
 |Column|Type|Options|
@@ -47,7 +52,8 @@
 |shipping-days|integer|null: false|
 |seller_id|references|null: false|
 |buyer_id|references|null: false|
-### Association
+
+### Association
 - has_many :images dependent: :destory
 - has_many :comments dependent: :destory
 - belongs_to :user
@@ -55,6 +61,7 @@
 - belongs_to :brand
 - belongs_to :seller, class_name: "User"
 - belongs_to :buyer, class_name: "User"
+
 
 ## imagesテーブル
 |Column|Type|Options|
@@ -65,6 +72,7 @@
 ### Association
 - belongs_to :item
 
+
 ## commentsテーブル
 |Column|Type|Options|
 |------|----|-------|
@@ -72,25 +80,31 @@
 |item_id|references|null:false, foreign_key: true|
 |content|text|null: false|
 |created_at|timestamps|null: false|
-### Association
+
+### Association
 - belongs_to :item
 - belongs_to :user
+
 
 ## categoriesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
 |ancestory|string||
+
 ### Association
 - has_many :items
 - has_ancestory
+
 
 ## brandsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
+
 ### Association
 - has_many :items
+
 
 ## credit_cardsテーブル
 |Column|Type|Options|
@@ -102,7 +116,7 @@
 |expiry_month|integer|null:false|
 
 ### Association
-- belongs_to :user​​
+- belongs_to :user
 
 
 ## sns_credentialsテーブル
@@ -113,4 +127,4 @@
 |provider|integer|null:false|
 
 ### Association
-- belongs_to :user​​
+- belongs_to :user
