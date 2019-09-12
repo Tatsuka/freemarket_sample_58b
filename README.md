@@ -16,7 +16,7 @@
 |birth_day|integer|null: false|
 
 ### Association
-- has_many :items
+- has_many :items
 - has_many :comments
 - has_one :address dependent: :destroy
 - has_one :credit_card dependent: :destroy
