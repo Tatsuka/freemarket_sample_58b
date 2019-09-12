@@ -56,7 +56,7 @@
 ### Association
 - has_many :images dependent: :destory
 - has_many :comments dependent: :destory
-- belongs_to :user
+- belongs_to :user
 - belongs_to :category
 - belongs_to :brand
 - belongs_to :seller, class_name: "User"
