@@ -13,7 +13,9 @@
 |last_name_kana|string|null:false|
 |first_name_kanji|string|null:false|
 |last_name_kanji|string|null:false|
-|birthday|integer|null:false|
+|birth_year|integer|null: false|
+|birth_month|integer|null: false|
+|birth_day|integer|null: false|
 ### Association
 - has_many :items
 - has_many :comments
@@ -29,7 +31,7 @@
 |city|string|null:false|
 |block_number|integer||
 |building_name|string||
-##Association
+### Association
 - belongs_to :user​​
 
 ## itemsテーブル
@@ -45,10 +47,16 @@
 |shipping_fee_charge_to|integer|null: false|
 |shipping_from|integer|null: false|
 |shipping-days|integer|null: false|
+|seller_id|references|null: false|
+|buyer_id|references|null: false|
 ### Association
-- belongs_to :user
 - has_many :images dependent: :destory
 - has_many :comments dependent: :destory
+- belongs_to :user
+- belongs_to :category
+- belongs_to :brand
+- belongs_to :seller, class_name: "User"
+- belongs_to :buyer, class_name: "User"
 
 ## imagesテーブル
 |Column|Type|Options|
@@ -69,6 +77,22 @@
 ### Association
 - belongs_to :item
 - belongs_to :user
+
+## categoriesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false|
+|ancestory|string||
+### Association
+- has_many :items
+- has_ancestory
+
+## brandsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false|
+### Association
+- has_many :items
 
 ## credit_cardsテーブル
 |Column|Type|Options|
