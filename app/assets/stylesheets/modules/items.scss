@@ -1,15 +1,20 @@
 
 .wrapper {
 
-
   .main-wrapper {
 
     .srider {
-      height: 390px;
-      background: palegreen;
+      width: 100%;
+      img {
+        display: block;
+        width: auto;
+        height: 400px;
+        margin: 0 auto;
+      }
     }
 
     .popularity {
+      background-color: rgb(255, 255, 255);
       padding: 56px 0px 30px;
 
       h2 {
@@ -112,9 +117,12 @@
         }
       }
     }
-    .srider-bottom {
+    .bottom-image {
       height: 260px;
-      background: palegreen;
+      img {
+        height: 100%;
+        width: 100%;
+      }
     }
   }
 }
