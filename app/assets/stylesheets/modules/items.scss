@@ -5,8 +5,11 @@
   .main-wrapper {
 
     .srider {
-      height: 390px;
-      background: palegreen;
+      img {
+        width: auto;
+        height: 400px;
+        margin: 0 auto;
+      }
     }
 
     .popularity {
