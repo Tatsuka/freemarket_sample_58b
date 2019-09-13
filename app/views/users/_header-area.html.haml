@@ -17,24 +17,24 @@
         .header-bottom__right
           .header-bottom__right__goodjob
             %a{href:""}
-              .header--goodjob__icon
-              .header--goodjob__text
-                いいね！一覧
+            .header--goodjob__icon
+            .header--goodjob__text
+              いいね！一覧
           .header-bottom__right__news
             %a{href:""}
-              .header--news__icon
-              .header--news__text
-                お知らせ
+            .header--news__icon
+            .header--news__text
+              お知らせ
           .header-bottom__right__todolist
             %a{href:""}
-              .header--todolist__icon
-              .header--todolist__text
-                やることリスト
+            .header--todolist__icon
+            .header--todolist__text
+              やることリスト
           .header-bottom__right__mypage
             %a{href:""}
-              .header--mypage__icon
-              .header--mypage__text
-                マイページ
+            .header--mypage__icon
+            .header--mypage__text
+              マイページ
    
   .header-bottom__bread__crumbs      
   .bread-crumbs 
@@ -118,64 +118,3 @@
               電話番号の確認
           .config__logout
             = link_to "ログアウト", destroy_user_session_path, method: :delete
-    .content__right
-      .mypage-user-icon__area
-        .user-icon__zone
-          %a{href:""}
-          .user__icon         
-          .user__name
-            ユーザー名
-          .mypage-number
-            .user__evaluation
-              評価
-            .user__exhibits
-              出品数
-      .mypage-tab-container-notification-todo
-        .mypage-tabs
-          .mypage-news
-            お知らせ
-          .mypage-todo
-            やることリスト
-        .tab-content
-          .mypage-news-list
-            .mypage-news-link
-              %a{href:""}
-              .mypage-news-body
-                .mypage-item-text
-                  事務局から個別メッセージ「ログイン通知」
-            .mypage-news-link2
-              .mypage-news-body
-                .mypage-item-text
-                  事務局から個別メッセージ「ログイン通知」
-            .mypage-go-link
-              %a{href:""}
-              .mypage-go-link-text
-                一覧を見る
-          .mypage-todo-list
-            .mypage-todo-link
-              %a{href:""}
-      .purchased-product
-        .purchased-product-head
-          購入した商品
-        .purchased-product-list
-          .purchased-product-now
-            %a{href:""}
-            取引中
-          .purchased-product-old
-            %a{href:""}
-            過去の取引
-        .purchased-product-content
-          .purchased-product-content-active
-          .purchased-product-content-old
-
-  .app-banner
-  .global-footer
-   
-
-
-
-
-
-
-
-//= link_to "ログアウト", destroy_user_session_path, method: :delete
