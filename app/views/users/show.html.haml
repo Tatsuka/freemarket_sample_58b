@@ -17,17 +17,25 @@
         .header-bottom__right
           .header-bottom__right__goodjob
             %a{href:""}
+            .header--goodjob__icon
+            .header--goodjob__text
               いいね！一覧
           .header-bottom__right__news
             %a{href:""}
+            .header--news__icon
+            .header--news__text
               お知らせ
           .header-bottom__right__todolist
             %a{href:""}
+            .header--todolist__icon
+            .header--todolist__text
               やることリスト
           .header-bottom__right__mypage
             %a{href:""}
+            .header--mypage__icon
+            .header--mypage__text
               マイページ
-
+   
   .header-bottom__bread__crumbs      
   .bread-crumbs 
     %a{href:""}
@@ -146,15 +154,28 @@
           .mypage-todo-list
             .mypage-todo-link
               %a{href:""}
-      .mypage-tab-container
+      .purchased-product
+        .purchased-product-head
+          購入した商品
+        .purchased-product-list
+          .purchased-product-now
+            %a{href:""}
+            取引中
+          .purchased-product-old
+            %a{href:""}
+            過去の取引
+        .purchased-product-content
+          .purchased-product-content-active
+          .purchased-product-content-old
+
   .app-banner
   .global-footer
+   
 
 
 
-        
 
-  
+
 
 
 //= link_to "ログアウト", destroy_user_session_path, method: :delete
