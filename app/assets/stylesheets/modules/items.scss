@@ -1,10 +1,12 @@
 
 .wrapper {
 
-
   .main-wrapper {
 
     .srider {
+      width: 100%;
+      img {
+        display: block;
         width: auto;
         height: 400px;
         margin: 0 auto;
