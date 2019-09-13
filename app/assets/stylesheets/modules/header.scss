@@ -1,9 +1,10 @@
 .header-area {
-
+  background: white;
   &__wrapper {
-    width: 700px;
+    width: 1020px;
     margin: 0 auto;
     padding: 8px 0 0;
+    background: #fff;
 
     .header-top {
       display: flex;
