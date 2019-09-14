@@ -37,8 +37,7 @@
     white-space: normal;
   }
 
-  
- 
+
   .content__right{
     background: red;
     float: right;
@@ -112,6 +111,30 @@
         border-style: solid;
         border-width: 0;    
       }
+
+// ログアウト画面の表示
+  .content__right__logout__area {
+    float: right;
+    width: 700px;
+    background: #fff;
+    &__form {
+      padding: 64px;
+      &__btn {
+        max-width: 320px;
+        margin: 0 auto;
+        button {
+          margin: 0;
+          background: #ea352d;
+          border: 1px solid #ea352d;
+          color: #fff;
+          display: block;
+          width: 100%;
+          line-height: 48px;
+          font-size: 14px;
+        }
+      }
+    }
+  }
 
 
   .mypage-tab-container-notification-todo{
@@ -286,5 +309,11 @@
       }   
     }
     @import "mypage-content-area";
-
+  .bottom-image {
+    height: 260px;
+    img {
+      height: 100%;
+      width: 100%;
+    }
+  }
 }
