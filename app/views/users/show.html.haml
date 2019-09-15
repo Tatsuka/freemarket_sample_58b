@@ -16,115 +16,87 @@
               ブランドから探す
         .header-bottom__right
           .header-bottom__right__goodjob
-            %a{href:""}
+            = link_to 'いいね！一覧'
               .header--goodjob__icon
               .header--goodjob__text
-                いいね！一覧
           .header-bottom__right__news
-            %a{href:""}
+            = link_to 'お知らせ'
               .header--news__icon
               .header--news__text
-                お知らせ
           .header-bottom__right__todolist
-            %a{href:""}
+            = link_to 'やることリスト'
               .header--todolist__icon
               .header--todolist__text
-                やることリスト
           .header-bottom__right__mypage
-            %a{href:""}
+            = link_to 'マイページ'
               .header--mypage__icon
               .header--mypage__text
-                マイページ
    
   .header-bottom__bread__crumbs      
   .bread-crumbs 
-    %a{href:""}
-      メルカリ＜マイページ
+    = link_to 'メルカリ＜マイページ'
   .content-area
     .content__left
       .content__left__list
         .content__left__mypage
           .list__mypage
-            %a{href:""}
-              マイページ
+            = link_to 'マイページ'
           .list__news
-            %a{href:""}
-              お知らせ
+            = link_to 'お知らせ'
           .list__todolist
-            %a{href:""}
-              やることリスト
+            = link_to 'やることリスト'
           .list__goodjob
-            %a{href:""}
-              いいね！一覧
+            = link_to 'いいね！一覧'
           .list__exhibit
-            %a{href:""}
-              出品する
+            = link_to '出品する'
           .list__exhibitnow
-            %a{href:""}
-              出品した商品 - 出品中
+            = link_to '出品した商品 - 出品中'
           .clist__transactionnow
-            %a{href:""}
-              出品した商品 - 取引中
+            = link_to '出品した商品 - 取引中'
           .list__transactionend
-            %a{href:""}
-              出品した商品 - 売却済み
+            = link_to '出品した商品 - 売却済み'
           .list__buynow
-            %a{href:""}
-              購入した商品 - 取引中
+            = link_to '購入した商品 - 取引中'
           .list__buyend
-            %a{href:""}
-              購入した商品 - 過去の取引
+            = link_to '購入した商品 - 過去の取引'
           .clist__newslist
-            %a{href:""}
-              ニュース一覧
+            = link_to 'ニュース一覧'
           .list__evaluation
-            %a{href:""}
-              評価一覧
+            = link_to '評価一覧'
           .list__guide
-            %a{href:""}
-              ガイド
+            = link_to 'ガイド'
           .list__contact
-            %a{href:""}
-              お問い合わせ
+            = link_to 'お問い合わせ'
         .content__left__merpay
           メルペイ
         .merpay__list
           .merpay__transfer
-            %a{href:""}
-              売上・振込申請
+            = link_to '売上・振込申請'
           .merpay__point
-            %a{href:""}
-              ポイント
+            = link_to 'ポイント'
         .content__left__config
           設定
         .config__lisut
           .config__profile
-            %a{href:""}
-              プロフィール
+            = link_to 'プロフィール'
           .config__address
-            %a{href:""}
-              発送元・お届け先住所変更
+            = link_to '発送元・お届け先住所変更'
           .config__payment
-            %a{href:""}
-              支払い方法
+            = link_to '支払い方法'
           .config__passmail
-            %a{href:""}
-              メール/パスワード
+            = link_to 'メール/パスワード'
           .config__person
-            %a{href:""}
-              本人情報
+            = link_to '本人情報'
           .config__tell
-            %a{href:""}
-              電話番号の確認
+            = link_to '電話番号の確認'
           .config__logout
             = link_to "ログアウト", destroy_user_session_path, method: :delete
     .content__right
       .mypage-user-icon__area
         .user-icon__zone
-          %a{href:""}
+          = link_to 'ユーザー名'
           .user__icon         
           .user__name
-            ユーザー名
           .mypage-number
             .user__evaluation
               評価
@@ -139,43 +111,29 @@
         .tab-content
           .mypage-news-list
             .mypage-news-link
-              %a{href:""}
               .mypage-news-body
                 .mypage-item-text
-                  事務局から個別メッセージ「ログイン通知」
+                  = link_to '事務局から個別メッセージ「ログイン通知」'
             .mypage-news-link2
               .mypage-news-body
                 .mypage-item-text
-                  事務局から個別メッセージ「ログイン通知」
+                  = link_to '事務局から個別メッセージ「ログイン通知」'
             .mypage-go-link
-              %a{href:""}
               .mypage-go-link-text
-                一覧を見る
+                = link_to '一覧を見る'
           .mypage-todo-list
             .mypage-todo-link
-              %a{href:""}
       .purchased-product
         .purchased-product-head
           購入した商品
         .purchased-product-list
           .purchased-product-now
-            %a{href:""}
-            取引中
+            = link_to '取引中'
           .purchased-product-old
-            %a{href:""}
-            過去の取引
+            = link_to '過去の取引'
         .purchased-product-content
           .purchased-product-content-active
           .purchased-product-content-old
 
   .app-banner
   .global-footer
-   
-
-
-
-
-
-
-
-//= link_to "ログアウト", destroy_user_session_path, method: :delete

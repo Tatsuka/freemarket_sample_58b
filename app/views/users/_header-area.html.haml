@@ -16,105 +16,24 @@
               ブランドから探す
         .header-bottom__right
           .header-bottom__right__goodjob
-            %a{href:""}
+            = link_to 'いいね！一覧'
             .header--goodjob__icon
             .header--goodjob__text
-              いいね！一覧
+              
           .header-bottom__right__news
-            %a{href:""}
+            = link_to 'お知らせ'
             .header--news__icon
             .header--news__text
-              お知らせ
+              
           .header-bottom__right__todolist
-            %a{href:""}
+            = link_to 'やることリスト'
             .header--todolist__icon
             .header--todolist__text
-              やることリスト
+              
           .header-bottom__right__mypage
-            %a{href:""}
+            = link_to 'マイページ'
             .header--mypage__icon
             .header--mypage__text
-              マイページ
+              
    
   .header-bottom__bread__crumbs      
-  .bread-crumbs 
-    %a{href:""}
-      メルカリ＜マイページ
-  .content-area
-    .content__left
-      .content__left__list
-        .content__left__mypage
-          .list__mypage
-            %a{href:""}
-              マイページ
-          .list__news
-            %a{href:""}
-              お知らせ
-          .list__todolist
-            %a{href:""}
-              やることリスト
-          .list__goodjob
-            %a{href:""}
-              いいね！一覧
-          .list__exhibit
-            %a{href:""}
-              出品する
-          .list__exhibitnow
-            %a{href:""}
-              出品した商品 - 出品中
-          .clist__transactionnow
-            %a{href:""}
-              出品した商品 - 取引中
-          .list__transactionend
-            %a{href:""}
-              出品した商品 - 売却済み
-          .list__buynow
-            %a{href:""}
-              購入した商品 - 取引中
-          .list__buyend
-            %a{href:""}
-              購入した商品 - 過去の取引
-          .clist__newslist
-            %a{href:""}
-              ニュース一覧
-          .list__evaluation
-            %a{href:""}
-              評価一覧
-          .list__guide
-            %a{href:""}
-              ガイド
-          .list__contact
-            %a{href:""}
-              お問い合わせ
-        .content__left__merpay
-          メルペイ
-        .merpay__list
-          .merpay__transfer
-            %a{href:""}
-              売上・振込申請
-          .merpay__point
-            %a{href:""}
-              ポイント
-        .content__left__config
-          設定
-        .config__lisut
-          .config__profile
-            %a{href:""}
-              プロフィール
-          .config__address
-            %a{href:""}
-              発送元・お届け先住所変更
-          .config__payment
-            %a{href:""}
-              支払い方法
-          .config__passmail
-            %a{href:""}
-              メール/パスワード
-          .config__person
-            %a{href:""}
-              本人情報
-          .config__tell
-            %a{href:""}
-              電話番号の確認
-          .config__logout
-            = link_to "ログアウト", destroy_user_session_path, method: :delete

@@ -1,0 +1,98 @@
+.content-area{
+  position:relative;
+}
+
+  .identification-area{
+    width: 700px;
+    height: 1200px;
+    background: white;
+    
+    position:absolute;
+    top: 0px;
+    right: 0px;
+  }
+    .identification-inner{
+      width: 100%;
+      height: 100%;
+      padding: 64px;
+    }
+      .personal-information-text{
+        width: 100%;
+        height: 80px;
+        font-size: 14px;
+      }
+        .personal-information-text-right{
+          margin: 8px 0 0;
+          line-height: 1.5;
+          text-align: right;
+          color: #0099e8;
+          text-decoration: none;
+          touch-action: manipulation;
+          cursor: pointer;
+        }
+      .registered-personal-information{
+        margin: 40px 0 0;
+        display: block;
+        font-size: 14px;
+      }
+        .registered-personal-information-top{
+          font-weight: 600;
+        }
+        .registered-personal-information-bottom{
+          margin: 8px 0 0;
+          line-height: 1.5;
+        }
+      .new-personal-information{
+        margin: 40px 0 0;
+        font-size: 14px;
+      }
+        .new-personal-information-top{
+          font-weight: 600;
+          display: inline-block;
+          touch-action: manipulation;       
+        }
+        .new-personal-information-top-arbitrary{
+          background: #ccc;
+          margin: 0 0 0 8px;
+          padding: 2px 4px;
+          border-radius: 2px;
+          color: #fff;
+          font-size: 12px;
+          vertical-align: top;
+          display: inline-block;
+
+        }
+        .new-personal-information-input{
+          width: 100%;
+          margin: 8px 0 0;
+          height: 48px;
+          padding: 10px 16px 8px;
+          border-radius: 4px;
+          border: 1px solid #ccc;
+          background: #fff;
+          line-height: 1.5;
+          font-size: 16px;
+          min-height: 1.5em;
+
+        }
+
+    .new-personal-information-text-bottom{
+      height: 50px;
+      position:relative;
+    }
+      .blank-margin{
+        width: 100%;
+        height: 25px;
+        position:relative;
+      }
+      .personal-information-text-bottom{
+        color: #0099e8;
+        text-decoration: none;
+        touch-action: manipulation;
+        box-sizing: inherit;
+        cursor: pointer;
+
+        position:absolute;
+        top: 25px;
+        right: 0px;
+      }
