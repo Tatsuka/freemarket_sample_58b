@@ -111,6 +111,7 @@
         %section
           .card-info-content-box
             %h3.card-info-content-box-head クレジットカード一覧
+            - if @credit_card.present?
             .card-info-list
               %li
                 %form.card-info-form{action: "#", method: "POST"}
@@ -121,10 +122,15 @@
                   .card-info-num 02 / 20
                   %input{name: "method", type: "hidden", value: "card"}/
                   %button.card-info-remove{type: "submit"} 削除する
+            - else
+            .credit-info-new-content
+              .credit-info-new
+                = link_to "", class: 'card-new-button'
+                  = fa_icon "credit-card"
+                  クレジットカードを追加する
         .card-info-guidance
           = link_to "支払い方法について"
           = fa_icon "angle-right"
-
 .footer
   = render 'shared/footer'
   = render 'shared/button'

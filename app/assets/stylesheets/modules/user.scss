@@ -157,10 +157,10 @@
       section{
         display: block;
         .card-info-content-box {
-
+          max-width: 320px;
+          margin: 0 auto;
           .card-info-content-box-head{
-            max-width: 320px;
-            margin: 0 auto;
+ 
             font-size: 14px;
             font-weight: bold;
           }
@@ -198,6 +198,25 @@
               }
             }
           }
+          .credit-info-new-content{
+            padding: 24px 0;
+            border-bottom: 1px solid #eee;
+
+            .credit-info-new {
+              margin: 0;
+              height: 50px;
+              background: #ea352d;
+              border: 1px solid #ea352d;
+              color: #fff;
+              text-align: center;
+              line-height: 50px;
+              .card-new-button {
+
+              }
+
+            }
+          }
+
         }
       }
     }
