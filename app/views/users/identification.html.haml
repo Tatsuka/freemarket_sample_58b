@@ -1,2 +1,85 @@
-%p
-  identification!
+.wrapper
+  = render 'header-area'
+
+  .bread-crumbs 
+    %a{href:""}
+      メルカリ  ＜  マイページ  ＜  本人情報の登録
+  
+  .content-area
+    = render 'left-area'
+
+    .identification-area
+      .right-chapter-head
+        本人情報の登録
+      .identification-inner
+        .personal-information-text
+          .personal-information-text1
+            お客さまの本人情報をご登録ください。
+          .personal-information-text2
+            登録されたお名前・生年月日を変更する場合、本人確認書類の提出が必要になります。
+          .personal-information-text-right
+            %a{href:""}
+            本人確認書類のアップロードについて＞
+          
+          
+        
+        .registered-personal-information
+          .registered-personal-information-top
+            お名前
+          .registered-personal-information-bottom
+            赤城太郎
+        .registered-personal-information
+          .registered-personal-information-top
+            お名前カナ
+          .registered-personal-information-bottom
+            アカギタロウ
+        .registered-personal-information
+          .registered-personal-information-top
+            生年月日
+          .registered-personal-information-bottom
+            1900/01/01
+        .new-personal-information
+          .new-personal-information-top
+            郵便番号
+          .new-personal-information-top-arbitrary
+            任意 
+          .new-personal-information-input
+            *****
+        .new-personal-information
+          .new-personal-information-top
+            都道府県
+          .new-personal-information-top-arbitrary
+            任意 
+          .new-personal-information-input
+            *****
+        .new-personal-information
+          .new-personal-information-top
+            市区町村
+          .new-personal-information-top-arbitrary
+            任意 
+          .new-personal-information-input
+            *****
+        .new-personal-information
+          .new-personal-information-top
+            番地 
+          .new-personal-information-top-arbitrary
+            任意 
+          .new-personal-information-input
+            *****
+        .new-personal-information
+          .new-personal-information-top
+            建物名
+          .new-personal-information-top-arbitrary
+            任意 
+          .new-personal-information-input
+            *****
+        .deliver-form-btn
+          変更する
+        .new-personal-information-text-bottom
+          .blank-margin
+          .personal-information-text-bottom
+            %a{href:""}
+            本人情報の登録について＞
+            
+            
+        

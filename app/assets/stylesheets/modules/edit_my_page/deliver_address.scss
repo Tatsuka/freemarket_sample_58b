@@ -1,0 +1,173 @@
+.content-area{
+  position:relative;
+}
+.deliver-area{
+  width: 700px;
+  height: 1150px;
+  background: white;
+
+  position:absolute;
+  top: 0px;
+  right: 0px;
+}
+  .deliver-chapter{
+    width: 100%;
+    height: 100%;
+  }
+    // // .deliver-chapter-head{
+    // //   font-size: 24px;
+    // //   padding: 8px 24px;
+    // //   border-bottom: 1px solid #f5f5f5;
+    // //   text-align: center;
+
+    // //   line-height: 1.4;
+    // }  
+    .deliver-registration-form{
+      width: 100%;
+      height: 100%;
+      padding: 40px 40px 64px;
+    }
+    .right-single-content{
+      width: 100%;
+      height: 100%;
+      max-width: 343px;
+      margin: 0 auto;
+      padding: 0;
+      border-style: solid;
+      border-width: 0;
+
+    }
+    .deliver-form-name-kanji{
+      width: 100%;
+      height: 137px;
+      margin: 0;
+      
+    }
+      .deliver-form-name-kanji-input{
+        font-weight: 600;
+        display: inline-block;
+        touch-action: manipulation;
+        cursor: default;
+        display: inline-block;
+      }
+      .deliver-equired{
+        background: #ea352d;
+        margin: 0 0 0 8px;
+        padding: 2px 4px;
+        border-radius: 2px;
+        color: #fff;
+        font-size: 12px;
+        vertical-align: top;
+        display: inline-block;
+      }
+      .deliver-form-first-name-kanji{
+        width: 100%;
+        margin: 8px 0 0;
+        height: 48px;
+        padding: 10px 16px 8px;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+        background: #fff;
+        line-height: 1.5;
+        font-size: 16px;
+
+      }
+      .deliver-form-last-name-kanji{
+        @extend .deliver-form-first-name-kanji;
+      }
+    .deliver-form-name-kana{
+      margin: 24px 0 0;
+      @extend .deliver-form-name-kanji;
+    }
+      .deliver-form-name-kana-input{
+        @extend .deliver-form-name-kanji-input;
+      }
+      .deliver-form-first-name-kana{
+        @extend .deliver-form-first-name-kanji;
+      }
+      .deliver-form-last-name-kana{
+        @extend .deliver-form-first-name-kanji;
+      }
+    .deliver-form-postal-code{
+      margin: 24px 0 0;
+      width: 100%;
+      height: 80px;
+    }
+      .deliver-form-postal-code-input{
+        @extend .deliver-form-name-kanji-input;
+      }
+      .deliver-form-postal-code-user{
+        @extend .deliver-form-first-name-kanji;
+      }
+    .deliver-form-prefecture{
+      @extend .deliver-form-postal-code;
+    }
+      .deliver-form-prefecture-input{
+        @extend .deliver-form-name-kanji-input;
+      }
+      .deliver-form-prefecture-user{
+        @extend .deliver-form-first-name-kanji;
+      }
+    .deliver-form-city{
+      @extend .deliver-form-postal-code;
+    }
+      .deliver-form-city-input{
+        @extend .deliver-form-name-kanji-input;
+      }
+      .deliver-form-city-user{
+        @extend .deliver-form-first-name-kanji;
+      }
+    .deliver-form-block-number{
+      @extend .deliver-form-postal-code;
+    }
+      .deliver-form-block-number-input{
+        @extend .deliver-form-name-kanji-input;
+      }
+      .deliver-form-block-number-user{
+        @extend .deliver-form-first-name-kanji;
+      }
+    .deliver-form-building_name{
+      @extend .deliver-form-postal-code;
+    }
+      .deliver-form-building_name-input{
+        @extend .deliver-form-name-kanji-input;
+      }
+      .deliver-any{
+        background: #ccc;;
+        margin: 0 0 0 8px;
+        padding: 2px 4px;
+        border-radius: 2px;
+        color: #fff;
+        font-size: 12px;
+        vertical-align: top;
+        display: inline-block;
+      }
+      .deliver-form-building-name-user{
+        @extend .deliver-form-first-name-kanji;
+      }
+    .deliver-form-phone-number{
+      @extend .deliver-form-postal-code;
+    }
+      .deliver-form-phone-number-input{
+        @extend .deliver-form-name-kanji-input;
+      }
+      .deliver-form-phone-number-user{
+        @extend .deliver-form-first-name-kanji;
+      }
+      .deliver-form-btn{
+        margin-top: 32px;
+        background: #ea352d;
+        border: 1px solid #ea352d;
+        color: #fff;
+        display: block;
+        width: 100%;
+        height: 50px;
+        line-height: 48px;
+        font-size: 14px;
+        border: 1px solid transparent;
+        -webkit-transition: all ease-out .3s;
+        transition: all ease-out .3s;
+        cursor: pointer;
+        text-align: center;
+        touch-action: manipulation;
+      }

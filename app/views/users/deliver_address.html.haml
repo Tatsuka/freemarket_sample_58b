@@ -1,2 +1,81 @@
-%p
-  deliver_address!
+.wrapper
+  = render 'header-area'
+
+  .bread-crumbs 
+    %a{href:""}
+      メルカリ  ＜  マイページ  発送元・お届け先住所変更
+  
+  .content-area
+    = render 'left-area'
+
+    .deliver-area
+      .deliver-chapter
+        .right-chapter-head
+          発送元・お届け先住所変更
+        .deliver-registration-form
+          .deliver-single-content
+            .deliver-form-name-kanji
+              .deliver-form-name-kanji-input
+                お名前
+              .deliver-equired
+                必須
+              .deliver-form-first-name-kanji
+                赤城
+              .deliver-form-last-name-kanji
+                太郎
+            .deliver-form-name-kana
+              .deliver-form-name-kana-input
+                お名前カナ
+              .deliver-equired
+                必須
+              .deliver-form-first-name-kana
+                アカギ
+              .deliver-form-last-name-kana
+                タロウ
+            .deliver-form-postal-code
+              .deliver-form-postal-code-input
+                郵便番号
+              .deliver-equired
+                必須
+              .deliver-form-postal-code-user
+                000-0000
+            .deliver-form-prefecture
+              .deliver-form-prefecture-input
+                都道府県
+              .deliver-equired
+                必須
+              .deliver-form-prefecture-user
+                東京都
+            .deliver-form-city
+              .deliver-form-city-input
+                市区町村
+              .deliver-equired
+                必須
+              .deliver-form-city-user
+                横浜市緑区
+            .deliver-form-block-number
+              .deliver-form-block-number-input
+                番地
+              .deliver-equired
+                必須
+              .deliver-form-block-number-user
+                青山1−1−1
+            .deliver-form-building_name
+              .deliver-form-building_name-input
+                建物名
+              .deliver-any
+                任意
+              .deliver-form-building-name-user
+                柳ビル103
+            .deliver-form-phone-number
+              .deliver-form-phone-number-input
+                電話
+              .deliver-any
+                任意
+              .deliver-form-phone-number-user
+                070-12345678
+            .deliver-form-btn
+              変更する
+
+
+            

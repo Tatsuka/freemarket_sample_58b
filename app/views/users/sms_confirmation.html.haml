@@ -1,2 +1,17 @@
-%p
-  sms_confirmation!
+.wrapper
+  = render 'header-area'
+
+  .bread-crumbs 
+    %a{href:""}
+      メルカリ  ＜  マイページ  ＜  電話番号の確認
+  
+  .content-area
+    = render 'left-area'
+
+
+    .sms-confirmation-area
+      .right-chapter-head
+        完了
+      .sms-confirmation-text
+        確認済みです
+  
