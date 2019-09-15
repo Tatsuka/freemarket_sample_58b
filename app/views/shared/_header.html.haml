@@ -14,17 +14,9 @@
           ブランドから探す
       .header-bottom__right
         .header-bottom__right__signup
-          %a{href:""}
-            新規会員登録
+          = link_to '新規会員登録'
+            
         .header-bottom__right__login
-          %a{href:""}
-            ログイン
-      -# ログイン中の表示
-      -# %ul.header-bottom__right
-      -#   %li.header-bottom__right__news
-      -#     お知らせ
-      -#   %li.header-bottom__right__todo
-      -#     やることリスト
-      -#   %li.header-bottom__right__mypage
-      -#     マイページ
+          = link_to 'ログイン'
+            
 
