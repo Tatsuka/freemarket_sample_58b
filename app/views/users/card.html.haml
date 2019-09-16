@@ -1,3 +1,35 @@
 .wrapper
-  = render 'header-light-area'
+  = render 'header-area'
 
+  .bread-crumbs 
+    = link_to 'メルカリ  ＜  マイページ  メール/パスワード'
+  
+  .content-area
+    = render 'left-area'
+    
+    .right-container-card-info
+      .right-container-card-info-head 支払い方法
+      .right-container-card-info-inner
+        %section
+          .card-info-content-box
+            %h3.card-info-content-box-head クレジットカード一覧
+            - if @credit_card.present?
+              .card-info-list
+                %li
+                  = form_for action:"#", method:"POST", class:"card-info-form"
+                  = image_tag "//www-mercari-jp.akamaized.net/assets/img/card/visa.svg?2482339763", alt: "visa", class: "card-img"
+                  .card-info-num ************0237
+                  .card-info-num 02 / 20
+                  = button_tag "削除する", type: "submit", class: "card-info-remove"
+            - else
+            .credit-info-new-content
+              .credit-info-new
+                = link_to "", class: 'card-new-button'
+                = fa_icon "credit-card"
+                クレジットカードを追加する
+      .card-info-guidance
+        = link_to "支払い方法について"
+        = fa_icon "angle-right"
+.footer
+  = render 'shared/footer'
+  = render 'shared/button'
