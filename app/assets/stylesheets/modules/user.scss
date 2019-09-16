@@ -62,7 +62,6 @@
     background: rgb(225, 241, 195);
     height: 200px;
     width: 100%;
-    // padding: 20px;         ???
     position: relative;
     background-repeat: no-repeat;
     background-size: cover;
@@ -73,12 +72,10 @@
     align-items: center;
   }
   .user-icon__zone{
-    // background: #fff;
     width: 100%;
     height: 111px;
     display: block;
     position: absolute;
-    // top: 50%;
     left: 0;
     right: 0;  
   }
@@ -97,7 +94,6 @@
       line-height: 1.4;
       background-repeat: no-repeat;
       margin-block-start: 0.83em;
-      // margin-block-end: 0.83em;
       margin-inline-start: 0px;
       margin-inline-end: 0px;
     }
@@ -114,10 +110,9 @@
         display: inline-block;
         font-size: 14px;
         border-style: solid;
-        border-width: 0;    
+        border-width: 0;
       }
 
-// ログアウト画面の表示
   .content__right__logout__area {
     float: right;
     width: 700px;
@@ -161,13 +156,13 @@
         .card-info-content-box {
           max-width: 320px;
           margin: 0 auto;
-          .card-info-content-box-head{
+          .card-info-content-box-head {
  
             font-size: 14px;
             font-weight: bold;
           }
-          .card-info-list{
-            li{
+          .card-info-list {
+            li {
               padding: 24px 0;
               border-bottom: 1px solid #eee;
             }
@@ -175,12 +170,12 @@
               max-width: 320px;
               margin: 0 auto;
               position: relative;
-              img{
+              img {
                 vertical-align: middle;
                 height: 15px;
                 width: 49px;
               }
-              .card-info-num{
+              .card-info-num {
                 margin: 8px 0 0;
                 font-size: 16px;
               }
@@ -200,10 +195,9 @@
               }
             }
           }
-          .credit-info-new-content{
+          .credit-info-new-content {
             padding: 24px 0;
             border-bottom: 1px solid #eee;
-
             .credit-info-new {
               margin: 0;
               height: 50px;
@@ -212,11 +206,8 @@
               color: #fff;
               text-align: center;
               line-height: 50px;
-              .card-new-button {
-              }
             }
           }
-
         }
       }
     }
@@ -234,7 +225,7 @@
     background: darkblue;
     height: 405px;
     width: 100%;
-    // padding: 20px;
+
     position: relative;
     background-repeat: no-repeat;
     background-size: cover;
@@ -246,11 +237,6 @@
       width: 100%;
       border: 0;
       font-size: 0;
-    //   margin-block-start: 1em;
-    // margin-block-end: 1em;
-    // margin-inline-start: 0px;
-    // margin-inline-end: 0px;
-    // padding-inline-start: 40px;
 
     }
       .mypage-news{
@@ -314,7 +300,6 @@
       }
         .mypage-news-body{
           margin: 0 40px 0 68px;
-          // width: 100%;
           height: 100%;
           background: rgb(227, 227, 255);
           display: block;
