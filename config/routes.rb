@@ -12,4 +12,14 @@ Rails.application.routes.draw do
   get 'users/:id/identification' =>  'users#identification'
   get 'users/:id/sms_confirmation'=> 'users#sms_confirmation'
   get 'users/:id/edit'            =>  'users#edit'
+
+  resources :signup do
+      collection do
+        get 'step1'
+        get 'step2'
+        get 'step3'
+        get 'step4'
+        get 'done'
+      end
+    end
 end
