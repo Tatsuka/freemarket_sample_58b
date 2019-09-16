@@ -141,9 +141,6 @@
     }
   }
 
-
-
-// クレッジットカードの表示
   .right-container-card-info{
     width: 65%;
     background: #fff;
@@ -180,12 +177,12 @@
               position: relative;
               img{
                 vertical-align: middle;
+                height: 15px;
+                width: 49px;
               }
               .card-info-num{
                 margin: 8px 0 0;
                 font-size: 16px;
-
-        
               }
               .card-info-remove {
                 position: absolute;
@@ -216,9 +213,7 @@
               text-align: center;
               line-height: 50px;
               .card-new-button {
-
               }
-
             }
           }
 
