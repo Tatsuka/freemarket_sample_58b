@@ -1,0 +1,376 @@
+.single-container{
+  width: 100%;
+  height: 100%;
+  padding: 0 0 220px;
+  display: block;
+  background: #eee;
+}
+  .single-main{
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+  .single-container-Item-registration-are{
+    width: 700px;
+    height: 100%;
+    margin: 0 auto;
+    display: block;
+  }
+  .sell-container{
+    width: 100%;
+    height: 100%;
+  }
+    .data-reactroot{
+      width: 100%;
+      height: 100%;
+    }
+    .single-head{
+      padding: 32px 16px;
+      font-size: 22px;
+      line-height: 1.5;
+      text-align: center;
+      box-sizing: inherit;
+      margin: 0 0 1px 0;
+      background: #fff;
+    }
+    .sell-form{
+      background: #fff;
+      width: 100%;
+      height: 100%;
+    }
+      .sell-upload-box{
+        width: 620px;
+        padding: 40px;
+        display: block;
+      }
+        .sell-upload-head{
+          display: inline-block;
+          width: 100%;
+        }
+        .sell-upload-head-text{
+          display: inline-block;
+          width: 70px;
+          font-size: 16px;
+          font-weight: bold;
+        }
+        .sell-upload-required{
+          display: inline-block;
+          background: #ea352d;
+          margin: 0 0 0 8px;
+          padding: 2px 4px;
+          border-radius: 2px;
+          color: #fff;
+          font-size: 12px;
+          vertical-align: top;
+          border-style: solid;
+          line-height: inherit;
+          box-sizing: inherit;
+          display: inline-block;
+        }
+        .sell-upload-head-text-small{
+          margin: 8px 0 0;
+          line-height: 1.5;
+          font-size: 14px;
+          font-weight: normal;
+        }
+        .sell-dropbox-container{
+          display: block;
+          width: 620px;
+          height: 165px;
+          margin: 16px auto 0;
+          background: #eee;
+        }
+        .sell-upload-drop-box{
+          width: 100%;
+          height: 100%;
+          position:relative
+        }
+        .visible-pc{
+          position: absolute;
+          top: 50%;
+          left: 16px;
+          right: 16px;
+          text-align: center;
+          font-size: 14px;
+          line-height: 1.5;
+          -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+          pointer-events: none;
+          white-space: pre-wrap;
+          word-wrap: break-word;
+        }
+    .sell-content{
+      width: 100%;
+      height: 100%;
+      padding: 40px;
+      border-top: 1px solid #eee;
+      display: block;
+      background: #fff;
+    }
+      .sell-content-product-nam{
+        height: 100%;
+        width: 100%;
+      }
+        .sell-content-label{
+          width: 100%px;
+          font-weight: 600;
+          font-size: 14px;
+          display: inline-block;
+        }
+        .sell-content_input-default{
+          width: 100%;
+          margin: 8px 0 0;
+          height: 48px;
+          padding: 10px 16px 8px;
+          border-radius: 4px;
+          border: 1px solid #ccc;
+          background: #fff;
+          line-height: 1.5;
+          font-size: 16px;
+        }
+      .sell-content-blank{
+        width: 100%;
+        height: 40px;
+      }
+      .sell-content-product-description{
+        height: 100%;
+        width: 100%;
+      }
+        .sell-content-textarea-default{
+          width: 100%;
+          margin: 8px 0 0;
+          height: 145px;
+          padding: 10px 16px 8px;
+          border-radius: 4px;
+          border: 1px solid #ccc;
+          background: #fff;
+          line-height: 1.5;
+          font-size: 16px;
+        }
+    .sell-content-clearfix{
+      width: 100%;
+      height: 270px;
+      padding: 40px;
+      border-top: 1px solid #eee;
+      display: block;
+      background: #fff;
+    }
+      .sell-content-details{
+        width: 100%;
+        height: 100%;
+      }
+      .sell-sub-details-head{
+        float: left;
+        color: #888;
+        font-size: 14px;
+        font-weight: bold;
+      }
+      .sell-form-details-box{
+        float: right;
+        width: 400px;
+        height: 100%;
+        margin: 0;
+      }
+        .icon-arrow-bottom{
+          position: absolute;
+          right: 16px;
+          top: 50%;
+          z-index: 2;
+          color: #888;
+          font-size: 8px;
+          -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+        }
+    .sell-content-delivery{
+      padding: 40px;
+      width: 100%;
+      height: 400px;
+      border-top: 1px solid #eee;
+      background: #fff;
+      display: block;
+    }
+      .form-question{
+        display: inline-block;
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        background: #0099e8;
+        color: #fff;
+        line-height: 14px;
+        font-size: 12px;
+        text-align: center;
+        text-decoration: none;
+        touch-action: manipulation;
+        }
+      .sell-form-delivery-box{
+        float: right;
+        width: 400px;
+        height: 100%;
+        margin: 0;
+      }
+    .sell-content-income{
+      padding: 40px;
+      width: 100%;
+      height: 320px;
+      border-top: 1px solid #eee;
+      width: 100%;
+      background: #fff;
+    }
+      .sell-form-income-box{
+        float: right;
+        width: 400px;
+        height: 100%;
+        margin: 0;
+      }
+        .sell-price{
+          width: 400px;
+          height: 100%;
+          margin: 0;
+        }
+          .income-form-group{
+            width: 100%;
+            height: 100%;
+
+            border: 0;
+          }
+            .income-sell-clearfix{
+              width: 100%;
+              height: 75px;
+              padding: 0 0 24px;
+            }
+              .income-clearfix-left{
+                width: 50%;
+                height: 48px;
+                font-weight: 600;
+                padding: 10px 0;
+                float: left;
+                display: inline-block;
+              }
+            .right-sell-price-input{
+              width: 50%;
+              text-align: right;
+              float: right;
+              display: inline-block;
+              text-align: left;
+              font-size: 12px;
+            }
+              .sell-incomeinput-default{
+                margin: 0 0 0 10px;
+                text-align: right;
+                width: 80%;
+                height: 48px;
+                padding: 10px 16px 8px;
+                border-radius: 4px;
+                border: 1px solid #ccc;
+                background: #fff;
+                line-height: 1.5;
+                font-size: 16px;
+                display: inline-block;
+              }
+            .sell-income-sales-commission{
+              padding: 24px 0;
+              width: 100%;
+              height: 70px;
+              border-top: 1px solid #ccc;
+              text-align: -webkit-match-parent;
+            }
+              .sell-income-sales-commission-left{
+                float: left;
+                font-size: 14px;
+                width: 50%;                  
+              }
+              .sell-income-sales-commission-right{
+                float: right;
+                font-size: 14px;
+                width: 50%;  
+                text-align: right;
+              }
+            .income-sell-clearfix-bold{
+              width: 100%;
+              height: 75px;
+              border-top: 1px solid #ccc;
+              text-align: -webkit-match-parent;
+              padding: 24px 0;
+            }
+              .income-sell-clearfix-bold-left{
+                font-weight: 600;
+                text-align: -webkit-match-parent;
+                float: left;
+              }
+              .income-sell-clearfix-bold-right{
+                float: right;
+                font-size: 14px;
+                width: 50%;  
+                text-align: right;
+                font-weight: 600;
+              }
+    .sell-content-sell-btn-box{
+      width: 100%;
+      height: 370px;
+      padding: 40px;
+      border-top: 1px solid #eee;
+      display: block;
+      background: #fff;
+
+    }
+      .sell-content-sell-btn-box-text-area{
+        width: 100%;
+        line-height: 1.5;
+        height: 100%;
+        font-size: 0;
+      }
+        .sell-content-sell-btn-box-text-area-line{
+          width: 100%;
+          word-break: break-all;
+        }
+          .sell-content-sell-btn-box-text-area1-1{
+            color: #0099e8;
+            text-decoration: none;
+            touch-action: manipulation;
+            cursor: pointer;
+            display: inline-block;
+            font-size: 14px;
+          }
+          .sell-content-sell-btn-box-text-area1-2{
+            display: inline-block;
+            font-size: 14px;
+          }
+          .sell-content-sell-btn-box-text-area1-3{
+            @extend .sell-content-sell-btn-box-text-area1-1;
+          }
+          .sell-content-sell-btn-box-text-area1-4{
+            @extend .sell-content-sell-btn-box-text-area1-1;
+          }
+          .sell-content-sell-btn-box-text-area1-5{
+            @extend .sell-content-sell-btn-box-text-area1-1;
+          }
+        .sell-content-sell-btn-default-btn-red{
+          margin: 40px 0 0;
+          background: #ea352d;
+          border: 1px solid #ea352d;
+          color: #fff;
+          display: block;
+          width: 100%;
+          line-height: 48px;
+          font-size: 14px;
+          border: 1px solid transparent;
+          -webkit-transition: all ease-out .3s;
+          transition: all ease-out .3s;
+          cursor: pointer;
+          text-align: center;
+        }
+        .sell-content-sell-btn-default-btn-gray{
+          margin: 24px auto 0;
+          background: #aaa;
+          border: 1px solid #ea352d;
+          color: #fff;
+          display: block;
+          width: 45%;
+          line-height: 48px;
+          font-size: 14px;
+          border: 1px solid transparent;
+          -webkit-transition: all ease-out .3s;
+          transition: all ease-out .3s;
+          cursor: pointer;
+          text-align: center;
+        }
