@@ -10,12 +10,81 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_17_035231) do
+ActiveRecord::Schema.define(version: 2019_09_17_044945) do
+
+  create_table "credit_cards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.integer "card_number", null: false
+    t.integer "security_code", null: false
+    t.integer "expiry_year", null: false
+    t.integer "expiry_month", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "comment", null: false
     t.string "condition", null: false
     t.integer "price", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "name", null: false
+    t.text "detail", null: false
+    t.integer "shipping_cost", null: false
+    t.string "shipping_fee_charge_to", null: false
+    t.integer "shipping_from", null: false
+    t.string "shipping_days", null: false
+    t.bigint "category_id", null: false
+    t.bigint "trade_status_id", null: false
+  end
+
+  create_table "profiles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.text "introduction", null: false
+    t.string "avatar", null: false
+    t.string "first_name_kana", null: false
+    t.string "last_name_kana", null: false
+    t.string "first_name_kanji", null: false
+    t.string "last_name_kanji", null: false
+    t.integer "birth_year", null: false
+    t.integer "birth_month", null: false
+    t.integer "birth_day", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "shipping_addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "first_name_kana", null: false
+    t.string "last_name_kana", null: false
+    t.string "first_name_kanji", null: false
+    t.string "last_name_kanji", null: false
+    t.integer "postal_code", null: false
+    t.bigint "prefecture_id", null: false
+    t.string "city", null: false
+    t.integer "block_number"
+    t.string "building_name"
+    t.integer "phone_number", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "sns_credentials", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.integer "uid", null: false
+    t.integer "provider", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "user_addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.integer "phone_number", null: false
+    t.integer "postal_code", null: false
+    t.bigint "prefecture_id", null: false
+    t.string "city", null: false
+    t.integer "block_number"
+    t.string "building_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
