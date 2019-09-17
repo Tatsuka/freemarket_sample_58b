@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
-<<<<<<< Updated upstream
-  devise_for :users
+devise_for :users, skip: :all
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   get 'items'         =>    'items#index'
   root to: "items#index"
@@ -23,27 +22,6 @@ Rails.application.routes.draw do
         get 'step5_done'
       end
     end
-=======
-  devise_for :users, skip: :all
-  # # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  # get 'items'         =>    'items#index'
-  # root to: "items#index"
-  # get 'users/:id'     =>    'users#show'
-  # get 'users/:id/sign_out'=>    'users#sign_out'
-  # get 'users/:id/profile' =>    'users#profile'
-  # get 'users/:id/deliver_address'=> 'users#deliver_address'
-  # get 'users/:id/card'    =>     'users#card'
-  # get 'users/:id/email_password' =>  'users#email_password'
-  # get 'users/:id/identification' =>  'users#identification'
-  # get 'users/:id/sms_confirmation'=> 'users#sms_confirmation'
-  # get 'users/:id/edit'            =>  'users#edit'
-
-  # devise_for :users, skip: :all,
-  # controllers: {
-  #   omniauth_callbacks: 'users/omniauth_callbacks',
-  #   registrations:      'users/registrations',
-  #   sessions:      'users/sessions'
-  # }
 
   #マイページ
   get     'mypage',                    to: 'mypage/mypage#index', as: :mypage_top
@@ -89,5 +67,4 @@ Rails.application.routes.draw do
     post    'signup/registration', to: 'users/registrations#create',     as: :create_user_registration
   end
   
->>>>>>> Stashed changes
 end
