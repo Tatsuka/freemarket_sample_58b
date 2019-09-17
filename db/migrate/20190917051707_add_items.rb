@@ -6,8 +6,8 @@ class AddItems < ActiveRecord::Migration[5.2]
     add_column :items, :shipping_fee_charge_to, :string, null: false
     add_column :items, :shipping_from, :integer, null: false
     add_column :items, :shipping_days, :string, null: false
-    add_column :items, :category, :references, null: false, foreign_key:true
-    add_column :items, :trade_status, :references, null: false, foreign_key:true
-    add_column :items, :brand, :references, foreign_key:true
+    add_column :items, :category_id, :bigint, null: false, foreign_key:true
+    add_column :items, :trade_status_id, :bigint, null: false, foreign_key:true
+    add_column :items, :brand, :bigint_id, foreign_key:true
   end
 end
