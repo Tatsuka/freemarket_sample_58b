@@ -1,4 +1,4 @@
-class AddDetailsToItems < ActiveRecord::Migration[5.2]
+class AddItems < ActiveRecord::Migration[5.2]
   def change
     add_column :items, :item, :string, null: false
     add_column :items, :detail, :text, null: false
