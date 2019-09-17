@@ -138,11 +138,11 @@
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
-|ancestory|string||
+|ancestry|string||
 ### Association
 - has_many :brands, through: :categories_brands
 - has_many :items
-- has_ancestory
+- has_ancestry
 
 
 ## brandsテーブル
