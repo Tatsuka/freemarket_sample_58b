@@ -3,4 +3,7 @@ class ItemsController < ApplicationController
   end
   def new
   end
+
+  def confirmation
+  end
 end

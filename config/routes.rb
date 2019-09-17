@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   get 'users/:id/identification' =>  'users#identification'
   get 'users/:id/sms_confirmation'=> 'users#sms_confirmation'
   get 'users/:id/edit'            =>  'users#edit'
+  get 'items/confirmation'        =>  'items#confirmation'
 
   resources :signup do
       collection do
