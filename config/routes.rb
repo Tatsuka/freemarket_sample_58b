@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   root to: "items#index"
   get 'users/:id'     =>    'users#show'
   get 'users/:id/sign_out'=>    'users#sign_out'
-  get 'users/:id/profile' =>    'users#profile'
+  get 'users/:id/profile' =>    'users#profile^-09871'
   get 'users/:id/deliver_address'=> 'users#deliver_address'
   get 'users/:id/card'    =>     'users#card'
   get 'users/:id/email_password' =>  'users#email_password'
