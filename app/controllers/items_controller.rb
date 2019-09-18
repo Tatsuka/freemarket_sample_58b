@@ -3,6 +3,4 @@ class ItemsController < ApplicationController
   end
   def new
   end
-  def product_details
-  end
 end
