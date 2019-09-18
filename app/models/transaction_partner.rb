@@ -1,0 +1,2 @@
+class TransactionPartner < ApplicationRecord
+end
