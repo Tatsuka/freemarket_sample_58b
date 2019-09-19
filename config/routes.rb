@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 devise_for :users, skip: :all
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   get 'items'         =>    'items#index'
+  get 'items/product_details' => 'items#product_details'
   root to: "items#index"
   get 'users/:id'     =>    'users#show'
   get 'users/:id/sign_out'=>    'users#sign_out'

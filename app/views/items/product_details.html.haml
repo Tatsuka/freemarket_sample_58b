@@ -1,0 +1,120 @@
+.product-details-wrapper
+  = render 'shared/header'
+  .product-details-main
+    %h1.product-details-main__title
+      ☆ここに商品名が表示されます☆
+    %p.product-details-main__words
+      『この商品』は、**回の取引実績を持つ○○さんから出品されました。東京都から1~2日で発送されます。
+    .product-details-main__content
+      .product-details-main__content__image
+        .product-details-main__content__image__top
+        .product-details-main__content__image__dots
+          - (1..10).each do |i|
+            .product-details-main__content__image__dots__dot
+      %table.product-details-main__content__table
+        %tbody
+          %tr
+            %th 出品者
+            %td
+              %a
+                出品者名
+              %div
+                .item-user-ratings
+                  = fa_icon "circle", class: "icon-good"
+                  %span 0
+                .item-user-ratings
+                  = fa_icon "circle", class: "icon-normal"
+                  %span 0
+                .item-user-ratings
+                  = fa_icon "circle", class: "icon-bad"
+                  %span 0
+          %tr
+            %th カテゴリー
+            %td
+              %a メンズ
+              %br
+              %a  ＞スニーカー
+              %br
+              %a ＞靴
+          %tr
+            %th ブランド
+            %td
+              %a ブランド名
+          %tr
+            %th 商品のサイズ
+            %td
+              %a サイズ
+          %tr
+            %th 商品の状態
+            %td
+              %a 新品、未使用
+          %tr
+            %th 配送料の負担
+            %td
+              %a 送料込み
+          %tr
+            %th 配送方法
+            %td
+              %a らくらくメルカリ便
+          %tr
+            %th 配送元地域
+            %td
+              %a 東京都
+          %tr
+            %th 発送日の目安
+            %td
+              %a 1〜2日で発送
+    .product-details-main__item-price
+      %span.item-total-price ¥24,100
+      %span.item-tax (税込)
+      %span.item-shipping-fee 送料込み
+    %button.buy-btn{type: "submit"}
+      購入画面に進む
+    .product-details-main__item-description
+      %p
+        靴が好きで色々集めているのですが、こちらのシューズはJeffrey Campbell ジェフリーキャンベルの革のシューズになります。
+        ジャンルはハッキリどれに当たるのかはわからないのですが、スニーカーやローカット スニーカーまたはローファーになるのかなと思います。
+        カーフレザーを使用しているようなので、レザースニーカーで合ってるかなとも思うのですが、写真を見て判断して頂ければと思います。
+        ジェフリーキャンベルは日本ではメンズ スニーカー、メンズ ブーツなどメンズラインのシューズを販売しなくなるようなので、今後はかなり入手困難になるかと思います。なので、レア 激レア 希少扱いで出品させて頂きます。
+    .product-details-main__item-button
+      .product-details-main__item-button__left
+        .product-details-main__item-button__left__like
+          = fa_icon "heart", class: "icon-heart"
+          いいね！
+        .product-details-main__item-button__left__report
+          ！ 不適切な商品の報告
+      .product-details-main__item-button__right
+        あんしん・あんぜんへの取り組み
+  %ul.item-link-prev-next
+    %li.item-link-prev
+      ＜ 前の商品
+    %li.item-link-next
+      次の商品 ＞
+  .sns-box
+    %ul
+      %li
+        = fa_icon "facebook-square 3x", class: "icon-facebook-square"
+      %li
+        = fa_icon "twitter-square 3x", class: "icon-twitter-square"
+      %li
+        = fa_icon "pinterest 3x", class: "icon-pinterest"
+  .users-item-box
+    %h2.users-item-box__head
+      出品者名さんのその他の出品
+    .users-item-box__content
+      - (1..6).each do |i|
+        .users-item-box__content__item-data
+          .users-item-box__content__item-data__photo
+          .users-item-box__content__item-data__body
+            %h3.users-item-box__content__item-data__body__name
+              ☆新品 タグ付き☆エスニック アジアン チュニック☆黒 緑 金☆
+            .users-item-box__content__item-data__body__num
+              .users-item-box__content__item-data__body__num__price
+                ¥ 2,800
+              %span
+                = fa_icon "heart", class: "icon-heart"
+  .bread-crumbs
+    メルカリ ＞ ☆ここに商品名が入ります☆
+  .bottom-image
+    = image_tag '/bottom-image.jpg', class: "bottom-image-banner"
+  = render 'shared/footer'
