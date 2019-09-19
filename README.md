@@ -88,7 +88,6 @@
 ### Association
 - belongs_to :user
 
-
 ## itemsテーブル
 |Column|Type|Options|
 |------|----|-------|
