@@ -2,7 +2,7 @@
   = render 'shared/header'
   .product-details-main
     %h1.product-details-main__title
-      ☆ここに商品名が表示されます☆
+      = @item.name
     %p.product-details-main__words
       『この商品』は、**回の取引実績を持つ○○さんから出品されました。東京都から1~2日で発送されます。
     .product-details-main__content
@@ -18,6 +18,7 @@
             %td
               %a
                 出品者名
+                -# = @item.user.name
               %div
                 .item-user-ratings
                   = fa_icon "circle", class: "icon-good"
@@ -65,17 +66,16 @@
             %td
               %a 1〜2日で発送
     .product-details-main__item-price
-      %span.item-total-price ¥24,100
+      %span.item-total-price
+        ¥
+        = @item.price
       %span.item-tax (税込)
       %span.item-shipping-fee 送料込み
     %button.buy-btn{type: "submit"}
       購入画面に進む
     .product-details-main__item-description
       %p
-        靴が好きで色々集めているのですが、こちらのシューズはJeffrey Campbell ジェフリーキャンベルの革のシューズになります。
-        ジャンルはハッキリどれに当たるのかはわからないのですが、スニーカーやローカット スニーカーまたはローファーになるのかなと思います。
-        カーフレザーを使用しているようなので、レザースニーカーで合ってるかなとも思うのですが、写真を見て判断して頂ければと思います。
-        ジェフリーキャンベルは日本ではメンズ スニーカー、メンズ ブーツなどメンズラインのシューズを販売しなくなるようなので、今後はかなり入手困難になるかと思います。なので、レア 激レア 希少扱いで出品させて頂きます。
+        = @item.detail
     .product-details-main__item-button
       .product-details-main__item-button__left
         .product-details-main__item-button__left__like
