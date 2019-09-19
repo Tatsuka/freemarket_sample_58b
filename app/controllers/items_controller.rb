@@ -8,6 +8,7 @@ class ItemsController < ApplicationController
   def search
   end
   def show
+    @item = Item.find(params[:id])
   end
   def edit
   end
