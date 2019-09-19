@@ -1,14 +1,14 @@
-class Mypage::CreditController < ApplicationController
-  def index
-    @user = current_user
-  end
+class Users::PasswordsController < ApplicationController
   def new
     @user = current_user
   end
-  def create
+  def edit
     @user = current_user
   end
-  def destroy
+  def update
+    @user = current_user
+  end
+  def create
     @user = current_user
   end
 end
