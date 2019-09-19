@@ -20,20 +20,20 @@ devise_for :users, skip: :all
 
 
   #マイページ
-  get     'mypage',                    to: 'mypage/mypage#index', as: :mypage_top
-  get     'logout',                    to: 'mypage/logout#index', as: :mypage_logout
+  get     'mypage',                to: 'mypage/mypage#index',           as: :mypage_top
+  get     'logout',                to: 'mypage/logout#index',           as: :mypage_logout
   namespace :mypage do
-    get   'profile',                 to: 'profile#edit',                  as: :profile
-    patch 'profile',                 to: 'profile#update',                 as: :profile_update
-    get   'identification',          to: 'identification#edit',           as: :identification
-    patch 'identification',          to: 'identification#update',         as: :identification_update
+    get   'profile',               to: 'profile#edit',                  as: :profile
+    patch 'profile',               to: 'profile#update',                as: :profile_update
+    get   'identification',        to: 'identification#edit',           as: :identification
+    patch 'identification',        to: 'identification#update',         as: :identification_update
     resources :credit, only: [:index, :new, :create, :destroy]
   end
 
   #商品関連ページ
-  get      'sell',                 to: 'items#new',                      as: :new_item
-  post     'sell',                 to: 'items#create',                   as: :create_item
-  get      'search',               to: 'items#search',                   as: :search_items
+  get      'sell',                 to: 'items#new',                     as: :new_item
+  post     'sell',                 to: 'items#create',                  as: :create_item
+  get      'search',               to: 'items#search',                  as: :search_items
   resources :items, only: [:show, :edit, :update, :destroy]
   resources :category, only: [:index, :show]
 
@@ -56,18 +56,14 @@ devise_for :users, skip: :all
     post    'users/password',           to: 'users/passwords#create'
 
     # signup
-    get     'signup',                   to: 'users/signup#index',               as: :start_user_registration
-    get     'signup/registration',      to: 'users/signup#registration',        as: :new_user_registration
-    get     'signup/sms_comfirmation',  to: 'users/signup#confirmation',        as: :new_user_sms_confirmation
-    get     'signup/address',           to: 'users/signup#address',             as: :new_user_address
-    get     'signup/payment',           to: 'users/signup#payment',             as: :new_user_payment
-    get     'signup/complete',          to: 'users/signup#complete',            as: :new_user_registration_complete
-    post    'signup',                   to: 'users/signup#create',              as: :create_new_user
-
-    patch   'users',                    to: 'users/registrations#update',     as: :user_registration
-    put     'users',                    to: 'users/registrations#update'
-    delete  'users',                    to: 'users/registrations#destroy'
-    post    'users',                    to: 'users/registrations#create',     as: :create_user_registration
+    get     'signup',                   to: 'users/signup#new',               as: :start_user_registration
+    get     'signup/registration',      to: 'users/signup#registration',      as: :new_user_registration
+    get     'signup/sms_comfirmation',  to: 'users/signup#confirmation',      as: :new_user_sms_confirmation
+    get     'signup/address',           to: 'users/signup#address',           as: :new_user_address
+    get     'signup/payment',           to: 'users/signup#payment',           as: :new_user_payment
+    get     'signup/complete',          to: 'users/signup#complete',          as: :new_user_registration_complete
+    post    'signup',                   to: 'users/signup#create',            as: :create_user_registration
+    patch   'signup',                   to: 'users/signup#update',            as: :user_registration
   end
   
 end
