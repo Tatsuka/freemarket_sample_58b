@@ -1,16 +1,16 @@
 Rails.application.routes.draw do
 devise_for :users, skip: :all
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  get 'items'         =>    'items#index'
+  get 'items'                     =>  'items#index'
   root to: "items#index"
-  get 'users/:id'     =>    'users#show'
-  get 'users/:id/sign_out'=>    'users#sign_out'
-  get 'users/:id/profile' =>    'users#profile'
-  get 'users/:id/deliver_address'=> 'users#deliver_address'
-  get 'users/:id/card'    =>     'users#card'
-  get 'users/:id/email_password' =>  'users#email_password'
-  get 'users/:id/identification' =>  'users#identification'
-  get 'users/:id/sms_confirmation'=> 'users#sms_confirmation'
+  get 'users/:id/show'            =>  'users#show'
+  get 'users/:id/sign_out'        =>  'users#sign_out'
+  get 'users/:id/profile'         =>  'users#profile'
+  get 'users/:id/deliver_address' =>  'users#deliver_address'
+  get 'users/:id/card'            =>  'users#card'
+  get 'users/:id/email_password'  =>  'users#email_password'
+  get 'users/:id/identification'  =>  'users#identification'
+  get 'users/:id/sms_confirmation'=>  'users#sms_confirmation'
   get 'users/:id/edit'            =>  'users#edit'
 
   resources :signup do
@@ -22,6 +22,19 @@ devise_for :users, skip: :all
         get 'step5_done'
       end
     end
+
+  resources :users　do
+    collection do
+      get 'mypage'
+      get 'profile'
+      get 'deliver_address'
+      get 'card'
+      get 'email_password'
+      get 'identification'
+      get 'sms_confirmation'
+    end
+  end
+
 
   #マイページ
   get     'mypage',                    to: 'mypage/mypage#index', as: :mypage_top
@@ -66,5 +79,4 @@ devise_for :users, skip: :all
     delete  'users',               to: 'users/registrations#destroy'
     post    'signup/registration', to: 'users/registrations#create',     as: :create_user_registration
   end
-  
 end

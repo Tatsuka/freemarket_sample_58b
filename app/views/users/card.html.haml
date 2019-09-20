@@ -1,8 +1,10 @@
 .wrapper
   = render 'header-area'
 
-  .bread-crumbs 
-    = link_to 'メルカリ  ＜  マイページ  メール/パスワード'
+  .header-bottom__bread__crumbs      
+    .bread-crumbs 
+      - breadcrumb :card
+      = breadcrumbs separator: " ＞ "
   .content-area
     = render 'left-area'
     .right-container-card-info
