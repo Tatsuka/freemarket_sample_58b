@@ -9,16 +9,16 @@
         人気のカテゴリー
       .popularity__category
         %ul.popularity__category__list
-          %li.popularity__category__list__ladies
+          %li.popularity__category__list__name
             %a
               レディース
-          %li.popularity__category__list__mens
+          %li.popularity__category__list__name
             %a
               メンズ
-          %li.popularity__category__list__camera
+          %li.popularity__category__list__name
             %a
               家電・スマホ・カメラ
-          %li.popularity__category__list__toy
+          %li.popularity__category__list__name
             %a
               おもちゃ・ホビー・グッズ
 
@@ -30,8 +30,16 @@
         %a.more{href:""}
           もっと見る ＞
       .category-items__ladies__list
-        - (1..10).each do |i|
+        - @ladies_items.each do |item|
           .category-items__ladies__list__item
+            .category-items__ladies__list__item__box
+              .category-items__ladies__list__item__box__image
+                -# = item.images.first.image
+              .category-items__ladies__list__item__box__price
+                = item.price
+              .category-items__ladies__list__item__box__caption
+                = item.name
+
       .category-items__ladies
         .category-items__ladies__header
           %h3.new-item

@@ -8,6 +8,7 @@
     .product-details-main__content
       .product-details-main__content__image
         .product-details-main__content__image__top
+          = image_tag @item.images.first.image
         .product-details-main__content__image__dots
           - (1..10).each do |i|
             .product-details-main__content__image__dots__dot
@@ -17,7 +18,7 @@
             %th 出品者
             %td
               %a
-                出品者名
+                = @item.user.nickname
               %div
                 .item-user-ratings
                   = fa_icon "circle", class: "icon-good"
