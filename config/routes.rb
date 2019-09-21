@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   
   
     #マイページ
-    get     'mypage',                to: 'mypage#index',                  as: :mypage_top
+    get     'mypage',                to: 'mypage/mypage#index',           as: :mypage_top
     get     'logout',                to: 'mypage/logout#index',           as: :mypage_logout
     namespace :mypage do
       get   'profile',               to: 'profile#edit',                  as: :profile
