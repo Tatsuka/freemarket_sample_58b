@@ -23,50 +23,77 @@
               おもちゃ・ホビー・グッズ
 
     .category-items
-      .category-items__ladies
-        .category-items__ladies__header
+      .category-items__erea
+        .category-items__erea__header
           %h3.new-item
             レディース新着アイテム
         %a.more{href:""}
           もっと見る ＞
-      .category-items__ladies__list
+      .category-items__erea__list
         - @ladies_items.each do |item|
-          .category-items__ladies__list__item
-            .category-items__ladies__list__item__box
-              .category-items__ladies__list__item__box__image
-                -# = item.images.first.image
-              .category-items__ladies__list__item__box__price
+          .category-items__erea__list__item
+            .category-items__erea__list__item__box
+              .category-items__erea__list__item__box__image
+                -# = image_tag item.images.image
+              .category-items__erea__list__item__box__price
                 = item.price
-              .category-items__ladies__list__item__box__caption
+              .category-items__erea__list__item__box__caption
                 = item.name
 
-      .category-items__ladies
-        .category-items__ladies__header
+      .category-items__erea
+        .category-items__erea__header
           %h3.new-item
             メンズ新着アイテム
         %a.more{href:""}
           もっと見る ＞
-      .category-items__ladies__list
-        - (1..10).each do |i|
-          .category-items__ladies__list__item
-      .category-items__ladies
-        .category-items__ladies__header
+      .category-items__erea__list
+        - @mens_items.each do |item|
+          .category-items__erea__list__item
+            .category-items__erea__list__item__box
+              .category-items__erea__list__item__box__image
+                -# = item.images.first.image
+              .category-items__erea__list__item__box__price
+                = item.price
+              .category-items__erea__list__item__box__caption
+                = item.name
+
+
+      .category-items__erea
+        .category-items__erea__header
           %h3.new-item
             家電・スマホ・カメラ新着アイテム
         %a.more{href:""}
           もっと見る ＞
-      .category-items__ladies__list
-        - (1..10).each do |i|
-          .category-items__ladies__list__item
-      .category-items__ladies
-        .category-items__ladies__header
+      .category-items__erea__list
+        - @home_appliance_items.each do |item|
+          .category-items__erea__list__item
+            .category-items__erea__list__item__box
+              .category-items__erea__list__item__box__image
+                -# = item.images.first.image
+              .category-items__erea__list__item__box__price
+                = item.price
+              .category-items__erea__list__item__box__caption
+                = item.name
+
+
+      .category-items__erea
+        .category-items__erea__header
           %h3.new-item
             おもちゃ・ホビー・グッズ新着アイテム
         %a.more{href:""}
           もっと見る ＞
-      .category-items__ladies__list
-        - (1..10).each do |i|
-          .category-items__ladies__list__item
+      .category-items__erea__list
+        - @toy_items.each do |item|
+          .category-items__erea__list__item
+            .category-items__erea__list__item__box
+              .category-items__erea__list__item__box__image
+                -# = item.images.first.image
+              .category-items__erea__list__item__box__price
+                = item.price
+              .category-items__erea__list__item__box__caption
+                = item.name
+
+
     .bottom-image
       %img{src: "//web-jp-assets.mercdn.net/_next/static/images/download_app_bg-b57d6f1a32f2aebd89cf6f43bc2e4b39.jpg"}
 
