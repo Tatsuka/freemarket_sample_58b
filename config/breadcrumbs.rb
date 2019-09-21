@@ -2,30 +2,29 @@ crumb :root do
   link "メルカリ", root_path
 end
 
-crumb :show do
-  link "マイページ", users_path
+crumb :mypage do
+  link "マイページ", mypage_top_path
   parent :root
 end
 
-crumb :card do
-  link "支払い方法", card_users_path
-  parent :show
+crumb :credit do
+  link "支払い方法", mypage_credit_index_path
+  parent :mypage
 end
 
 crumb :profile do
-  link "プロフィール", profile_users_path
-  parent :show
+  link "プロフィール", mypage_profile_path
+  parent :mypage
 end
 
 crumb :identification do
-  link "本人情報の登録", identification_users_path
-  parent :show
+  link "本人情報の登録", mypage_identification_path
+  parent :mypage
 end
 
 crumb :logout do
-  link "ログアウト", logout_users_path
-  # link "ログアウト", logout_mypage_path  
-  parent :show
+  link "ログアウト", mypage_logout_path
+  parent :mypage
 end
 
 

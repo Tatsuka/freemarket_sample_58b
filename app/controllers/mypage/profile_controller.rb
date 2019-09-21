@@ -1,4 +1,5 @@
 class Mypage::ProfileController < ApplicationController
-  def mypage
+  def edit
+    @user = current_user
   end
 end

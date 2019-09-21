@@ -139,7 +139,10 @@
   .right-container-card-info{
     width: 65%;
     background: #fff;
-    float: right;
+    position:absolute;
+    top: 0px;
+    right: 0px;
+
     .right-container-card-info-head {
       padding: 12px 4%;
       text-align: center;

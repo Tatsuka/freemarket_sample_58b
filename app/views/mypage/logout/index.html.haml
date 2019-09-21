@@ -6,26 +6,25 @@
         %form{action: "", method: "post", class: "search-form"}
           %input{name: "search", placeholder: "何かお探しですか？", type: "search", class: "search-input"}
             = fa_icon "search", class: "icon-search"
+        -# %input{name: "submit", type: "submit", value: "検索"}/
       .header-bottom
         .header-bottom__left
-          .header-bottom__left__brand
-            %a
-              カテゴリーから探す
           .header-bottom__left__category
-            %a
-              ブランドから探す
+            カテゴリーから探す
+          .header-bottom__left__brand
+            ブランドから探す
         .header-bottom__right
-          .header-bottom__right__goodjob
-            = link_to 'いいね！一覧'
-          .header-bottom__right__news
-            = link_to 'お知らせ'
-          .header-bottom__right__todolist
-            = link_to 'やることリスト'
-          .header-bottom__right__mypage
-            = link_to 'マイページ'
+        -# ログイン中の表示
+        %ul.header-bottom__right
+          %li.header-bottom__right__news
+            お知らせ
+          %li.header-bottom__right__todo
+            やることリスト
+          %li.header-bottom__right__mypage
+            マイページ
   .header-bottom__bread__crumbs      
     .bread-crumbs 
-      - breadcrumb :profile
+      - breadcrumb :logout
       = breadcrumbs separator: " ＞ "
   .content-area
     .content__left
@@ -83,16 +82,12 @@
             = link_to '電話番号の確認'
           .config__logout
             = link_to "ログアウト", destroy_user_session_path, method: :delete
-    .profile__content__right
-      .profile__content__container
-        .right-chapter-head
-          プロフィール
-        .profile__content__form
-          .profile__content__icon
-            .profile__content__icon__area
-            .profile__content__input__name
-          .profile__content__setting__profile
-            .profile__content__setting__textarea
-              こんにちは☆ ご覧いただきありがとうございます！かわいいものやきれいめオフィスカジュアル中心に出品しています。服のサイズは主に9号です。気持ちよくお取引できるよう心がけていますので、商品や発送方法などご質問がありましたらお気軽にどうぞ♪
-            .profile__content__setting__btn
-              = link_to '変更する'
+    .content__right__logout__area
+      %form.content__right__logout__area__form{action: "", method: "POST", novalidate: "novalidate"}
+        .content__right__logout__area__form__btn
+          %button{type: "submit"} ログアウト
+
+  .bottom-image
+    %img{src: "//web-jp-assets.mercdn.net/_next/static/images/download_app_bg-b57d6f1a32f2aebd89cf6f43bc2e4b39.jpg"}
+  = render 'shared/footer'
+  = render 'shared/button'

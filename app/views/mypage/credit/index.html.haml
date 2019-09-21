@@ -1,12 +1,12 @@
 .wrapper
-  = render 'header-area'
+  = render 'mypage/mypage-shared/header-area'
 
   .header-bottom__bread__crumbs      
     .bread-crumbs 
-      - breadcrumb :card
+      - breadcrumb :credit
       = breadcrumbs separator: " ＞ "
   .content-area
-    = render 'left-area'
+    = render 'mypage/mypage-shared/left-area'
     .right-container-card-info
       .right-container-card-info-head 支払い方法
       .right-container-card-info-inner
