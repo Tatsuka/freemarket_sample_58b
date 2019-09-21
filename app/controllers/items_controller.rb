@@ -3,7 +3,16 @@ class ItemsController < ApplicationController
   end
   def new
   end
-
-  def confirmation
+  def create
+  end
+  def search
+  end
+  def show
+  end
+  def edit
+  end
+  def update
+  end
+  def destroy
   end
 end

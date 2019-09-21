@@ -32,8 +32,9 @@ gem 'haml-rails'
 gem 'erb2haml'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-gem "font-awesome-rails"
-
+gem 'font-awesome-rails'
+gem 'font-awesome-sass', '~> 5.5.0'
+gem 'font_awesome5_rails'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
@@ -83,3 +84,4 @@ gem 'fog-aws'
 gem 'mini_magick'
 gem 'ancestry'
 gem "gretel"
+gem 'mini_magick'
