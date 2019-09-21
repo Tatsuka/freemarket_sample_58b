@@ -1,10 +1,12 @@
 .wrapper
-  = render 'header-area'
+  = render 'mypage/mypage-shared/header-area'
 
-  .bread-crumbs 
-    = link_to 'メルカリ  ＜  マイページ  メール/パスワード'
+  .header-bottom__bread__crumbs      
+    .bread-crumbs 
+      - breadcrumb :credit
+      = breadcrumbs separator: " ＞ "
   .content-area
-    = render 'left-area'
+    = render 'mypage/mypage-shared/left-area'
     .right-container-card-info
       .right-container-card-info-head 支払い方法
       .right-container-card-info-inner
