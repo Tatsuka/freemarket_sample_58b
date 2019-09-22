@@ -32,13 +32,13 @@
             = fa_icon "angle-right", class: "angle-right"
       .category-items__erea__list
         - @ladies_items.each do |item|
-          .category-items__erea__list__item
+          = link_to "/items/#{item.id}", method: :get, class: "category-items__erea__list__item" do
             .category-items__erea__list__item__box
               .category-items__erea__list__item__box__image
                 - item.images.each do |image|
                   = image_tag image.image.url
               .category-items__erea__list__item__box__price
-                = item.price
+                = number_to_currency(item.price, :unit => "￥", :precision => 0)
               .category-items__erea__list__item__box__caption
                 = item.name
       .category-items__erea
@@ -50,13 +50,13 @@
             = fa_icon "angle-right", class: "angle-right"
       .category-items__erea__list
         - @mens_items.each do |item|
-          .category-items__erea__list__item
+          = link_to "/items/#{item.id}", method: :get, class: "category-items__erea__list__item" do
             .category-items__erea__list__item__box
               .category-items__erea__list__item__box__image
                 - item.images.each do |image|
                   = image_tag image.image.url
               .category-items__erea__list__item__box__price
-                = item.price
+                = number_to_currency(item.price, :unit => "￥", :precision => 0)
               .category-items__erea__list__item__box__caption
                 = item.name
       .category-items__erea
@@ -68,13 +68,13 @@
             = fa_icon "angle-right", class: "angle-right"
       .category-items__erea__list
         - @home_appliance_items.each do |item|
-          .category-items__erea__list__item
+          = link_to "/items/#{item.id}", method: :get, class: "category-items__erea__list__item" do
             .category-items__erea__list__item__box
               .category-items__erea__list__item__box__image
                 - item.images.each do |image|
                   = image_tag image.image.url
               .category-items__erea__list__item__box__price
-                = item.price
+                = number_to_currency(item.price, :unit => "￥", :precision => 0)
               .category-items__erea__list__item__box__caption
                 = item.name
 
@@ -87,13 +87,13 @@
             = fa_icon "angle-right", class: "angle-right"
       .category-items__erea__list
         - @toy_items.each do |item|
-          .category-items__erea__list__item
+          = link_to "/items/#{item.id}", method: :get, class: "category-items__erea__list__item" do
             .category-items__erea__list__item__box
               .category-items__erea__list__item__box__image
                 - item.images.each do |image|
                   = image_tag image.image.url
               .category-items__erea__list__item__box__price
-                = item.price
+                = number_to_currency(item.price, :unit => "￥", :precision => 0)
               .category-items__erea__list__item__box__caption
                 = item.name
     .bottom-image
