@@ -5,9 +5,6 @@ class Item < ApplicationRecord
   belongs_to :brand
   belongs_to :user
 
-  scope :extraction, -> (category_id) { where(category_id: category_id).limit(10).order("created_at DESC") }
+  scope :extract_by_category, -> (category_id) { where(category_id: category_id).limit(10).order("created_at DESC") }
 
 end
-
-
-

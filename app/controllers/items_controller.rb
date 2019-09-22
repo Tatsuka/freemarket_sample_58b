@@ -1,11 +1,10 @@
 class ItemsController < ApplicationController
 
   def index
-    @ladies_items = Item.extraction(1)
-    @mens_items = Item.extraction(2)
-    @home_appliance_items = Item.extraction(3)
-    @toy_items = Item.extraction(4)
-
+    @ladies_items = Item.extract_by_category(1)
+    @mens_items = Item.extract_by_category(2)
+    @home_appliance_items = Item.extract_by_category(3)
+    @toy_items = Item.extract_by_category(4)
   end
 
   def new
