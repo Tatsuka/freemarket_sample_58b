@@ -3,65 +3,101 @@
 
   .main-wrapper
     .srider
-      %img{src: "//www-mercari-jp.akamaized.net/assets/img/featured/camp/index/index_keyvisual.png?2482339763"}
+      = image_tag "//www-mercari-jp.akamaized.net/assets/img/featured/camp/index/index_keyvisual.png?2482339763"
     .popularity
       %h2
         人気のカテゴリー
       .popularity__category
         %ul.popularity__category__list
-          %li.popularity__category__list__ladies
+          %li.popularity__category__list__name
             %a
               レディース
-          %li.popularity__category__list__mens
+          %li.popularity__category__list__name
             %a
               メンズ
-          %li.popularity__category__list__camera
+          %li.popularity__category__list__name
             %a
               家電・スマホ・カメラ
-          %li.popularity__category__list__toy
+          %li.popularity__category__list__name
             %a
               おもちゃ・ホビー・グッズ
 
     .category-items
-      .category-items__ladies
-        .category-items__ladies__header
+      .category-items__erea
+        .category-items__erea__header
           %h3.new-item
             レディース新着アイテム
-        %a.more{href:""}
-          もっと見る ＞
-      .category-items__ladies__list
-        - (1..10).each do |i|
-          .category-items__ladies__list__item
-      .category-items__ladies
-        .category-items__ladies__header
+          .category-more
+            = link_to "もっと見る", class: "more"
+            = fa_icon "angle-right", class: "angle-right"
+      .category-items__erea__list
+        - @ladies_items.each do |item|
+          = link_to "/items/#{item.id}", method: :get, class: "category-items__erea__list__item" do
+            .category-items__erea__list__item__box
+              .category-items__erea__list__item__box__image
+                - item.images.each do |image|
+                  = image_tag image.image.url
+              .category-items__erea__list__item__box__price
+                = number_to_currency(item.price, :unit => "￥", :precision => 0)
+              .category-items__erea__list__item__box__caption
+                = item.name
+      .category-items__erea
+        .category-items__erea__header
           %h3.new-item
             メンズ新着アイテム
-        %a.more{href:""}
-          もっと見る ＞
-      .category-items__ladies__list
-        - (1..10).each do |i|
-          .category-items__ladies__list__item
-      .category-items__ladies
-        .category-items__ladies__header
+          .category-more
+            = link_to "もっと見る", class: "more"
+            = fa_icon "angle-right", class: "angle-right"
+      .category-items__erea__list
+        - @mens_items.each do |item|
+          = link_to "/items/#{item.id}", method: :get, class: "category-items__erea__list__item" do
+            .category-items__erea__list__item__box
+              .category-items__erea__list__item__box__image
+                - item.images.each do |image|
+                  = image_tag image.image.url
+              .category-items__erea__list__item__box__price
+                = number_to_currency(item.price, :unit => "￥", :precision => 0)
+              .category-items__erea__list__item__box__caption
+                = item.name
+      .category-items__erea
+        .category-items__erea__header
           %h3.new-item
             家電・スマホ・カメラ新着アイテム
-        %a.more{href:""}
-          もっと見る ＞
-      .category-items__ladies__list
-        - (1..10).each do |i|
-          .category-items__ladies__list__item
-      .category-items__ladies
-        .category-items__ladies__header
+          .category-more
+            = link_to "もっと見る", class: "more"
+            = fa_icon "angle-right", class: "angle-right"
+      .category-items__erea__list
+        - @home_appliance_items.each do |item|
+          = link_to "/items/#{item.id}", method: :get, class: "category-items__erea__list__item" do
+            .category-items__erea__list__item__box
+              .category-items__erea__list__item__box__image
+                - item.images.each do |image|
+                  = image_tag image.image.url
+              .category-items__erea__list__item__box__price
+                = number_to_currency(item.price, :unit => "￥", :precision => 0)
+              .category-items__erea__list__item__box__caption
+                = item.name
+
+      .category-items__erea
+        .category-items__erea__header
           %h3.new-item
             おもちゃ・ホビー・グッズ新着アイテム
-        %a.more{href:""}
-          もっと見る ＞
-      .category-items__ladies__list
-        - (1..10).each do |i|
-          .category-items__ladies__list__item
+          .category-more
+            = link_to "もっと見る", class: "more"
+            = fa_icon "angle-right", class: "angle-right"
+      .category-items__erea__list
+        - @toy_items.each do |item|
+          = link_to "/items/#{item.id}", method: :get, class: "category-items__erea__list__item" do
+            .category-items__erea__list__item__box
+              .category-items__erea__list__item__box__image
+                - item.images.each do |image|
+                  = image_tag image.image.url
+              .category-items__erea__list__item__box__price
+                = number_to_currency(item.price, :unit => "￥", :precision => 0)
+              .category-items__erea__list__item__box__caption
+                = item.name
     .bottom-image
-      %img{src: "//web-jp-assets.mercdn.net/_next/static/images/download_app_bg-b57d6f1a32f2aebd89cf6f43bc2e4b39.jpg"}
-
+      = image_tag "//web-jp-assets.mercdn.net/_next/static/images/download_app_bg-b57d6f1a32f2aebd89cf6f43bc2e4b39.jpg"
   = render 'shared/footer'
   = render 'shared/button'
 
