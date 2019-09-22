@@ -1,10 +1,11 @@
 class ItemsController < ApplicationController
 
   def index
-    @ladies_items = Item.limit(10).order("created_at DESC").where(category_id: '1')
-    @mens_items = Item.limit(10).order("created_at DESC").where(category_id: '2')
-    @home_appliance_items = Item.limit(10).order("created_at DESC").where(category_id: '3')
-    @toy_items = Item.limit(10).order("created_at DESC").where(category_id: '4')
+    @ladies_items = Item.extraction(1)
+    @mens_items = Item.extraction(2)
+    @home_appliance_items = Item.extraction(3)
+    @toy_items = Item.extraction(4)
+
   end
 
   def new
