@@ -84,3 +84,6 @@ end
 gem 'carrierwave'
 gem 'fog-aws'
 gem 'mini_magick'
+gem 'ancestry'
+gem "gretel"
+gem 'mini_magick'

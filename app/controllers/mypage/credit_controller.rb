@@ -12,3 +12,4 @@ class Mypage::CreditController < ApplicationController
     @user = current_user
   end
 end
+

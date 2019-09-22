@@ -17,25 +17,16 @@
         .header-bottom__right
           .header-bottom__right__goodjob
             = link_to 'いいね！一覧'
-              .header--goodjob__icon
-              .header--goodjob__text
           .header-bottom__right__news
             = link_to 'お知らせ'
-              .header--news__icon
-              .header--news__text
           .header-bottom__right__todolist
             = link_to 'やることリスト'
-              .header--todolist__icon
-              .header--todolist__text
-                
           .header-bottom__right__mypage
             = link_to 'マイページ'
-              .header--mypage__icon
-              .header--mypage__text
-   
   .header-bottom__bread__crumbs      
-  .bread-crumbs 
-    = link_to 'メルカリ  ＜  マイページ  ＜  プロフィール'
+    .bread-crumbs 
+      - breadcrumb :profile
+      = breadcrumbs separator: " ＞ "
   .content-area
     .content__left
       .content__left__list
@@ -105,3 +96,6 @@
               こんにちは☆ ご覧いただきありがとうございます！かわいいものやきれいめオフィスカジュアル中心に出品しています。服のサイズは主に9号です。気持ちよくお取引できるよう心がけていますので、商品や発送方法などご質問がありましたらお気軽にどうぞ♪
             .profile__content__setting__btn
               = link_to '変更する'
+.footer
+  = render 'shared/footer'
+  = render 'shared/button'
