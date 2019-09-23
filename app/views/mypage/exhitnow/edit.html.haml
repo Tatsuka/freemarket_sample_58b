@@ -1,0 +1,46 @@
+.wrapper
+  = render 'mypage/_mypage-shared/header-area'
+
+  .header-bottom__bread__crumbs      
+    .bread-crumbs 
+      - breadcrumb :exhitnow
+      = breadcrumbs separator: " ＞ "
+  .content-area
+    = render 'mypage/_mypage-shared/left-area'
+    .content-area__exhitnow-content-area
+      .content-area__exhitnow-content-area__exhitnow-content-head
+        出品した商品
+      .content-area__exhitnow-content-area__listing-status
+        .content-area__exhitnow-content-area__listing-status__status-exhitnow
+          .content-area__exhitnow-content-area__listing-status__status-exhitnow__exhitnow-text
+            出品中
+          .content-area__exhitnow-content-area__listing-status__status-exhitnow__listing-content
+            .status-exhitnow__listing-content__1
+              = link_to 'あ', mypage_exhitnow_compilation_edit_path
+            .status-exhitnow__listing-content__2
+              = link_to 'い', mypage_exhitnow_compilation_edit_path
+            .status-exhitnow__listing-content__3
+              = link_to 'う', mypage_exhitnow_compilation_edit_path
+            .status-exhitnow__listing-content__4
+              = link_to 'え', mypage_exhitnow_compilation_edit_path
+            .status-exhitnow__listing-content__5
+              = link_to 'お', mypage_exhitnow_compilation_edit_path
+        .content-area__exhitnow-content-area__listing-status__status-exhitusers
+          .content-area__exhitnow-content-area__listing-status__status-exhitusers__exhitusers-text
+            取引中
+          .content-area__exhitnow-content-area__listing-status__status-exhitusers__listing-content
+            現在取り扱いはありません
+        .content-area__exhitnow-content-area__listing-status__status-exhitend
+          .content-area__exhitnow-content-area__listing-status__status-exhitend__exhitend-text
+            売却済
+          .content-area__exhitnow-content-area__listing-status__status-exhitend__listing-content
+            現在取り扱いはありません
+      -# .content-area__exhitnow-content-area__my-exhibit
+      -#   出品物
+.footer
+  = render 'shared/footer'
+  = render 'shared/button'
+
+
+        
+      

@@ -1,6 +1,6 @@
 .signup-wrapper {
   height: 100vh;
-  background-color: #f5f5f5;
+  background-color: rgb(245, 245, 245);
 
   .signup-main {
     width: 700px;
@@ -8,7 +8,7 @@
     padding: 0 0 220px;
   
     &__box {
-      background: #fff;
+      background: rgb(245, 245, 245)
 
       &__title {
         color: #333;

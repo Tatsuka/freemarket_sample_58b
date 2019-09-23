@@ -1,18 +1,21 @@
+// Place all the styles related to the mypage/exhitnow/compilation controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
 .icon::before {
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
   content: "\f007";
 }
 
-.product-details-wrapper {
+.compilation-details-wrapper {
   color: #333;
   background: rgb(245, 245, 245);
   font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
 
-  .product-details-main {
+  .compilation-details-main {
     width: 700px;
     background: #fff;
-    margin: 40px auto 0;
+    margin:  40px auto 0;
     padding: 24px 40px 40px;
 
     &__title {
@@ -21,13 +24,6 @@
       text-align: center;
       word-wrap: break-word;
       line-height: 1.4;
-    }
-
-    &__words {
-      margin: 8px 0 0;
-      font-size: 14px;
-      color: #888;
-      line-height: 1.5;
     }
 
     &__content:after {
@@ -45,7 +41,7 @@
         max-width: 300px;
         min-height: 375px;
         margin: 0 auto;
-        background: #fafafa;
+        background: rgb(245, 245, 245);
 
         &__top {
           background: pink;
@@ -88,7 +84,7 @@
               padding: 8px;
               text-align: left;
               font-weight: 400;
-              background: #fafafa;
+              background: rgb(245, 245, 245);
             }
 
             td {
@@ -136,63 +132,7 @@
         font-size: 16px;
       }
     }
-
-    .buy-btn {
-      width: 100%;
-      font-size: 24px;
-      font-weight: 600;
-      line-height: 60px;
-      margin-top: 16px;
-      background: #ea352d;
-      color: #fff;
-    }
-
-    &__item-description {
-      padding: 32px 0 0;
-      line-height: 1.5;
-      font-size: 18px;
-    }
-
-    &__item-button::after {
-      content: '';
-      display: block;
-      clear: both;
-    }
-    &__item-button {
-      margin: 16px 0 0;
-      font-size: 0;
-
-      &__left {
-        font-size: 14px;
-        float: left;
-
-        &__like {
-          display: inline-block;
-          border: 1px solid #f5f5f5;
-          background: rgb(245, 245, 245);
-          padding: 8px 16px;
-          border-radius: 40px;
-        }
-
-        &__report {
-          display: inline-block;
-          border: 1px solid #f5f5f5;
-          background: rgb(245, 245, 245);
-          margin: 0 0 0 16px;
-          padding: 8px 16px;
-          border-radius: 40px;
-        }
-      }
-
-      &__right {
-        font-size: 14px;
-        float: right;
-        color: #0099e8;
-        margin: 8px 0 0;
-      }
-    }
   }
-
   .item-link-prev-next::after {
     content: '';
     display: block;
@@ -212,93 +152,47 @@
     }
   }
 
-  .sns-box {
-    background: #fff;
+  .compilation-item-box{
     margin: 24px auto;
-    padding: 48px 0 8px;
     width: 700px;
-    text-align: center;
-
-    ul {
-      li {
-        display: inline-block;
-        margin: 0 8px 8px 0;
-        vertical-align: middle;
-        text-align: center;
-
-        .icon-facebook-square {
-          color: #385185;
-        }
-        .icon-twitter-square {
-          color: #0099e8;
-        }
-        .icon-pinterest {
-          color: #AA262A;
-        }
-      }
+    background: #fff;
+    padding: 8px 16px 8px 16px;
+    display: block;
+  
+    &__btn-default-btn-red{
+      margin: 16px 0 16px 0;
+      background: #ea352d;
+      border: 1px solid #ea352d;
+      color: #fff;
+      display: block;
+      width: 100%;
+      line-height: 48px;
+      font-size: 14px;
+      cursor: pointer;
+      text-align: center;
     }
-  }
-
-  .users-item-box {
-    width: 700px;
-    margin: 0 auto;
-    margin-bottom: 40px;
-
-    &__head {
-      margin: 24px 0 8px;
-      font-size: 22px;
-      font-weight: 600;
-      color: #0099e8;
+    &__text-center{
+      font-size: 16px;
+      text-align: center;
+      background-repeat: no-repeat;
+      margin: 0;
+      padding: 0;
+      display: block;
     }
-    &__content {
-      width: auto;
-
-      &__item-data:nth-child(3n) {
-        margin-right: 0;
-      }
-      &__item-data {
-        width: 216px;
-        height: 330px;
-        margin: 0 20px 20px 0;
-        display: inline-block;
-
-        &__photo {
-          background: burlywood;
-          width: 216px;
-          height: 220px;
-        }
-
-        &__body {
-          background: #fff;
-          padding: 16px;
-          height: 110px;
-
-          &__name {
-            overflow: hidden;
-            position: relative;
-            font-weight: 400;
-            height: 3em;
-            line-height: 1.5;
-            word-break: break-word;
-            white-space: normal;
-          }
-
-          &__num {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin: 8px 0 0;
-          }
-        }
-      }
-    }
-  }
-
-  .bread-crumbs {
+    &__btn-default-btn-gray{
+      margin: 16px 0 16px 0;
+      background: #aaa;
+    border: 1px solid #aaa;
+    color: #fff;
+    display: block;
     width: 100%;
-    border-top: 1px solid gray;
-    margin: 0 auto;
-    padding: 16px 0;
+    line-height: 48px;
+    font-size: 14px;
+    transition: all ease-out .3s;
+    cursor: pointer;
+    text-align: center;
+    }
+
   }
 
   .bottom-image {
