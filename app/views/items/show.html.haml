@@ -113,7 +113,7 @@
       #{@item.user.nickname}さんのその他の出品
     .users-item-box__content
       - @user_items.each do |user_items|
-        = link_to "/items/#{user_items.id}", method: :get do
+        = link_to item_path(user_items.id) do
           .users-item-box__content__item-data
             .users-item-box__content__item-data__photo
               = image_tag user_items.images.first.image.url if user_items.images
@@ -129,7 +129,7 @@
       #{@item.category.name}その他の出品
     .users-item-box__content
       - @category_items.each do |category_items|
-        = link_to "/items/#{category_items.id}", method: :get do
+        = link_to item_path(category_items.id) do
           .users-item-box__content__item-data
             .users-item-box__content__item-data__photo
               = image_tag category_items.images.first.image.url if category_items.images
