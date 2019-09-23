@@ -1,0 +1,91 @@
+.icon::before
+.wrapper
+  = render 'mypage/_mypage-shared/header-area'
+
+  .header-bottom__bread__crumbs      
+    .bread-crumbs 
+      - breadcrumb :compilation
+      = breadcrumbs separator: " ＞ "
+
+  .compilation-details-wrapper
+    .compilation-details-main
+      %h1.compilation-details-main__title
+        ☆ここに商品名が表示されます☆
+      .compilation-details-main__content
+        .compilation-details-main__content__image
+          .compilation-details-main__content__image__top
+          .compilation-details-main__content__image__dots
+            - (1..10).each do |i|
+              .compilation-details-main__content__image__dots__dot
+        %table.compilation-details-main__content__table
+          %tbody
+            %tr
+              %th 出品者
+              %td
+                %a
+                  出品者名
+
+            %tr
+              %th カテゴリー
+              %td
+                %a メンズ
+                %br
+                %a  ＞スニーカー
+                %br
+                %a ＞靴
+            %tr
+              %th ブランド
+              %td
+                %a ブランド名
+            %tr
+              %th 商品のサイズ
+              %td
+                %a サイズ
+            %tr
+              %th 商品の状態
+              %td
+                %a 新品、未使用
+            %tr
+              %th 配送料の負担
+              %td
+                %a 送料込み
+            %tr
+              %th 配送方法
+              %td
+                %a らくらくメルカリ便
+            %tr
+              %th 配送元地域
+              %td
+                %a 東京都
+            %tr
+              %th 発送日の目安
+              %td
+                %a 1〜2日で発送
+      .compilation-details-main__item-price
+        %span.item-total-price ¥24,100
+        %span.item-tax (税込)
+        %span.item-shipping-fee 送料込み
+    
+    .compilation-item-box
+      .compilation-item-box__btn-default-btn-red
+        商品の編集
+      .compilation-item-box__text-center
+        or
+      .compilation-item-box__btn-default-btn-gray
+        この商品を削除する
+    .bottom-image
+      = image_tag '/bottom-image.jpg', class: "bottom-image-banner"
+
+
+
+
+
+
+
+
+
+
+
+.footer
+  = render 'shared/footer'
+  = render 'shared/button'

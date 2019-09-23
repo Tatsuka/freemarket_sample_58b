@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   devise_for :users, skip: :all
     # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   
@@ -27,8 +28,16 @@ Rails.application.routes.draw do
       patch 'profile',               to: 'profile#update',                as: :profile_update
       get   'identification',        to: 'identification#edit',           as: :identification
       patch 'identification',        to: 'identification#update',         as: :identification_update
+      get   'exhitnow',              to: 'exhitnow#edit',                 as: :exhitnow
+      patch 'exhitnow',              to: 'exhitnow#update',               as: :exhitnow_update
+      namespace :exhitnow do
+        get 'compilation/update',    as: 'compilation_update'
+        get 'compilation/edit',      as: 'compilation_edit'
+        get 'compilation/destroy',   as: 'compilation_destroy'
+      end
       resources :credit, only: [:index, :new, :create, :destroy]
     end
+ 
   
     #商品関連ページ
     get      'sell',                 to: 'items#new',                     as: :new_item

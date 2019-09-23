@@ -1,0 +1,135 @@
+// Place all the styles related to the mypage/exhitnow controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.content-area__exhitnow-content-area{
+  width: 700px;
+  background: white;
+  position:absolute;
+  top: 0px;
+  right: 0px;
+
+  &__exhitnow-content-head{
+    border-bottom: 1px solid #f5f5f5;
+    width: 100%;
+    height: 100%;
+    padding: 0 4%;
+    font-size: 16px;
+    line-height: 72px;
+
+  }
+  &__listing-status{
+    border-bottom: 1px solid #f5f5f5;
+    width: 100%;
+    line-height: 70px;
+  
+    &__status-exhitnow{
+      border-bottom: 1px solid #f5f5f5;
+      font-size:0;
+      width: 100%;
+      height: 78px;
+      display:block;
+
+      &__exhitnow-text{
+        text-align: center;
+        width: 15%;
+        height: 78px;
+        font-size: 16px;
+        display: inline-block;
+      }
+
+      &__listing-content{
+        border-left: 1px solid #f5f5f5;
+        text-align: center;
+        width: 85%;
+        height: 78px;
+        padding: 0 4%;
+        font-size: 16px;
+        line-height: 72px;
+        display: inline-block;
+      
+        .status-exhitnow__listing-content__1{
+          width: 70px;
+          height: 70px;
+          margin: 4px 16px;
+          display: inline-block;
+          border: 1px solid black;
+        }
+        .status-exhitnow__listing-content__2{
+          @extend .status-exhitnow__listing-content__1;
+        }
+        .status-exhitnow__listing-content__3{
+          @extend .status-exhitnow__listing-content__1;
+        }
+        .status-exhitnow__listing-content__4{
+          @extend .status-exhitnow__listing-content__1;
+        }
+        .status-exhitnow__listing-content__5{
+          @extend .status-exhitnow__listing-content__1;
+        }
+      }
+    }
+    &__status-exhitusers{
+      border-bottom: 1px solid #f5f5f5;
+      font-size:0;
+      width: 100%;
+      vertical-align: top;
+
+      &__exhitusers-text{
+        border-right: 1px solid #f5f5f5;
+        text-align: center;
+        width: 15%;
+        height: 78px;
+        font-size: 16px;
+        line-height: 72px;
+        display:inline-block;
+      }
+
+      &__listing-content{
+        text-align: center;
+        border-left: 1px solid #f5f5f5;
+        text-align: center;
+        width: 85%;
+        height: 78px;
+        padding: 0 4%;
+        font-size: 16px;
+        line-height: 72px;
+        display:inline-block;
+      }
+    }
+    &__status-exhitend{
+      border-bottom: 1px solid #f5f5f5;
+      font-size:0;
+      width: 100%;
+      vertical-align: top;
+
+      &__exhitend-text{
+        border-right: 1px solid #f5f5f5;
+        text-align: center;
+        width: 15%;
+        height: 78px;
+        font-size: 16px;
+        line-height: 72px;
+        display:inline-block;
+      }
+
+      &__listing-content{
+        border-left: 1px solid #f5f5f5;
+        text-align: center;
+        width: 85%;
+        height: 78px;
+        padding: 0 4%;
+        font-size: 16px;
+        line-height: 72px;
+        display:inline-block;
+      }
+    }
+  }
+  &__my-exhibit{
+    width: 100%;
+    height: 70px;
+    padding: 0 4%;
+    font-size: 16px;
+    line-height: 72px;
+  }
+}

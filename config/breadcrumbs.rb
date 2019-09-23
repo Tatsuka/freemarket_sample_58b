@@ -27,6 +27,15 @@ crumb :logout do
   parent :mypage
 end
 
+crumb :exhitnow do
+  link "出品した商品 - 出品中", mypage_exhitnow_path
+  parent :mypage
+end
+
+crumb :compilation do
+  link "出品商品画面", mypage_exhitnow_compilation_edit_path
+  parent :exhitnow
+end
 
 
 
