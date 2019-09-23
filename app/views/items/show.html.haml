@@ -1,0 +1,148 @@
+.product-details-wrapper
+  = render 'shared/header'
+  .product-details-main
+    %h1.product-details-main__title
+      = @item.name
+    .product-details-main__content
+      .product-details-main__content__image
+        .product-details-main__content__image__top
+          = image_tag @item.images.first.image.url if @item.images
+        .product-details-main__content__image__dots
+          - if @item.images
+            - @item.images.each do |image|
+              .product-details-main__content__image__dots__dot
+                = image_tag image.image.url
+      %table.product-details-main__content__table
+        %tbody
+          %tr
+            %th 出品者
+            %td
+              %a
+                = @item.user.nickname
+              %div
+                .item-user-ratings
+                  = fa_icon "circle", class: "icon-good"
+                  %span 0
+                .item-user-ratings
+                  = fa_icon "circle", class: "icon-normal"
+                  %span 0
+                .item-user-ratings
+                  = fa_icon "circle", class: "icon-bad"
+                  %span 0
+          %tr
+            %th カテゴリー
+            %td
+              %a
+                = @item.category.name if @item.category.name
+              %br
+              %a ＞**
+              %br
+              %a ＞**
+          %tr
+            %th ブランド
+            %td
+              %a
+                = @item.brand.name if @item.brand.name
+          %tr
+            %th 商品のサイズ
+            %td
+              %a
+                **
+          %tr
+            %th 商品の状態
+            %td
+              %a
+                = @item.condition_id if @item.condition_id
+          %tr
+            %th 配送料の負担
+            %td
+              %a 送料込み
+          %tr
+            %th 配送方法
+            %td
+              %a らくらくメルカリ便
+          %tr
+            %th 配送元地域
+            %td
+              %a
+                = @item.shipping_from if @item.shipping_from
+          %tr
+            %th 発送日の目安
+            %td
+              %a
+                #{@item.shipping_days}日で発送
+    .product-details-main__item-price
+      %span.item-total-price
+        = number_to_currency(@item.price, unit: "￥", precision: 0)
+      %span.item-tax (税込)
+      %span.item-shipping-fee 送料込み
+    - if @item.trade_status_id == 1
+      = link_to transaction_buy_path(@item) do
+        %button.buy-btn{type: "submit"}
+          購入画面に進む
+    - else
+      %button.sold-out
+        売り切れました
+    .product-details-main__item-description
+      %p
+        = @item.detail
+    .product-details-main__item-button
+      .product-details-main__item-button__left
+        .product-details-main__item-button__left__like
+          = fa_icon "heart", class: "icon-heart"
+          いいね！
+        .product-details-main__item-button__left__report
+          ！ 不適切な商品の報告
+      .product-details-main__item-button__right
+        あんしん・あんぜんへの取り組み
+  %ul.item-link-prev-next
+    %li.item-link-prev
+      ＜ 前の商品
+    %li.item-link-next
+      次の商品 ＞
+  .sns-box
+    %ul
+      %li
+        = fa_icon "facebook-square 3x", class: "icon-facebook-square"
+      %li
+        = fa_icon "twitter-square 3x", class: "icon-twitter-square"
+      %li
+        = fa_icon "pinterest 3x", class: "icon-pinterest"
+  .users-item-box
+    %h2.users-item-box__head
+      #{@item.user.nickname}さんのその他の出品
+    .users-item-box__content
+      - @user_items.each do |user_items|
+        = link_to item_path(user_items.id) do
+          .users-item-box__content__item-data
+            .users-item-box__content__item-data__photo
+              = image_tag user_items.images.first.image.url if user_items.images
+            .users-item-box__content__item-data__body
+              %h3.users-item-box__content__item-data__body__name
+                = user_items.name
+              .users-item-box__content__item-data__body__num
+                .users-item-box__content__item-data__body__num__price
+                  = number_to_currency(user_items.price, unit: "￥", precision: 0)
+                %span
+                  = fa_icon "heart", class: "icon-heart"
+    %h2.users-item-box__head
+      #{@item.category.name}その他の出品
+    .users-item-box__content
+      - @category_items.each do |category_items|
+        = link_to item_path(category_items.id) do
+          .users-item-box__content__item-data
+            .users-item-box__content__item-data__photo
+              = image_tag category_items.images.first.image.url if category_items.images
+            .users-item-box__content__item-data__body
+              %h3.users-item-box__content__item-data__body__name
+                = category_items.name
+              .users-item-box__content__item-data__body__num
+                .users-item-box__content__item-data__body__num__price
+                  = number_to_currency(category_items.price, unit: "￥", precision: 0)
+                %span
+                  = fa_icon "heart", class: "icon-heart"
+  .bread-crumbs
+    メルカリ ＞ ☆#{@item.name}☆
+  .bottom-image
+    = image_tag '/bottom-image.jpg', class: "bottom-image-banner"
+  = render 'shared/footer'

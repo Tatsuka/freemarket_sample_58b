@@ -48,11 +48,15 @@
         background: #fafafa;
 
         &__top {
-          background: pink;
           width: 300px;
           height: 300px;
           position: relative;
           overflow: hidden;
+
+          img {
+            width: 100%;
+            object-fit: contain;
+          }
         }
 
         &__dots {
@@ -60,13 +64,17 @@
           font-size:0;
 
           &__dot {
-            background: olivedrab;
             width: 60px;
             height: 60px;
             max-height: none;
             position: relative;
             overflow: hidden;
             display: inline-block;
+
+            img {
+              width: 100%;
+              object-fit: contain;
+            }
           }
         }
       }
@@ -144,6 +152,17 @@
       line-height: 60px;
       margin-top: 16px;
       background: #ea352d;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    .sold-out {
+      width: 100%;
+      font-size: 24px;
+      font-weight: 600;
+      line-height: 60px;
+      margin-top: 16px;
+      background: #888;
       color: #fff;
     }
 
@@ -263,9 +282,15 @@
         display: inline-block;
 
         &__photo {
-          background: burlywood;
           width: 216px;
           height: 220px;
+          position: relative;
+          overflow: hidden;
+
+          img {
+            width: 100%;
+            object-fit: contain;
+          }
         }
 
         &__body {
