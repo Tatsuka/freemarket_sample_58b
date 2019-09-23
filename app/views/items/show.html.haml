@@ -3,22 +3,23 @@
   .product-details-main
     %h1.product-details-main__title
       = @item.name
-    %p.product-details-main__words
-      『この商品』は、**回の取引実績を持つ○○さんから出品されました。東京都から1~2日で発送されます。
     .product-details-main__content
       .product-details-main__content__image
         .product-details-main__content__image__top
+          = image_tag @item.images.first.image.url if @item.images
         .product-details-main__content__image__dots
-          - (1..10).each do |i|
-            .product-details-main__content__image__dots__dot
+          -# - (1..10).each do |i|
+          - if @item.images
+            - @item.images.each do |image|
+              .product-details-main__content__image__dots__dot
+                = image_tag image.image.url
       %table.product-details-main__content__table
         %tbody
           %tr
             %th 出品者
             %td
               %a
-                出品者名
-                -# = @item.user.name
+                = @item.user.nickname
               %div
                 .item-user-ratings
                   = fa_icon "circle", class: "icon-good"
@@ -32,23 +33,27 @@
           %tr
             %th カテゴリー
             %td
-              %a メンズ
+              %a
+                = @item.category.name if @item.category.name
               %br
-              %a  ＞スニーカー
+              %a ＞**
               %br
-              %a ＞靴
+              %a ＞**
           %tr
             %th ブランド
             %td
-              %a ブランド名
+              %a
+                = @item.brand.name if @item.brand.name
           %tr
             %th 商品のサイズ
             %td
-              %a サイズ
+              %a
+                **
           %tr
             %th 商品の状態
             %td
-              %a 新品、未使用
+              %a
+                = @item.condition_id if @item.condition_id
           %tr
             %th 配送料の負担
             %td
@@ -60,19 +65,26 @@
           %tr
             %th 配送元地域
             %td
-              %a 東京都
+              %a
+                = @item.shipping_from if @item.shipping_from
           %tr
             %th 発送日の目安
             %td
-              %a 1〜2日で発送
+              %a
+                #{@item.shipping_days}日で発送
     .product-details-main__item-price
       %span.item-total-price
         ¥
         = @item.price
       %span.item-tax (税込)
       %span.item-shipping-fee 送料込み
-    %button.buy-btn{type: "submit"}
-      購入画面に進む
+    - if @item.trade_status_id == 1
+      = link_to transaction_buy_path(@item) do
+        %button.buy-btn{type: "submit"}
+          購入画面に進む
+    - else
+      %button.sold-out
+        売り切れました
     .product-details-main__item-description
       %p
         = @item.detail
@@ -87,9 +99,9 @@
         あんしん・あんぜんへの取り組み
   %ul.item-link-prev-next
     %li.item-link-prev
-      ＜ 前の商品
+      ＜
     %li.item-link-next
-      次の商品 ＞
+      ＞
   .sns-box
     %ul
       %li
@@ -100,21 +112,39 @@
         = fa_icon "pinterest 3x", class: "icon-pinterest"
   .users-item-box
     %h2.users-item-box__head
-      出品者名さんのその他の出品
+      #{@item.user.nickname}さんのその他の出品
     .users-item-box__content
-      - (1..6).each do |i|
-        .users-item-box__content__item-data
-          .users-item-box__content__item-data__photo
-          .users-item-box__content__item-data__body
-            %h3.users-item-box__content__item-data__body__name
-              ☆新品 タグ付き☆エスニック アジアン チュニック☆黒 緑 金☆
-            .users-item-box__content__item-data__body__num
-              .users-item-box__content__item-data__body__num__price
-                ¥ 2,800
-              %span
-                = fa_icon "heart", class: "icon-heart"
+      - @user_items.each do |user_items|
+        = link_to "/items/#{user_items.id}", method: :get do
+          .users-item-box__content__item-data
+            .users-item-box__content__item-data__photo
+              = image_tag user_items.images.first.image.url if user_items.images
+            .users-item-box__content__item-data__body
+              %h3.users-item-box__content__item-data__body__name
+                = user_items.name
+              .users-item-box__content__item-data__body__num
+                .users-item-box__content__item-data__body__num__price
+                  ¥#{user_items.price}
+                %span
+                  = fa_icon "heart", class: "icon-heart"
+    %h2.users-item-box__head
+      #{@item.category.name}その他の出品
+    .users-item-box__content
+      - @category_items.each do |category_items|
+        = link_to "/items/#{category_items.id}", method: :get do
+          .users-item-box__content__item-data
+            .users-item-box__content__item-data__photo
+              = image_tag category_items.images.first.image.url if category_items.images
+            .users-item-box__content__item-data__body
+              %h3.users-item-box__content__item-data__body__name
+                = category_items.name
+              .users-item-box__content__item-data__body__num
+                .users-item-box__content__item-data__body__num__price
+                  ¥#{category_items.price}
+                %span
+                  = fa_icon "heart", class: "icon-heart"
   .bread-crumbs
-    メルカリ ＞ ☆ここに商品名が入ります☆
+    メルカリ ＞ ☆#{@item.name}☆
   .bottom-image
     = image_tag '/bottom-image.jpg', class: "bottom-image-banner"
   = render 'shared/footer'
