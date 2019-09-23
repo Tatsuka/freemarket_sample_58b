@@ -8,7 +8,6 @@
         .product-details-main__content__image__top
           = image_tag @item.images.first.image.url if @item.images
         .product-details-main__content__image__dots
-          -# - (1..10).each do |i|
           - if @item.images
             - @item.images.each do |image|
               .product-details-main__content__image__dots__dot
