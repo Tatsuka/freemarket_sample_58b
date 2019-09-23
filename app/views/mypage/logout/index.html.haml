@@ -23,8 +23,9 @@
           %li.header-bottom__right__mypage
             マイページ
   .header-bottom__bread__crumbs      
-  .bread-crumbs 
-    = link_to 'メルカリ > マイページ > ログアウト'
+    .bread-crumbs 
+      - breadcrumb :logout
+      = breadcrumbs separator: " ＞ "
   .content-area
     .content__left
       .content__left__list

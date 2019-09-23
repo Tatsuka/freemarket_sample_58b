@@ -9,7 +9,6 @@ class ImageUploader < CarrierWave::Uploader::Base
   else
     storage :fog
   end
-
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
   def store_dir
@@ -28,7 +27,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   # process scale: [200, 300]
   #
   # def scale(width, height)
-  #   # do something
+  #   # do something/dev/xvda1 
   # end
 
   # Create different versions of your uploaded files:
