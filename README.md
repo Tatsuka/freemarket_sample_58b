@@ -103,8 +103,8 @@
 |trade_status|bigint|null:false,foreign_key:true|
 |brand|bigint|foreign_key: true|
 ### Association
-- has_many :images dependent: :destory
-- has_many :comments dependent: :destory
+- has_many :images dependent: :destroy
+- has_many :comments dependent: :destroy
 - has_one :transaction
 - belongs_to_active_hash :condition
 - belongs_to :category
