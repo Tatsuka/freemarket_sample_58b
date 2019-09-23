@@ -73,8 +73,7 @@
                 #{@item.shipping_days}日で発送
     .product-details-main__item-price
       %span.item-total-price
-        ¥
-        = @item.price
+        = number_to_currency(@item.price, unit: "￥", precision: 0)
       %span.item-tax (税込)
       %span.item-shipping-fee 送料込み
     - if @item.trade_status_id == 1
@@ -123,7 +122,7 @@
                 = user_items.name
               .users-item-box__content__item-data__body__num
                 .users-item-box__content__item-data__body__num__price
-                  ¥#{user_items.price}
+                  = number_to_currency(user_items.price, unit: "￥", precision: 0)
                 %span
                   = fa_icon "heart", class: "icon-heart"
     %h2.users-item-box__head
@@ -139,7 +138,7 @@
                 = category_items.name
               .users-item-box__content__item-data__body__num
                 .users-item-box__content__item-data__body__num__price
-                  ¥#{category_items.price}
+                  = number_to_currency(category_items.price, unit: "￥", precision: 0)
                 %span
                   = fa_icon "heart", class: "icon-heart"
   .bread-crumbs
