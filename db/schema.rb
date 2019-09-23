@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_19_095617) do
+ActiveRecord::Schema.define(version: 2019_09_23_064534) do
 
   create_table "brands", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -81,12 +81,10 @@ ActiveRecord::Schema.define(version: 2019_09_19_095617) do
     t.string "last_name_kana", null: false
     t.string "first_name_kanji", null: false
     t.string "last_name_kanji", null: false
-    t.integer "birth_year", null: false
-    t.integer "birth_month", null: false
-    t.integer "birth_day", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.date "birthday", null: false
   end
 
   create_table "shipping_addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
