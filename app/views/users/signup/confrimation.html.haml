@@ -1,6 +1,6 @@
 .registration-wrapper
   .header-step1
-    = link_to "" do
+    = link_to root_path do
       = image_tag '/mercari-logo.svg', class:"mercari-logo"
     .header-step1__signup-bar
       %ol
@@ -24,19 +24,19 @@
       .registration-main__box__title
         %b
           電話番号の確認
-      .registration-main__box__form-area
-        .registration-main__box__form-area__content
-          .registration-main__box__form-area__content__group
-            %label{for: "nickname"}
-              携帯電話の番号
-            %input{name: "phone", placeholder: "携帯電話の番号を入力", type: "phone", value: ""}
-            %p
-              本人確認のため、携帯電話のSMS(ショートメッセージサービス)を利用して認証を行います。
-          %button.next-btn{type: "submit"}
-            SNSを送信する
-          .registration-main__box__form-area__content__group
-            %p
-              ※電話番号は本人確認や不正利用防止のために利用します。他のユーザーに公開されることはありません。
-            %p.text-right
-              電話番号の確認が必要な理由 >
+      = form_for(@user, url: new_user_address_path, method: :get) do |f|
+        .registration-main__box__form-area
+          .registration-main__box__form-area__content
+            .registration-main__box__form-area__content__group
+              = f.fields_for :profile do |profile|
+                  = profile.label :phone_number, '携帯電話の番号'
+                  = profile.phone_field :phone_number, placeholder: '携帯電話の番号を入力'
+                  %p
+                    本人確認のため、携帯電話のSMS(ショートメッセージサービス)を利用して認証を行います。
+                = f.submit 'SNSを送信する'
+            .registration-main__box__form-area__content__group
+              %p
+                ※電話番号は本人確認や不正利用防止のために利用します。他のユーザーに公開されることはありません。
+              %p.text-right
+                電話番号の確認が必要な理由 >
   = render 'shared/signup-footer'
