@@ -37,7 +37,7 @@
               .category-items__erea__list__item__box__image
                 = image_tag item.images.first.image.url
               .category-items__erea__list__item__box__price
-                = number_to_currency(item.price, :unit => "￥", :precision => 0)
+                = number_to_currency(item.shipping_cost, :unit => "￥", :precision => 0)
               .category-items__erea__list__item__box__caption
                 = item.name
       .category-items__erea
@@ -54,7 +54,7 @@
               .category-items__erea__list__item__box__image
                 = image_tag item.images.first.image.url
               .category-items__erea__list__item__box__price
-                = number_to_currency(item.price, :unit => "￥", :precision => 0)
+                = number_to_currency(item.shipping_cost, :unit => "￥", :precision => 0)
               .category-items__erea__list__item__box__caption
                 = item.name
       .category-items__erea
@@ -71,7 +71,7 @@
               .category-items__erea__list__item__box__image
                 = image_tag item.images.first.image.url
               .category-items__erea__list__item__box__price
-                = number_to_currency(item.price, :unit => "￥", :precision => 0)
+                = number_to_currency(item.shipping_cost, :unit => "￥", :precision => 0)
               .category-items__erea__list__item__box__caption
                 = item.name
 
@@ -89,7 +89,7 @@
               .category-items__erea__list__item__box__image
                 = image_tag item.images.first.image.url
               .category-items__erea__list__item__box__price
-                = number_to_currency(item.price, :unit => "￥", :precision => 0)
+                = number_to_currency(item.shipping_cost, :unit => "￥", :precision => 0)
               .category-items__erea__list__item__box__caption
                 = item.name
     .bottom-image
