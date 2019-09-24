@@ -50,6 +50,7 @@
               .sell-upload-required
                 必須
               -# = f.select :category_id, Item.category_ids.keys
+              = f.select :category_id, Item.category_ids.keys
 
 
               .sell-content-blank
@@ -58,6 +59,7 @@
               .sell-upload-required
                 必須
               -# = f.select :condition_id, Item.condition_ids.keys
+              = f.select :condition_id, Item.condition_ids.keys
 
           .sell-content-delivery
             .sell-sub-details-head
@@ -70,6 +72,7 @@
               .sell-upload-required
                 必須
               -# = f.select :shipping_fee_charge_to, Item.shipping_fee_charge_tos.keys
+              = f.select :shipping_fee_charge_to, Item.shipping_fee_charge_tos.keys
 
               .sell-content-blank
               .sell-content-label
@@ -78,6 +81,7 @@
                 必須
               -# = f.select :shipping_from, Item.shipping_froms.keys
               = f.collection_select :prefecture, Prefecture.all, :id, :name
+              = f.select :shipping_from, Item.shipping_froms.keys
 
               .sell-content-blank
               .sell-content-label
@@ -85,6 +89,7 @@
               .sell-upload-required
                 必須
               -# = f.select :shipping_days, Item.shipping_days.keys
+              = f.select :shipping_days, Item.shipping_days.keys
 
           .sell-content-income
             .sell-sub-details-head

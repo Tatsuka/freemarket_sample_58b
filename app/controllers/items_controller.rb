@@ -24,7 +24,7 @@ class ItemsController < ApplicationController
         end
         redirect_to root_path
       else
-
+        binding.pry
         redirect_to new_item_path
       end
   end
