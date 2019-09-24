@@ -11,11 +11,19 @@ class ItemsController < ApplicationController
     # unless user_signed_in?
     #   redirect_to new_user_session_path
     # else
-      @item =Item.new
+    @item = Item.new
+    @item.images.build
     # end
   end
 
   def create
+    @item = Item.new(item_params)
+    if @item.save
+      image_params[:images].each do |image|
+        @item.images.create(image: image, item_id: @item.id) 
+      end
+      redirect_to items_path
+    end
   end
 
   def search
@@ -35,5 +43,22 @@ class ItemsController < ApplicationController
   end
 
   def destroy
+    # @item.destroy if @item.user_id === current_user.id
+    # redirect_to root_path
+  end
+
+  private
+  def item_params
+    # params.require(:item).permit(:name, :price, :detail, :shipping_cost, :shipping_fee_charge_to, :shipping_from, :shipping_days, :condition_id, :trade_status_id, :brand_id, images_attributes: [:image]).merge(user_id: "1")
+    params.require(:item).permit(
+      :name,
+      :price,
+      :detail,
+      images_attributes: [:id, :image]
+    ).merge(user_id: 1)
+  end
+
+  def image_params
+    params.require(:images).permit({images: []})
   end
 end

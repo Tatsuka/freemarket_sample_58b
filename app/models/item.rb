@@ -4,6 +4,8 @@ class Item < ApplicationRecord
   belongs_to :category
   belongs_to :brand
   belongs_to :user
+
+  accepts_nested_attributes_for :images
   # has_one :transaction
   # extend ActiveHash::Associations::ActiveRecordExtensions
     # belongs_to_active_hash :condition

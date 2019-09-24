@@ -5,7 +5,7 @@
         .data-reactroot
           .single-head
             商品の情報を入力
-        = form_for @item do |f|
+        = form_for @item, url: create_item_path do |f|
           .sell-form
             .sell-upload-box
               .sell-upload-head
@@ -15,10 +15,13 @@
                   必須
                 .sell-upload-head-text-small
                   最大10枚までアップロードできます
+            = f.fields_for :images, @item.images.first do |image|
+
               .sell-dropbox-container
                 .sell-upload-items-container
                   .sell-upload-items-have-item-0
-                  = f.file_field :image, class: ".sell-upload-drop-box",accept: "image/*"
+                  = image.label :image do
+                    = image.file_field :image, name: "images[images][]", class: "sell-upload-drop-box"
                   .visible-pc
                     -# ドラッグアンドドロップ
                     -# またはクリックしてファイルをアップロード
@@ -49,7 +52,8 @@
               .sell-content_input-default
                 .icon-arrow-bottom
                 .select-default
-                  ***
+            = f.select :category, Item.categories.keys,{prompt: '---'}
+
               .sell-content-blank
               .sell-content-label
                 商品の状態
@@ -107,7 +111,7 @@
                         必須
                     .right-sell-price-input
                       ¥
-                      = f.text_field :price, class: "sell-incomeinput-default",  placeholder: "例）300"
+                      = f.text_field :price, min:300, max:9999999, class: "sell-incomeinput-default",  placeholder: "例）300"
                   .sell-income-sales-commission
                     .sell-income-sales-commission-left
                       販売手数料 (10%)
@@ -143,7 +147,8 @@
                   = link_to '加盟店規約'
                 .sell-content-sell-btn-box-text-area1-2
                   に同意したことになります。
-                = button_tag "出品する", type: "submit", class: "sell-content-sell-btn-default-btn-red"
-              .sell-content-sell-btn-default-btn-gray
-                = link_to 'もどる'
+                =f.submit "出品する", class:"sell-content-sell-btn-default-btn-red"
+                =link_to "戻る", root_path,class:"sell-content-sell-btn-default-btn-gray"
+              
               .overlay
+              
