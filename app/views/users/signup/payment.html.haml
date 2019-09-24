@@ -54,6 +54,5 @@
                 = credit.number_field :security_code, placeholder: "カード背面4桁もしくは3桁の番号"
                 %p.text-right
                   カード裏面の番号とは?
-            %button.next-btn{type: "submit"}
-              次へ進む
+            = f.submit "次へ進む", class: 'next-btn'
   = render 'shared/signup-footer'
