@@ -1,11 +1,12 @@
 .single-container
+  = render 'shared/signup-header'
   .single-main
     .single-container-Item-registration-are
       .sell-container
         .data-reactroot
           .single-head
             商品の情報を入力
-        = form_for @item, url: create_item_path do |f|
+        = form_for @item do |f|
           .sell-form
             .sell-upload-box
               .sell-upload-head
@@ -15,26 +16,33 @@
                   必須
                 .sell-upload-head-text-small
                   最大10枚までアップロードできます
-            = f.fields_for :images, @item.images.first do |image|
-
               .sell-dropbox-container
                 .sell-upload-items-container
-                  .sell-upload-items-have-item-0
-                  = image.label :image do
-                    = image.file_field :image, name: "images[images][]", class: "sell-upload-drop-box"
-                  .visible-pc
-                    -# ドラッグアンドドロップ
-                    -# またはクリックしてファイルをアップロード
-                  .icon-camera
+                  .sell-upload-drop-box
+                    .visible-pc
+                      ドラッグアンドドロップ
+                      またはクリックしてファイルをアップロード
+                    .icon-camera
+                  - @item.images.each do |image|
+                    .sell-upload-items-have-item-0
+                      %ul
+                        %li.sell-upload-item
+                          .sell-upload-figure.square
+                            = image_tag image.image.url
+                          .sell-upload-button
+                            %a.sell-upload-edit{href: ""} 編集
+                            %a{href: ""} 削除
+                  -# = f.fields_for :images, @images do |i|
+                  -#   = i.file_field :image, multiple: true, name: 'images[image][]', class: "sell-upload-drop-box"
+                    -# , class: "sell-upload-drop-box", accept: "image/*"
           .sell-content
             .sell-content-product-nam
               .sell-content-label
                 商品名
               .sell-upload-required
                 必須
-            = f.text_field :name, id: "sell-content_input-default", placeholder: "商品名（必須 40文字まで)"
-
             .sell-content-blank
+              = f.text_field :name, id: "sell-content_input-default", placeholder: "商品名（必須 40文字まで)"
             .sell-content-product-description
               .sell-content-label
                 商品の説明
@@ -49,16 +57,13 @@
                 カテゴリー
               .sell-upload-required
                 必須
-              = f.select :category_id, Item.category_ids.keys
-
-
+              -# = f.select :category_id, Item.category_ids.keys
               .sell-content-blank
               .sell-content-label
                 商品の状態
               .sell-upload-required
                 必須
               = f.select :condition_id, Item.condition_ids.keys
-
           .sell-content-delivery
             .sell-sub-details-head
               配送について
@@ -70,21 +75,18 @@
               .sell-upload-required
                 必須
               = f.select :shipping_fee_charge_to, Item.shipping_fee_charge_tos.keys
-
               .sell-content-blank
               .sell-content-label
                 発送元の地域
               .sell-upload-required
                 必須
               = f.select :shipping_from, Item.shipping_froms.keys
-
               .sell-content-blank
               .sell-content-label
                 発送までの日数
               .sell-upload-required
                 必須
               = f.select :shipping_days, Item.shipping_days.keys
-
           .sell-content-income
             .sell-sub-details-head
               販売価格(300〜9,999,999)
@@ -101,7 +103,7 @@
                         必須
                     .right-sell-price-input
                       ¥
-                      = f.number_field :shipping_cost, min:300, max:9999999, class: "sell-incomeinput-default", placeholder: "例）300", value: ""
+                      = f.number_field :price, min:300, max:9999999, class: "sell-incomeinput-default", placeholder: "例）300", value: ""
                   .sell-income-sales-commission
                     .sell-income-sales-commission-left
                       販売手数料 (10%)
@@ -137,7 +139,6 @@
                   = link_to '加盟店規約'
                 .sell-content-sell-btn-box-text-area1-2
                   に同意したことになります。
-              =f.submit "出品する", class:"sell-content-sell-btn-default-btn-red"
-              =link_to "戻る", root_path,class:"sell-content-sell-btn-default-btn-gray"
-              
-              .overlay
+              = f.submit "変更する", class: "sell-content-sell-btn-default-btn-red"
+              = link_to 'キャンセル', item_path(@item.id), class: 'sell-content-sell-btn-default-btn-gray'
+  = render 'shared/signup-footer'
