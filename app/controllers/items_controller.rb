@@ -17,13 +17,15 @@ class ItemsController < ApplicationController
   end
 
   def create
-    @item = Item.new(item_params)
-    if @item.save
-      image_params[:images].each do |image|
-        @item.images.create(image: image, item_id: @item.id) 
-      end
-      redirect_to items_path
+    @item = Item.new(item_params)  
+    params[:images][:image].each do |i|
+      @item.images.build(image: i, item_id: @item.id)
     end
+      if @item.save
+        redirect_to root_path
+      else
+        redirect_to new_item_path
+      end
   end
 
   def search
@@ -54,7 +56,7 @@ class ItemsController < ApplicationController
       :name,
       :price,
       :detail,
-      images_attributes: [:id, :image]
+      images_attributes: [:image]
     ).merge(user_id: 1)
   end
 
