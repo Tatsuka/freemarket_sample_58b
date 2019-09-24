@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Mypage::ExhitnowController, type: :controller do
+RSpec.describe Mypage::ListingController, type: :controller do
 
   describe "GET #update" do
     it "returns http success" do

@@ -1,4 +1,4 @@
-class Mypage::ExhitnowController < ApplicationController
+class Mypage::ListingController < ApplicationController
   def update
     @user = current_user
   end

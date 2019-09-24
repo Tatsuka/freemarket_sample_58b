@@ -28,9 +28,9 @@ Rails.application.routes.draw do
       patch 'profile',               to: 'profile#update',                as: :profile_update
       get   'identification',        to: 'identification#edit',           as: :identification
       patch 'identification',        to: 'identification#update',         as: :identification_update
-      get   'exhitnow',              to: 'exhitnow#edit',                 as: :exhitnow
-      patch 'exhitnow',              to: 'exhitnow#update',               as: :exhitnow_update
-      namespace :exhitnow do
+      get   'listing',              to: 'listing#edit',                 as: :listing
+      patch 'listing',              to: 'listing#update',               as: :listing_update
+      namespace :listing do
         get 'compilation/update',    as: 'compilation_update'
         get 'compilation/edit',      as: 'compilation_edit'
         get 'compilation/destroy',   as: 'compilation_destroy'

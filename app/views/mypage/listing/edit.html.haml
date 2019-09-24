@@ -1,0 +1,44 @@
+.wrapper
+  = render 'mypage/_mypage-shared/header-area'
+
+  .header-bottom__bread__crumbs      
+    .bread-crumbs 
+      - breadcrumb :listing
+      = breadcrumbs separator: " ＞ "
+  .content-area
+    = render 'mypage/_mypage-shared/left-area'
+    .content-area__listing-content-area
+      .content-area__listing-content-area__listing-content-head
+        出品した商品
+      .content-area__listing-content-area__listing-status
+        .content-area__listing-content-area__listing-status__status-listing
+          .content-area__listing-content-area__listing-status__status-listing__listing-text
+            出品中
+          .content-area__listing-content-area__listing-status__status-listing__listing-content
+            .status-listing__listing-content__1
+              = link_to 'あ', mypage_listing_compilation_edit_path
+            .status-listing__listing-content__2
+              = link_to 'い', mypage_listing_compilation_edit_path
+            .status-listing__listing-content__3
+              = link_to 'う', mypage_listing_compilation_edit_path
+            .status-listing__listing-content__4
+              = link_to 'え', mypage_listing_compilation_edit_path
+            .status-listing__listing-content__5
+              = link_to 'お', mypage_listing_compilation_edit_path
+        .content-area__listing-content-area__listing-status__status-exhitusers
+          .content-area__listing-content-area__listing-status__status-exhitusers__exhitusers-text
+            取引中
+          .content-area__listing-content-area__listing-status__status-exhitusers__listing-content
+            現在取り扱いはありません
+        .content-area__listing-content-area__listing-status__status-exhitend
+          .content-area__listing-content-area__listing-status__status-exhitend__exhitend-text
+            売却済
+          .content-area__listing-content-area__listing-status__status-exhitend__listing-content
+            現在取り扱いはありません
+.footer
+  = render 'shared/footer'
+  = render 'shared/button'
+
+
+        
+      
