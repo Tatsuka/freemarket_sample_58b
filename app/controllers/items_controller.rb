@@ -59,9 +59,10 @@ class ItemsController < ApplicationController
       :category_id,
       :condition_id,
       :shipping_fee_charge_to,
-      :shipping_from,
+      :prefecture_id,
       :shipping_days,
       :shipping_cost,
+      :brand_id,
       images_attributes: [:image]
     ).merge(user_id: 1)
   end

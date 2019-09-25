@@ -49,9 +49,9 @@
                 カテゴリー
               .sell-upload-required
                 必須
-              -# = f.select :category_id, Item.category_ids.keys
-              = f.select :category_id, Item.category_ids.keys
+              = f.collection_select :category_id, Category.all, :id, :name
 
+              = f.select :brand_id, Item.brand_ids.keys
 
               .sell-content-blank
               .sell-content-label
@@ -71,7 +71,6 @@
                 配送料の負担
               .sell-upload-required
                 必須
-              -# = f.select :shipping_fee_charge_to, Item.shipping_fee_charge_tos.keys
               = f.select :shipping_fee_charge_to, Item.shipping_fee_charge_tos.keys
 
               .sell-content-blank
@@ -80,16 +79,16 @@
               .sell-upload-required
                 必須
               -# = f.select :shipping_from, Item.shipping_froms.keys
-              = f.collection_select :prefecture, Prefecture.all, :id, :name
-              = f.select :shipping_from, Item.shipping_froms.keys
+              = f.collection_select :prefecture_id, Prefecture.all, :id, :name
+
 
               .sell-content-blank
               .sell-content-label
                 発送までの日数
               .sell-upload-required
                 必須
-              -# = f.select :shipping_days, Item.shipping_days.keys
               = f.select :shipping_days, Item.shipping_days.keys
+
 
           .sell-content-income
             .sell-sub-details-head
