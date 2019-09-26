@@ -1,4 +1,5 @@
 .single-container
+  = render 'shared/signup-header'
   .single-main
     .single-container-Item-registration-are
       .sell-container
@@ -146,4 +147,4 @@
               =f.submit "出品する", class:"sell-content-sell-btn-default-btn-red"
               =link_to "戻る", root_path,class:"sell-content-sell-btn-default-btn-gray"
               
-              .overlay
+  = render 'shared/signup-footer'
