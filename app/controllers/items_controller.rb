@@ -14,7 +14,6 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
-    @item.save
 
     params[:images][:image].each do |image|
       @item.images.build(image: image,item_id: @item.id)
@@ -22,7 +21,6 @@ class ItemsController < ApplicationController
     if @item.save
       redirect_to root_path
     else
-      binding.pry
     end
   end
 
