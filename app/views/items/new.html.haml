@@ -16,6 +16,7 @@
                   必須
                 .sell-upload-head-text-small
                   最大10枚までアップロードできます
+
             = f.fields_for :images do |image|
 
               .sell-dropbox-container
@@ -51,6 +52,7 @@
                 必須
               = f.collection_select :category_id, Category.all, :id, :name
 
+
               = f.select :brand_id, Item.brand_ids.keys
 
               .sell-content-blank
@@ -85,7 +87,6 @@
               .sell-upload-required
                 必須
               = f.select :shipping_days, Item.shipping_days.keys
-
           .sell-content-income
             .sell-sub-details-head
               販売価格(300〜9,999,999)
@@ -142,3 +143,4 @@
               =link_to "戻る", root_path,class:"sell-content-sell-btn-default-btn-gray"
               
   = render 'shared/signup-footer'
+

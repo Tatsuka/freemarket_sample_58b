@@ -32,9 +32,7 @@
                           .sell-upload-button
                             %a.sell-upload-edit{href: ""} 編集
                             %a{href: ""} 削除
-                  -# = f.fields_for :images, @images do |i|
-                  -#   = i.file_field :image, multiple: true, name: 'images[image][]', class: "sell-upload-drop-box"
-                    -# , class: "sell-upload-drop-box", accept: "image/*"
+
           .sell-content
             .sell-content-product-nam
               .sell-content-label
@@ -57,7 +55,9 @@
                 カテゴリー
               .sell-upload-required
                 必須
-              -# = f.select :category_id, Item.category_ids.keys
+
+              = f.collection_select :category_id, Category.all, :id, :name
+
               .sell-content-blank
               .sell-content-label
                 商品の状態
@@ -80,7 +80,9 @@
                 発送元の地域
               .sell-upload-required
                 必須
-              = f.select :shipping_from, Item.shipping_froms.keys
+
+              = f.collection_select :prefecture_id, Prefecture.all, :id, :name
+
               .sell-content-blank
               .sell-content-label
                 発送までの日数
@@ -103,7 +105,7 @@
                         必須
                     .right-sell-price-input
                       ¥
-                      = f.number_field :price, min:300, max:9999999, class: "sell-incomeinput-default", placeholder: "例）300", value: ""
+                      = f.number_field :shipping_cost, min:300, max:9999999, class: "sell-incomeinput-default", placeholder: "例）300"
                   .sell-income-sales-commission
                     .sell-income-sales-commission-left
                       販売手数料 (10%)
