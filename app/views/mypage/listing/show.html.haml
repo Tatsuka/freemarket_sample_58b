@@ -82,9 +82,6 @@
           出品を停止する
       .compilation-item-box__btn-default-btn-gray
         = link_to 'この商品を削除する', item_path(@item), method: :delete
-        -# = link_to 'この商品を削除する', "/items/#{@item.id}", method: :delete
-        -# = link_to 'この商品を削除する', mypage_listings_destroy_listing_of_items_on_sale_path
-
     .bottom-image
       = image_tag '/bottom-image.jpg', class: "bottom-image-banner"
 
