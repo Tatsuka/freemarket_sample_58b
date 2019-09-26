@@ -7,6 +7,13 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 Image.create!(
-  item_id: '1',
-  image: File.open("./app/uploads/image/image/1/cap.jpg"),
-)
+  item_id: 1,
+  image: open("#{Rails.root}/db/fixtures/mcap.jpeg"))
+
+# lady = Category.create(:name=>"レディース")
+
+# lady_tops = lady.children.create(:name=>"トップス")
+# lady_jacket = lady.children.create(:name=>"ジャケット/アウター")
+
+# lady_tops.children.create([{:name=>"Tシャツ/カットソー(半袖/袖なし)"}, {:name=>"Tシャツ/カットソー(七分/長袖)"},{:name=>"その他"}])
+# lady_jacket.children.create([{:name=>"テーラードジャケット"}, {:name=>"ノーカラージャケット"}, {:name=>"Gジャン/デニムジャケット"},{:name=>"その他"}])
