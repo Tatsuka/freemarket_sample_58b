@@ -5,7 +5,7 @@ class Item < ApplicationRecord
   belongs_to :user
 
   accepts_nested_attributes_for :images
-  
+
   # has_one :transaction
   # extend ActiveHash::Associations::ActiveRecordExtensions
     # belongs_to_active_hash :condition
@@ -18,5 +18,5 @@ class Item < ApplicationRecord
   enum brand_id: {"---": 0, "シャネル": 1, "ナイキ": 2, "ルイ ヴィトン": 3}, _prefix: true
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :prefecture
-
+  
 end
