@@ -1,4 +1,5 @@
 .single-container
+  = render 'shared/signup-header'
   .single-main
     .single-container-Item-registration-are
       .sell-container
@@ -15,17 +16,16 @@
                   必須
                 .sell-upload-head-text-small
                   最大10枚までアップロードできます
-            = f.fields_for :images do |i|
+
+            = f.fields_for :images do |image|
+
               .sell-dropbox-container
                 .sell-upload-items-container
                   .sell-upload-items-have-item-0
-                    = i.label :image do
-                      = i.file_field :image, multiple: true, name: 'images[image][]'
-                  -# = image.label :image, for: "upload-image" do
-                  -# = image.file_field :image, multiple: true, name: "images[image][][image]", class: "sell-upload-drop-box", id: "upload-image", 'data-image': 0
+                  = image.label :image do
+                    = image.file_field :image, name: "images[image][]", multiple: true, class: "sell-upload-drop-box"
                   .visible-pc
-                    -# ドラッグアンドドロップ
-                    -# またはクリックしてファイルをアップロード
+
                   .icon-camera
           .sell-content
             .sell-content-product-nam
@@ -51,14 +51,15 @@
               .sell-upload-required
                 必須
               = f.collection_select :category_id, Category.all, :id, :name
-              -# = f.select :brand_id, Item.brand_ids.keys
+
+
+              = f.select :brand_id, Item.brand_ids.keys
 
               .sell-content-blank
               .sell-content-label
                 商品の状態
               .sell-upload-required
                 必須
-              -# = f.select :condition_id, Item.condition_ids.keys
               = f.select :condition_id, Item.condition_ids.keys
 
           .sell-content-delivery
@@ -78,9 +79,7 @@
                 発送元の地域
               .sell-upload-required
                 必須
-              -# = f.select :shipping_from, Item.shipping_froms.keys
               = f.collection_select :prefecture_id, Prefecture.all, :id, :name
-
 
               .sell-content-blank
               .sell-content-label
@@ -88,8 +87,6 @@
               .sell-upload-required
                 必須
               = f.select :shipping_days, Item.shipping_days.keys
-
-
           .sell-content-income
             .sell-sub-details-head
               販売価格(300〜9,999,999)
@@ -145,4 +142,5 @@
               =f.submit "出品する", class:"sell-content-sell-btn-default-btn-red"
               =link_to "戻る", root_path,class:"sell-content-sell-btn-default-btn-gray"
               
-              .overlay
+  = render 'shared/signup-footer'
+

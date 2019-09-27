@@ -1,6 +1,9 @@
 .single-container{
   width: 100%;
   height: 100%;
+
+  padding: 0 0 0px;
+
   display: block;
   background: rgb(245, 245, 245);
 }
@@ -179,7 +182,9 @@
           font-size: 14px;
           display: inline-block;
         }
-        .sell-content_input-default,#item_category_id,#item_condition_id,#item_shipping_fee_charge_to,#item_prefecture_id,#item_shipping_days {
+
+        #sell-content_input-default,#item_brand_id,#item_category_id,#item_condition_id,#item_shipping_fee_charge_to,#item_prefecture_id,#item_shipping_days {
+
           width: 100%;
           margin: 8px 0 0;
           height: 48px;

@@ -32,6 +32,7 @@
                           .sell-upload-button
                             %a.sell-upload-edit{href: ""} 編集
                             %a{href: ""} 削除
+
           .sell-content
             .sell-content-product-nam
               .sell-content-label
@@ -54,7 +55,9 @@
                 カテゴリー
               .sell-upload-required
                 必須
+
               = f.collection_select :category_id, Category.all, :id, :name
+
               .sell-content-blank
               .sell-content-label
                 商品の状態
@@ -77,7 +80,9 @@
                 発送元の地域
               .sell-upload-required
                 必須
+
               = f.collection_select :prefecture_id, Prefecture.all, :id, :name
+
               .sell-content-blank
               .sell-content-label
                 発送までの日数
