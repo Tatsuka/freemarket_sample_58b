@@ -8,6 +8,7 @@ class ItemsController < ApplicationController
   end
 
   def new
+    # ユーザー登録機能実装後に使用
     # unless user_signed_in?
     #   redirect_to new_user_session_path
     # else
@@ -17,8 +18,7 @@ class ItemsController < ApplicationController
   end
 
   def create
-    @item = Item.new(item_params)  
-    @item.save
+    @item = Item.new(item_params)
       params[:images][:image].each do |i|
         @item.images.build(image: i, item_id: @item.id)
       end
@@ -46,8 +46,7 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-    # @item.destroy if @item.user_id === current_user.id
-    # redirect_to root_path
+
   end
 
   private
