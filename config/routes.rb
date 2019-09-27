@@ -50,6 +50,7 @@ Rails.application.routes.draw do
     namespace :transaction do
       resources :buy, only: [:show, :create]
       resources :order_status, only: :show
+      post 'pay/:id' => 'buy#pay', as: 'pay'
     end
   
     devise_scope :user do

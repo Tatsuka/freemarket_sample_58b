@@ -88,3 +88,4 @@ gem 'ancestry'
 gem "gretel"
 gem 'mini_magick'
 gem 'active_hash'
+gem 'payjp'
