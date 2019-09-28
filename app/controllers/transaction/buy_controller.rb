@@ -9,8 +9,7 @@ class Transaction::BuyController < ApplicationController
   end
 
   def pay
-    @item.trade_status_id = 2
-    @item.save
+    @item.update(trade_status_id: 2)
     Payjp.api_key = 'sk_test_1721473b3cfd0970b82ecfda'
     charge = Payjp::Charge.create(
     amount: @item.shipping_cost,
