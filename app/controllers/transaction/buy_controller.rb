@@ -19,8 +19,8 @@ class Transaction::BuyController < ApplicationController
     )
   end
 
-end
-
+  private
   def set_item
     @item = Item.find(params[:id])
   end
+end
