@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_24_090940) do
+ActiveRecord::Schema.define(version: 2019_09_28_115903) do
 
   create_table "brands", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -42,7 +42,7 @@ ActiveRecord::Schema.define(version: 2019_09_24_090940) do
 
   create_table "credit_cards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id", null: false
-    t.integer "card_number", null: false
+    t.string "card_number", null: false
     t.integer "security_code", null: false
     t.integer "expiry_year", null: false
     t.integer "expiry_month", null: false
@@ -75,7 +75,6 @@ ActiveRecord::Schema.define(version: 2019_09_24_090940) do
   end
 
   create_table "profiles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.text "introduction", null: false
     t.string "avatar", null: false
     t.string "first_name_kana", null: false
     t.string "last_name_kana", null: false
@@ -85,7 +84,8 @@ ActiveRecord::Schema.define(version: 2019_09_24_090940) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.date "birthday", null: false
-    t.integer "phone_number", null: false
+    t.text "introduction"
+    t.string "phone_number", null: false
   end
 
   create_table "shipping_addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -129,14 +129,18 @@ ActiveRecord::Schema.define(version: 2019_09_24_090940) do
 
   create_table "user_addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id", null: false
-    t.integer "postal_code", null: false
     t.bigint "prefecture_id", null: false
     t.string "city", null: false
     t.integer "block_number"
     t.string "building_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "phone_number"
+    t.string "phone_number"
+    t.string "first_name_kana", null: false
+    t.string "last_name_kana", null: false
+    t.string "first_name_kanji", null: false
+    t.string "last_name_kanji", null: false
+    t.string "postal_code", null: false
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|

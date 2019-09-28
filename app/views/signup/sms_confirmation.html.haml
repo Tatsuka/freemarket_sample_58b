@@ -24,16 +24,15 @@
       .registration-main__box__title
         %b
           電話番号の確認
-      = form_for(@user, url: new_user_address_path, method: :get) do |f|
+      = form_for @profile, url: sms_confirmation_signup_index_path, method: :post do |f|
         .registration-main__box__form-area
           .registration-main__box__form-area__content
             .registration-main__box__form-area__content__group
-              = f.fields_for :profile do |profile|
-                  = profile.label :phone_number, '携帯電話の番号'
-                  = profile.phone_field :phone_number, placeholder: '携帯電話の番号を入力'
-                  %p
-                    本人確認のため、携帯電話のSMS(ショートメッセージサービス)を利用して認証を行います。
-                = f.submit 'SNSを送信する'
+              = f.label :phone_number, '携帯電話の番号'
+              = f.phone_field :phone_number, placeholder: '携帯電話の番号を入力'
+              %p
+                本人確認のため、携帯電話のSMS(ショートメッセージサービス)を利用して認証を行います。
+              = f.submit 'SNSを送信する'
             .registration-main__box__form-area__content__group
               %p
                 ※電話番号は本人確認や不正利用防止のために利用します。他のユーザーに公開されることはありません。
