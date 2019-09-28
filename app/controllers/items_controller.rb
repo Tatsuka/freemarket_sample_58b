@@ -42,13 +42,6 @@ class ItemsController < ApplicationController
   def edit
   end
   
-    def destroy
-      if item.user_id == current_user.id
-        @item.destroy
-        # if item_user_id == current_user.id
-        redirect_to mypage_listings_listing_of_items_on_sale_path
-      end
-    end
   def update
     item.update(item_params)
     redirect_to item_path(item.id)
@@ -57,7 +50,6 @@ class ItemsController < ApplicationController
   def destroy
     if item.user_id == current_user.id
       @item.destroy
-      # if item_user_id == current_user.id
       redirect_to mypage_listings_listing_of_items_on_sale_path
     end
   end
