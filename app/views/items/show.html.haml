@@ -33,18 +33,16 @@
             %th カテゴリー
             %td
               %a
-                = @item.category.parent.parent.name
+                = @item.category.name if @item.category.name
               %br
-              %a
-                >#{@item.category.parent.name}
+              %a ＞**
               %br
-              %a
-                >#{@item.category.name}
+              %a ＞**
           %tr
             %th ブランド
             %td
               %a
-                **
+                = @item.brand.name if @item.brand.name
           %tr
             %th 商品のサイズ
             %td
@@ -54,12 +52,11 @@
             %th 商品の状態
             %td
               %a
-                = @item.condition_id
+                = @item.condition_id if @item.condition_id
           %tr
             %th 配送料の負担
             %td
-              %a
-              = @item.shipping_fee_charge_to
+              %a 送料込み
           %tr
             %th 配送方法
             %td
@@ -68,15 +65,15 @@
             %th 配送元地域
             %td
               %a
-                = @item.prefecture.name
+                = @item.shipping_from if @item.shipping_from
           %tr
             %th 発送日の目安
             %td
               %a
-                = @item.shipping_days
+                #{@item.shipping_days}日で発送
     .product-details-main__item-price
       %span.item-total-price
-        = number_to_currency(@item.shipping_cost, unit: "￥", precision: 0)
+        = number_to_currency(@item.price, unit: "￥", precision: 0)
       %span.item-tax (税込)
       %span.item-shipping-fee 送料込み
     - if @item.trade_status_id == 1
@@ -125,7 +122,7 @@
                 = user_items.name
               .users-item-box__content__item-data__body__num
                 .users-item-box__content__item-data__body__num__price
-                  = number_to_currency(user_items.shipping_cost, unit: "￥", precision: 0)
+                  = number_to_currency(user_items.price, unit: "￥", precision: 0)
                 %span
                   = fa_icon "heart", class: "icon-heart"
     %h2.users-item-box__head
@@ -141,7 +138,7 @@
                 = category_items.name
               .users-item-box__content__item-data__body__num
                 .users-item-box__content__item-data__body__num__price
-                  = number_to_currency(category_items.shipping_cost, unit: "￥", precision: 0)
+                  = number_to_currency(category_items.price, unit: "￥", precision: 0)
                 %span
                   = fa_icon "heart", class: "icon-heart"
   .bread-crumbs

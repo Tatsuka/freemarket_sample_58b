@@ -23,20 +23,21 @@
               %th 出品者
               %td
                 %a
-                  出品者名
-
+                  = @item.user.nickname
             %tr
               %th カテゴリー
               %td
-                %a メンズ
+                %a 
+                  = @item.category.name if @item.category.name
                 %br
-                %a  ＞スニーカー
+                %a ""
                 %br
-                %a ＞靴
+                %a ""
             %tr
               %th ブランド
               %td
-                %a ブランド名
+                %a 
+                  = @item.category.name if @item.brand.name
             %tr
               %th 商品のサイズ
               %td
@@ -44,7 +45,8 @@
             %tr
               %th 商品の状態
               %td
-                %a 新品、未使用
+                %a 
+                  = @item.condition_id if @item.condition_id
             %tr
               %th 配送料の負担
               %td
@@ -56,13 +58,15 @@
             %tr
               %th 配送元地域
               %td
-                %a 東京都
+                %a 
+                  = @item.shipping_from if @item.shipping_from
             %tr
               %th 発送日の目安
               %td
-                %a 1〜2日で発送
+                #{@item.shipping_days}日で発送
       .compilation-details-main__item-price
-        %span.item-total-price ¥24,100
+        %span.item-total-price 
+          = number_to_currency(@item.price, unit: "￥", precision: 0)
         %span.item-tax (税込)
         %span.item-shipping-fee 送料込み
     
@@ -71,20 +75,15 @@
         商品の編集
       .compilation-item-box__text-center
         or
+      .compilation-item-box__btn-default-btn-red-and-gray
+        .compilation-item-box__btn-default-btn-red-and-gray__btn-red
+          出品を再開する
+        .compilation-item-box__btn-default-btn-red-and-gray__btn-gray
+          出品を停止する
       .compilation-item-box__btn-default-btn-gray
-        この商品を削除する
+        = link_to 'この商品を削除する', item_path(@item), method: :delete
     .bottom-image
       = image_tag '/bottom-image.jpg', class: "bottom-image-banner"
-
-
-
-
-
-
-
-
-
-
 
 .footer
   = render 'shared/footer'

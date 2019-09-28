@@ -35,9 +35,10 @@
           = link_to "/items/#{item.id}", method: :get, class: "category-items__erea__list__item" do
             .category-items__erea__list__item__box
               .category-items__erea__list__item__box__image
-                = image_tag item.images.first.image.url
+                - item.images.each do |image|
+                  = image_tag image.image.url
               .category-items__erea__list__item__box__price
-                = number_to_currency(item.shipping_cost, :unit => "￥", :precision => 0)
+                = number_to_currency(item.price, :unit => "￥", :precision => 0)
               .category-items__erea__list__item__box__caption
                 = item.name
       .category-items__erea
@@ -52,9 +53,10 @@
           = link_to "/items/#{item.id}", method: :get, class: "category-items__erea__list__item" do
             .category-items__erea__list__item__box
               .category-items__erea__list__item__box__image
-                = image_tag item.images.first.image.url
+                - item.images.each do |image|
+                  = image_tag image.image.url
               .category-items__erea__list__item__box__price
-                = number_to_currency(item.shipping_cost, :unit => "￥", :precision => 0)
+                = number_to_currency(item.price, :unit => "￥", :precision => 0)
               .category-items__erea__list__item__box__caption
                 = item.name
       .category-items__erea
@@ -69,9 +71,10 @@
           = link_to "/items/#{item.id}", method: :get, class: "category-items__erea__list__item" do
             .category-items__erea__list__item__box
               .category-items__erea__list__item__box__image
-                = image_tag item.images.first.image.url
+                - item.images.each do |image|
+                  = image_tag image.image.url
               .category-items__erea__list__item__box__price
-                = number_to_currency(item.shipping_cost, :unit => "￥", :precision => 0)
+                = number_to_currency(item.price, :unit => "￥", :precision => 0)
               .category-items__erea__list__item__box__caption
                 = item.name
 
@@ -87,9 +90,10 @@
           = link_to "/items/#{item.id}", method: :get, class: "category-items__erea__list__item" do
             .category-items__erea__list__item__box
               .category-items__erea__list__item__box__image
-                = image_tag item.images.first.image.url
+                - item.images.each do |image|
+                  = image_tag image.image.url
               .category-items__erea__list__item__box__price
-                = number_to_currency(item.shipping_cost, :unit => "￥", :precision => 0)
+                = number_to_currency(item.price, :unit => "￥", :precision => 0)
               .category-items__erea__list__item__box__caption
                 = item.name
     .bottom-image

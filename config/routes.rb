@@ -28,12 +28,16 @@ Rails.application.routes.draw do
       patch 'profile',               to: 'profile#update',                as: :profile_update
       get   'identification',        to: 'identification#edit',           as: :identification
       patch 'identification',        to: 'identification#update',         as: :identification_update
-      get   'listing',              to: 'listing#edit',                 as: :listing
-      patch 'listing',              to: 'listing#update',               as: :listing_update
-      namespace :listing do
-        get 'compilation/update',    as: 'compilation_update'
-        get 'compilation/edit',      as: 'compilation_edit'
-        get 'compilation/destroy',   as: 'compilation_destroy'
+
+      #出品中商品の編集
+      namespace :listings do
+        get 'listing',               to: 'listing#index',                 as: :listing_of_items_on_sale
+        get 'in_progress',           to: 'in_progress#index',             as: :listing_of_items_in_progress
+        get 'completed',             to: 'completed#index',               as: :listing_of_items_completed
+        get ':id',                   to: 'listing#show',                  as: :show_listing_of_items_on_sale
+        get 'edit/:id',              to: 'listing#edit',                  as: :edit_listing_of_items_on_sale
+        patch 'listing',             to: 'listing#update',                as: :update_listing_of_items_on_sale
+        delete 'listing',            to: 'listing#destroy',               as: :destroy_listing_of_items_on_sale
       end
       resources :credit, only: [:index, :new, :create, :destroy]
     end

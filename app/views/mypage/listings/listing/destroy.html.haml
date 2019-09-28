@@ -1,0 +1,17 @@
+.wrapper
+  = render 'mypage/_mypage-shared/header-area'
+
+  .header-bottom__bread__crumbs      
+    .bread-crumbs 
+      - breadcrumb :compilation
+      = breadcrumbs separator: " ＞ "
+
+  .item-destroy-main
+    .item-destroy-main__area
+      .item-destroy-main__area__head
+        商品を削除しますか？
+      .item-destroy-main__area__text
+        .item-destroy-main__area__text__yes
+          はい
+        .item-destroy-main__area__text__no
+          いいえ
