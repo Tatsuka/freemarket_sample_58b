@@ -28,12 +28,12 @@ crumb :logout do
 end
 
 crumb :listing do
-  link "出品した商品 - 出品中", mypage_listing_path
+  link "出品した商品 - 出品中",  mypage_listings_listing_of_items_on_sale_path
   parent :mypage
 end
 
 crumb :compilation do
-  link "出品商品画面", mypage_listing_compilation_edit_path
+  link "出品商品画面",  mypage_listings_show_listing_of_items_on_sale_path
   parent :listing
 end
 

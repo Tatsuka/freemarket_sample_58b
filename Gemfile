@@ -87,3 +87,4 @@ gem 'mini_magick'
 gem 'ancestry'
 gem "gretel"
 gem 'mini_magick'
+gem 'active_hash'
