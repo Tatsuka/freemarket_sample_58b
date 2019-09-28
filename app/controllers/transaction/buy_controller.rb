@@ -3,16 +3,14 @@ class Transaction::BuyController < ApplicationController
   before_action :set_item,only:[:show,:pay]
 
   def show
-    @item = Item.find(params[:id])
   end
 
   def create
   end
 
   def pay
-    @item = Item.find(params[:id])
     @item.trade_status_id = 2
-    @item.update
+    @item.save
     Payjp.api_key = 'sk_test_1721473b3cfd0970b82ecfda'
     charge = Payjp::Charge.create(
     amount: @item.shipping_cost,
