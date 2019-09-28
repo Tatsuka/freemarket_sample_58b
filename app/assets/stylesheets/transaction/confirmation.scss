@@ -41,8 +41,14 @@
             font-size: 22px;
             width: 64px;
             height: 48px;
-            background: #333;
-          }         
+
+            img {
+              object-fit: contain;
+              width: 100%;
+              height: 100%;
+            }
+          }
+
           &__confirmation-buy-item-name{
             width: calc(100% - 80px);
             margin: 0 0 0 16px;
@@ -123,11 +129,10 @@
                 }
               }
             }
-            &__confirmation-buy-btn-red{
+            &__confirmation-buy-btn-red,#payjp_checkout_box input[type=button]{
               width: 100%;
               margin: 8px 0 0;
               background: #ea352d;
-              border: 1px solid #ea352d;
               color: #fff;
               display: block;
               width: 100%;
