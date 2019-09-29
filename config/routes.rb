@@ -1,20 +1,10 @@
 Rails.application.routes.draw do
 
   devise_for :users, skip: :all
-    # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   
     get 'items'         =>    'items#index'
     get 'items/product_details' => 'items#product_details'
     root to: "items#index"
-    # get 'users/:id'     =>    'users#show'
-    # get 'users/:id/sign_out'=>    'users#sign_out'
-    # get 'users/:id/profile' =>    'users#profile'
-    # get 'users/:id/deliver_address'=> 'users#deliver_address'
-    # get 'users/:id/card'    =>     'users#card'
-    # get 'users/:id/email_password' =>  'users#email_password'
-    # get 'users/:id/identification' =>  'users#identification'
-    # get 'users/:id/sms_confirmation'=> 'users#sms_confirmation'
-    # get 'users/:id/edit'            =>  'users#edit'
   
   
   
@@ -41,7 +31,7 @@ Rails.application.routes.draw do
       end
       resources :credit, only: [:index, :new, :create, :destroy]
     end
- 
+
   
     #商品関連ページ
     get      'sell',                 to: 'items#new',                     as: :new_item
@@ -70,14 +60,19 @@ Rails.application.routes.draw do
       post    'users/password',           to: 'users/passwords#create'
   
       # signup
-      get     'signup',                   to: 'users/signup#new',               as: :start_user_registration
-      get     'signup/registration',      to: 'users/signup#registration',      as: :new_user_registration
-      get     'signup/sms_comfirmation',  to: 'users/signup#confirmation',      as: :new_user_sms_confirmation
-      get     'signup/address',           to: 'users/signup#address',           as: :new_user_address
-      get     'signup/payment',           to: 'users/signup#payment',           as: :new_user_payment
-      get     'signup/complete',          to: 'users/signup#complete',          as: :new_user_registration_complete
-      post    'signup',                   to: 'users/signup#create',            as: :create_user_registration
-      patch   'signup',                   to: 'users/signup#update',            as: :user_registration
+      resources :signup ,only: [:index,:create] do
+        collection do
+          get 'registration'
+          post 'registration' => 'signup#validates_for_registration'
+          get 'sms_confirmation' 
+          post 'sms_confirmation' => 'signup#validates_for_confirmation'
+          get 'address' 
+          post 'address' => 'signup#validates_for_address'
+          get 'payment'
+          post 'payment' => 'signup#validates_for_payment'
+          get 'complete'
+        end
+      end
     end
     
   end

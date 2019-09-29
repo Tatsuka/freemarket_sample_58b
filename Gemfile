@@ -83,9 +83,9 @@ end
 
 gem 'carrierwave'
 gem 'fog-aws'
-gem 'mini_magick'
 gem 'ancestry'
 gem "gretel"
 gem 'mini_magick'
 gem 'active_hash'
 gem 'payjp'
+gem 'squasher', '>= 0.6.0'

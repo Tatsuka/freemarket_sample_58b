@@ -3,9 +3,10 @@ class Item < ApplicationRecord
   has_many :comments , dependent: :destroy
   belongs_to :category
   belongs_to :user
+  #transactionテーブル作成時記述
   # has_one :transaction
   # extend ActiveHash::Associations::ActiveRecordExtensions
-    # belongs_to_active_hash :trade_status
+  # belongs_to_active_hash :trade_status
   
   accepts_nested_attributes_for :images
   scope :extract_by_category, -> (category_id) { where(category_id: category_id).limit(10).order("created_at DESC") }

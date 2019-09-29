@@ -1,23 +1,22 @@
-class ItemsController < ApplicationController
-  before_action :set_item, only: [:show, :edit, :update, :destroy]
+class ItemsController < ApplicationController
+  before_action :set_item, only: [:show, :edit, :update, :destroy]
 
-    def index
-      @ladies_items = Item.extract_by_category(1)
-      @mens_items = Item.extract_by_category(2)
-      @home_appliance_items = Item.extract_by_category(3)
-      @toy_items = Item.extract_by_category(4)
-    end
+  def index
+    @ladies_items = Item.extract_by_category(1)
+    @mens_items = Item.extract_by_category(2)
+    @home_appliance_items = Item.extract_by_category(3)
+    @toy_items = Item.extract_by_category(4)
+  end
   
-    def new
-      # ユーザー登録機能実装後に使用
-      # unless user_signed_in?
-      #   redirect_to new_user_session_path
-      # else
-      @item = Item.new
-      @item.images.build
-      # end
-    end
-  
+  def new
+    # ユーザー登録機能実装後に使用
+    # user_signed_in?
+    #   redirect_to new_user_session_path
+    # else
+    @item = Item.new
+    @item.images.build
+    # end
+  end
   def create
     @item = Item.new(item_params)
       params[:images][:image].each do |i|
@@ -30,7 +29,7 @@ class ItemsController < ApplicationController
     end
   end
   
-  def search
+  def search
   end
   
   def show
@@ -47,13 +46,12 @@ class ItemsController < ApplicationController
     redirect_to item_path(item.id)
   end
   
-  def destroy
+  def destroy
     if item.user_id == current_user.id
       @item.destroy
-      redirect_to mypage_listings_listing_of_items_on_sale_path
+      redirect_to mypage_listings_listing_of_items_on_sale_path
     end
   end
-end
 
   private
   def item_params
@@ -71,8 +69,8 @@ end
       images_attributes: [:image, :item_id]
     ).merge(user_id: 1)
   end
-    
-  def set_item
-    @item = Item.find(params[:id])
+
+  def set_item
+    @item = Item.find(params[:id])
   end
 end
