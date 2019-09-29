@@ -3,7 +3,6 @@ class SignupController < ApplicationController
   before_action :validates_for_payment, only: :create
 
   def index
-    
   end
 
   def registration
