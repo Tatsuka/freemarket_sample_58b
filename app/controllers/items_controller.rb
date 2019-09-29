@@ -30,7 +30,7 @@ class ItemsController < ApplicationController
     end
   end
   
-  def search
+  def search
   end
   
   def show
