@@ -1,20 +1,10 @@
 Rails.application.routes.draw do
 
   devise_for :users, skip: :all
-    # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   
     get 'items'         =>    'items#index'
     get 'items/product_details' => 'items#product_details'
     root to: "items#index"
-    # get 'users/:id'     =>    'users#show'
-    # get 'users/:id/sign_out'=>    'users#sign_out'
-    # get 'users/:id/profile' =>    'users#profile'
-    # get 'users/:id/deliver_address'=> 'users#deliver_address'
-    # get 'users/:id/card'    =>     'users#card'
-    # get 'users/:id/email_password' =>  'users#email_password'
-    # get 'users/:id/identification' =>  'users#identification'
-    # get 'users/:id/sms_confirmation'=> 'users#sms_confirmation'
-    # get 'users/:id/edit'            =>  'users#edit'
   
   
   
@@ -83,14 +73,6 @@ Rails.application.routes.draw do
           get 'complete'
         end
       end
-      # get     'signup',                   to: 'users/signup#new',               as: :start_user_registration
-      # get     'signup/registration',      to: 'users/signup#registration',      as: :new_user_registration
-      # get     'signup/sms_comfirmation',  to: 'users/signup#confirmation',      as: :new_user_sms_confirmation
-      # get     'signup/address',           to: 'users/signup#address',           as: :new_user_address
-      # get     'signup/payment',           to: 'users/signup#payment',           as: :new_user_payment
-      # get     'signup/complete',          to: 'users/signup#complete',          as: :new_user_registration_complete
-      # post    'signup',                   to: 'users/signup#create',            as: :create_user_registration
-      # patch   'signup',                   to: 'users/signup#update',            as: :user_registration
     end
     
   end
