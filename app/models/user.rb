@@ -6,7 +6,7 @@ class User < ApplicationRecord
   has_one :credit_card , dependent: :destroy
   has_one :profile
   has_one :user_address , dependent: :destroy
-
+  
 # Include default devise modules. Others available are:
 # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
 
