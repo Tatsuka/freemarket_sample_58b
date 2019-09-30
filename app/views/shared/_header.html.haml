@@ -28,7 +28,7 @@
               = icon 'fas fa-lg', 'check'
               %span やることリスト
             %li.header-bottom__right__mypage
-              = link_to mypage_top_path(current_user) do
+              = link_to mypage_top_path do
                 = current_user.profile.avatar
                 %span マイページ
       - else
