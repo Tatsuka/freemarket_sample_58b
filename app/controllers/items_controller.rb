@@ -23,7 +23,7 @@ class ItemsController < ApplicationController
       params[:images][:image].each do |i|
         @item.images.build(image: i, item_id: @item.id)
       end
-      if @item.save
+    if @item.save
       redirect_to root_path
     else
       redirect_to new_item_path
@@ -55,7 +55,8 @@ class ItemsController < ApplicationController
   end
 end
 
-  private
+private
+
   def item_params
     params.require(:item).permit(
       :name,
@@ -75,4 +76,3 @@ end
   def set_item
     @item = Item.find(params[:id])
   end
-end

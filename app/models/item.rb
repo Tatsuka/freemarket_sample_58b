@@ -16,7 +16,7 @@ class Item < ApplicationRecord
   enum shipping_days: {"---": 0, "1~2日で発送": 1, "2~3日で発送": 2, "4~7日で発送": 3}, _prefix: true
   enum brand_id: {"---": 0, "シャネル": 1, "ナイキ": 2, "ルイ ヴィトン": 3}, _prefix: true
   extend ActiveHash::Associations::ActiveRecordExtensions
-  belongs_to_active_hash :prefecture
+  belongs_to :prefecture
   
 end
 

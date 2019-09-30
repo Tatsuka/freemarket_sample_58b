@@ -1,5 +1,6 @@
 class Mypage::Listings::ListingController < ApplicationController
   def index
+    @item = Item.find(params[:id])
   end
 
   def update
