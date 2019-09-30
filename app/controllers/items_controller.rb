@@ -52,6 +52,7 @@ class ItemsController < ApplicationController
       redirect_to mypage_listings_listing_of_items_on_sale_path
     end
   end
+end
 
 private
 
