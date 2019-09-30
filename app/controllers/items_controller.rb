@@ -10,10 +10,10 @@ class ItemsController < ApplicationController
   
   def new
     if user_signed_in?
-      redirect_to new_user_session_path
-    else
       @item = Item.new
       @item.images.build
+    else
+      redirect_to new_user_session_path
     end
   end
   def create
@@ -66,7 +66,7 @@ class ItemsController < ApplicationController
       :brand_id,
       :prefecture_id,
       images_attributes: [:image, :item_id]
-    ).merge(user_id: 1)
+    ).merge(user_id: current_user.id)
   end
 
   def set_item
