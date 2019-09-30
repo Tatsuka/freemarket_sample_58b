@@ -7,4 +7,6 @@ class Profile < ApplicationRecord
   validates :last_name_kanji,      presence: true, length: {maximum: 35}
   validates :phone_number,                                     length: {maximum: 100}
   validates :avatar,                  presence: true
+
+  has_one_attached :avatar
 end

@@ -89,3 +89,7 @@ gem 'mini_magick'
 gem 'active_hash'
 gem 'payjp'
 gem 'squasher', '>= 0.6.0'
+gem 'omniauth-rails_csrf_protection'
+
+gem 'omniauth-facebook'
+gem 'omniauth-google-oauth2'

@@ -9,13 +9,12 @@ class ItemsController < ApplicationController
   end
   
   def new
-    # ユーザー登録機能実装後に使用
-    # user_signed_in?
-    #   redirect_to new_user_session_path
-    # else
-    @item = Item.new
-    @item.images.build
-    # end
+    if user_signed_in?
+      redirect_to new_user_session_path
+    else
+      @item = Item.new
+      @item.images.build
+    end
   end
   def create
     @item = Item.new(item_params)

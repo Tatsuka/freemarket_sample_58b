@@ -82,7 +82,7 @@
           .config__tell
             = link_to '電話番号の確認'
           .config__logout
-            = link_to "ログアウト", destroy_user_session_path, method: :delete
+            = link_to "ログアウト", mypage_logout_path, method: :get
     .content__right
       .mypage-user-icon__area
         .user-icon__zone

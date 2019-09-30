@@ -15,22 +15,21 @@
         %button.login-main__box__sns__google
           = fa_icon "google", class: "icon"
           googleでログイン
-      %form{action: "", method: "POST"}
-      .login-main__box__form
-        .login-main__box__form__input
-          %input.login-main__box__form__input__mail{name: "email", placeholder: "メールアドレス", type: "email", value: ""}
-        .login-main__box__form__input
-          %input.login-main__box__form__input__pass{name: "password", placeholder: "パスワード", type: "password"}/
-        .g-recaptcha.login-captcha{"data-sitekey" => "6LfZGCYTAAAAAHoK-s7Lg5OdYg5Fq4susvALmZoc"}
-          %div{style: "width: 304px; height: 78px;"}
-            %div
-              %iframe{frameborder: "0", height: "78", name: "a-aox9de8yb5gs", role: "presentation", sandbox: "allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox", scrolling: "no", src: "https://www.google.com/recaptcha/api2/anchor?ar=2&k=6LfZGCYTAAAAAHoK-s7Lg5OdYg5Fq4susvALmZoc&co=aHR0cHM6Ly93d3cubWVyY2FyaS5jb206NDQz&hl=ja&v=v1566858990656&size=normal&cb=amzt6ghte056", width: "304"}
-            %textarea#g-recaptcha-response.g-recaptcha-response{name: "g-recaptcha-response", style: "width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"}
-        %button.login-main__box__form__login
-          ログイン
-        = link_to "" do
-          %small
-            パスワードをお忘れの方
+      = form_for @user, url: user_session_path, method: :post do |f|
+        .login-main__box__form
+          .login-main__box__form__input
+            = f.email_field :email, placeholder: "メールアドレス", class: "login-main__box__form__input__mail"
+          .login-main__box__form__input
+            = f.password_field :password, placeholder: "パスワード", class: "login-main__box__form__input__pass"
+          -# .g-recaptcha.login-captcha{"data-sitekey" => "6LfZGCYTAAAAAHoK-s7Lg5OdYg5Fq4susvALmZoc"}
+          -#   %div{style: "width: 304px; height: 78px;"}
+          -#     %div
+          -#       %iframe{frameborder: "0", height: "78", name: "a-aox9de8yb5gs", role: "presentation", sandbox: "allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox", scrolling: "no", src: "https://www.google.com/recaptcha/api2/anchor?ar=2&k=6LfZGCYTAAAAAHoK-s7Lg5OdYg5Fq4susvALmZoc&co=aHR0cHM6Ly93d3cubWVyY2FyaS5jb206NDQz&hl=ja&v=v1566858990656&size=normal&cb=amzt6ghte056", width: "304"}
+          -#     %textarea#g-recaptcha-response.g-recaptcha-response{name: "g-recaptcha-response", style: "width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"}
+          = f.submit "ログイン", class: "login-main__box__form__login"
+          = link_to "" do
+            %small
+              パスワードをお忘れの方
   = render 'shared/signup-footer'  
 -# ログイン確認時に使用する
 -# %h2 Log in

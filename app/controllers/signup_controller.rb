@@ -3,7 +3,6 @@ class SignupController < ApplicationController
   before_action :validates_for_payment, only: :create
 
   def index
-    
   end
 
   def registration
@@ -107,7 +106,7 @@ class SignupController < ApplicationController
       user: @user,
       introduction: " ",
       phone_number: session[:phone_number],
-      avatar: "/public/default.jpg",
+      avatar: "/default.jpg",
       last_name_kanji: session[:last_name_kanji],
       first_name_kanji: session[:first_name_kanji],
       last_name_kana: session[:last_name_kana],
