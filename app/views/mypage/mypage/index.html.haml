@@ -22,8 +22,8 @@
           .header-bottom__right__todolist
             = link_to 'やることリスト'
           .header-bottom__right__mypage
-            = link_to 'マイページ'
-  .header-bottom__bread__crumbs      
+            = link_to 'マイページ', mypage_top_path
+  .header-bottom__bread__crumbs
     .bread-crumbs 
       - breadcrumb :mypage
       = breadcrumbs separator: " ＞ "
@@ -32,7 +32,7 @@
       .content__left__list
         .content__left__mypage
           .list__mypage
-            = link_to 'マイページ'
+            = link_to 'マイページ', mypage_top_path
           .list__news
             = link_to 'お知らせ'
           .list__todolist
@@ -86,7 +86,7 @@
     .content__right
       .mypage-user-icon__area
         .user-icon__zone
-          = link_to 'ユーザー名'
+          = current_user.nickname
           .user__icon         
           .user__name
           .mypage-number

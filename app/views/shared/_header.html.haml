@@ -13,11 +13,18 @@
           カテゴリーから探す
         .header-bottom__left__brand
           ブランドから探す
-      .header-bottom__right
-        .header-bottom__right__signup
-          = link_to '新規会員登録', signup_index_path
-            
-        .header-bottom__right__login
-          = link_to 'ログイン', new_user_session_path
-            
 
+      - if user_signed_in?
+        .header-bottom__right
+          .header-bottom__right__news
+            お知らせ
+          .header-bottom__right__todolist
+            やることリスト
+          .header-bottom__right__mypage
+            = link_to 'マイページ', mypage_top_path
+      - else
+        .header-bottom__right
+          .header-bottom__right__signup
+            = link_to '新規会員登録', signup_index_path
+          .header-bottom__right__login
+            = link_to 'ログイン', new_user_session_path
