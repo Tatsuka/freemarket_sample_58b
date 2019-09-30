@@ -51,7 +51,7 @@ Rails.application.routes.draw do
       # session
       get     'login',                    to: 'users/sessions#new',             as: :new_user_session
       post    'login',                    to: 'users/sessions#create',          as: :user_session
-      delete  'logout',                   to: 'uesrs/sessions#destroy',         as: :destroy_user_session
+      delete  'logout',                   to: 'users/sessions#destroy',         as: :destroy_user_session
       # password
       get     'password/reset',           to: 'users/passwords#new',            as: :new_user_password
       get     'password/edit',            to: 'users/passwords#edit',           as: :edit_user_password
