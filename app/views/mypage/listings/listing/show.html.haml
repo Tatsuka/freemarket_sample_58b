@@ -2,7 +2,7 @@
 .wrapper
   = render 'mypage/_mypage-shared/header-area'
 
-  .header-bottom__bread__crumbs      
+  .header-bottom__bread__crumbs
     .bread-crumbs 
       - breadcrumb :compilation
       = breadcrumbs separator: " ＞ "
@@ -37,7 +37,7 @@
               %th ブランド
               %td
                 %a 
-                  = @item.category.name if @item.brand.name
+                  -# = @item.category.name if @item.brand.name
             %tr
               %th 商品のサイズ
               %td

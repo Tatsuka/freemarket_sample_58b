@@ -23,7 +23,7 @@
             やることリスト
           %li.header-bottom__right__mypage
             マイページ
-  .header-bottom__bread__crumbs      
+  .header-bottom__bread__crumbs
     .bread-crumbs 
       - breadcrumb :logout
       = breadcrumbs separator: " ＞ "
@@ -86,6 +86,7 @@
     .content__right__logout__area
       %form.content__right__logout__area__form{action: "", method: "POST", novalidate: "novalidate"}
         .content__right__logout__area__form__btn
+          -# = link_to 'ログアウト', destroy_user_session_path, method: :delete
           %button{type: "submit"} ログアウト
 
   .bottom-image

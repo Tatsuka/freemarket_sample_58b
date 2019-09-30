@@ -31,8 +31,9 @@
               ありがとうございます。
             %h4.thanks
               会員登録が完了しました。
-          %button.next-btn{type: "submit"}
-            メルカリをはじめる
+          = link_to root_path do
+            %button.next-btn{type: "submit"}
+              メルカリをはじめる
   .registration-bottom-image
     = image_tag '/signup-bottom.jpg', class:"signup-bottom"
   = render 'shared/signup-footer'
