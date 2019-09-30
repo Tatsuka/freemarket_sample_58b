@@ -82,12 +82,11 @@
           .config__tell
             = link_to '電話番号の確認'
           .config__logout
-            = link_to "ログアウト", destroy_user_session_path, method: :delete
+            = link_to "ログアウト", mypage_logout_path, method: :get
     .content__right__logout__area
       %form.content__right__logout__area__form{action: "", method: "POST", novalidate: "novalidate"}
         .content__right__logout__area__form__btn
-          %button{type: "submit"} ログアウト
-
+          = link_to "ログアウト", destroy_user_session_path, method: :delete
   .bottom-image
     %img{src: "//web-jp-assets.mercdn.net/_next/static/images/download_app_bg-b57d6f1a32f2aebd89cf6f43bc2e4b39.jpg"}
   = render 'shared/footer'
