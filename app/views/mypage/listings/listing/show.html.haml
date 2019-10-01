@@ -1,12 +1,10 @@
 .icon::before
 .wrapper
   = render 'mypage/_mypage-shared/header-area'
-
   .header-bottom__bread__crumbs
     .bread-crumbs 
       - breadcrumb :compilation
       = breadcrumbs separator: " ＞ "
-
   .compilation-details-wrapper
     .compilation-details-main
       %h1.compilation-details-main__title
@@ -76,7 +74,7 @@
     
     .compilation-item-box
       .compilation-item-box__btn-default-btn-red
-        商品の編集
+        = link_to '商品の編集', edit_item_path(@item)
       .compilation-item-box__text-center
         or
       .compilation-item-box__btn-default-btn-red-and-gray
@@ -89,7 +87,6 @@
           = link_to 'この商品を削除する', item_path(@item), method: :delete
     .bottom-image
       = image_tag '/bottom-image.jpg', class: "bottom-image-banner"
-
 .footer
   = render 'shared/footer'
   = render 'shared/button'
