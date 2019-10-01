@@ -33,15 +33,16 @@
             %th カテゴリー
             %td
               %a
-                = @item.category.parent.parent.name
+                = @item.category.name
+                -# = @item.category.parent.parent.name
               %br
               %a
                 %i.fas.fa-chevron-right
-                #{@item.category.parent.name}
+                -# #{@item.category.parent.name}
               %br
               %a
                 %i.fas.fa-chevron-right
-                #{@item.category.name}
+                -# #{@item.category.name}
           %tr
             %th ブランド
             %td
@@ -84,7 +85,7 @@
     -# ユーザー登録が正常になったら使います
     -# - if @item.user_id != current_user.id
     - if @item.trade_status_id == 1
-      = link_to transaction_buy_path(@item) do
+      = link_to trade_buy_path(@item) do
         %button.buy-btn{type: "submit"}
           購入画面に進む
     - else
