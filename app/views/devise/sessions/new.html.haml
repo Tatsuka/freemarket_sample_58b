@@ -10,10 +10,10 @@
             新規会員登録
       .login-main__box__sns
         %button.login-main__box__sns__facebook
-          = fa_icon "facebook-square ", class: "icon"
+          %i.fab{class: "fa-facebook-square fa-2x"}
           Facebookでログイン
         %button.login-main__box__sns__google
-          = fa_icon "google", class: "icon"
+          = image_tag '/google.jpg', class: "google-bottom"
           googleでログイン
       = form_for @user, url: user_session_path, method: :post do |f|
         .login-main__box__form

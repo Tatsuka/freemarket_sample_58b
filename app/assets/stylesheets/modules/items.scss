@@ -95,6 +95,7 @@
             display: inline-block;
             margin: 0 0 20px 20px;
             &__box {
+              position: relative;
               &__image {
                 height: 170px;
                 z-index: 0;
@@ -144,3 +145,31 @@
   }
 }
 
+.item-sold-out-badge {
+  div {
+    display: block;
+    top: 16px;
+    font-size: 20px;
+    font-weight: 600;
+    position: absolute;
+    left: 0;
+    z-index: 2;
+    color: #fff;
+    transform: rotate(-45deg);
+    letter-spacing: 2px;
+  }
+}
+.item-sold-out-badge:after {
+    display: block;
+    content: '';
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 0;
+    height: 0;
+    position: absolute;
+    border-style: solid;
+    border-color: #ea352d transparent transparent transparent;
+    border-width: 100px 100px 0 0;
+    text-decoration: inherit;
+}

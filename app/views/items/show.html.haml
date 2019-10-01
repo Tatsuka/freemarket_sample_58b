@@ -81,6 +81,8 @@
         = number_to_currency(@item.shipping_cost, unit: "￥", precision: 0)
       %span.item-tax (税込)
       %span.item-shipping-fee 送料込み
+    -# ユーザー登録が正常になったら使います
+    -# - if @item.user_id != current_user.id
     - if @item.trade_status_id == 1
       = link_to transaction_buy_path(@item) do
         %button.buy-btn{type: "submit"}
@@ -130,6 +132,10 @@
                   = number_to_currency(user_items.shipping_cost, unit: "￥", precision: 0)
                 %span
                   = icon 'far fa-lg', 'heart'
+            - unless user_items.trade_status_id == 1
+              .item-sold-out-badge
+                %div SOLD
+
     %h2.users-item-box__head
       #{@item.category.name}その他の出品
     .users-item-box__content
@@ -146,6 +152,10 @@
                   = number_to_currency(category_items.shipping_cost, unit: "￥", precision: 0)
                 %span
                   = icon 'far fa-lg', 'heart'
+            - unless user_items.trade_status_id == 1
+              .item-sold-out-badge
+                %div SOLD
+
   .bottom-image
     = image_tag '/bottom-image.jpg', class: "bottom-image-banner"
   = render 'shared/footer'

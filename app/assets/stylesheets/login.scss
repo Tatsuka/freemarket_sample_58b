@@ -35,7 +35,19 @@
           line-height: 48px;
           font-size: 14px;
           text-align: center;
-          cursor: pointer;
+          position: relative;
+
+          .fa-facebook-square {
+            display: inline-block;
+            font-style: normal;
+            font-weight: 400;
+            font-variant: normal;
+            text-transform: none;
+            line-height: 1;
+            position: absolute;
+            top: 25%;
+            left: 16px;
+          }
         }
 
         &__google {
@@ -44,7 +56,17 @@
           line-height: 48px;
           font-size: 14px;
           text-align: center;
-          cursor: pointer;
+          position: relative;
+
+          .google-bottom {
+            display: inline-block;
+            weight: 27px;
+            height: 27px;
+            line-height: 1;
+            position: absolute;
+            top: 25%;
+            left: 16px;
+          }
         }
       }
 
