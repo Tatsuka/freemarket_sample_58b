@@ -1,4 +1,4 @@
-class Transaction::BuyController < ApplicationController
+class Trade::BuyController < ApplicationController
 
   before_action :set_item,only:[:show,:pay]
 

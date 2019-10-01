@@ -1,2 +1,2 @@
-module Transaction::OrderStatusHelper
+module Trade::OrderStatusHelper
 end

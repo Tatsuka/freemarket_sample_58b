@@ -1,2 +1,2 @@
-module Transaction::BuyHelper
+module Trade::BuyHelper
 end
