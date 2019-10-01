@@ -42,7 +42,7 @@
           .list__exhibit
             = link_to '出品する'
           .list__exhibitnow
-            = link_to '出品した商品 - 出品中', mypage_listings_listing_of_items_on_sale_path
+            = link_to '出品した商品 - 出品中', mypage_listings_listing_of_items_on_sale_path(@user.id)
           .clist__transactionnow
             = link_to '出品した商品 - 取引中'
           .list__transactionend

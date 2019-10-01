@@ -14,44 +14,28 @@
           .content-area__listing-content-area__listing-status__status-listing__listing-text
             出品中
           .content-area__listing-content-area__listing-status__status-listing__listing-content
-            .status-listing__listing-content__1
-              = link_to '@item.images.first.image.url if @item.images'
-            .status-listing__listing-content__2
-              -# = link_to 'い', mypage_listings_show_listing_of_items_on_sale_path
-            .status-listing__listing-content__3
-              -# = link_to 'う', mypage_listings_show_listing_of_items_on_sale_path
-            .status-listing__listing-content__4
-              -# = link_to 'え', mypage_listings_show_listing_of_items_on_sale_path
-            .status-listing__listing-content__5
-              -# = link_to 'お', mypage_listings_show_listing_of_items_on_sale_path
+            - @item.each do |item|
+              .status-listing__listing-content__1
+                .status-listing__listing-content__1__1-imege
+                  = link_to image_tag(item.images.first.image.url), mypage_listings_show_listing_of_items_on_sale_path(item.id)
         .content-area__listing-content-area__listing-status__status-exhitusers
           .content-area__listing-content-area__listing-status__status-exhitusers__exhitusers-text
             取引中
           .content-area__listing-content-area__listing-status__status-exhitusers__listing-content
             .status-listing__listing-content__6
-              -# = link_to '1', mypage_listings_show_listing_of_items_on_sale_path
             .status-listing__listing-content__7
-              -# = link_to '2', mypage_listings_show_listing_of_items_on_sale_path
             .status-listing__listing-content__8
-              -# = link_to '3', mypage_listings_show_listing_of_items_on_sale_path
             .status-listing__listing-content__9
-              -# = link_to '4', mypage_listings_show_listing_of_items_on_sale_path
             .status-listing__listing-content__10
-              -# = link_to '5', mypage_listings_show_listing_of_items_on_sale_path
         .content-area__listing-content-area__listing-status__status-exhitend
           .content-area__listing-content-area__listing-status__status-exhitend__exhitend-text
             売却済
           .content-area__listing-content-area__listing-status__status-exhitend__listing-content
             .status-listing__listing-content__11
-              -# = link_to 'a', mypage_listings_show_listing_of_items_on_sale_path
             .status-listing__listing-content__12
-              -# = link_to 'b', mypage_listings_show_listing_of_items_on_sale_path
             .status-listing__listing-content__13
-              -# = link_to 'c', mypage_listings_show_listing_of_items_on_sale_path
             .status-listing__listing-content__14
-              -# = link_to 'd', mypage_listings_show_listing_of_items_on_sale_path
             .status-listing__listing-content__15
-              -# = link_to 'e', mypage_listings_show_listing_of_items_on_sale_path
 .footer
   = render 'shared/footer'
   = render 'shared/button'
