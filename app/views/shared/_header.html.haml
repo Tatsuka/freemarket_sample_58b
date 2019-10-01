@@ -1,7 +1,8 @@
 .header-area
   .header-area__wrapper
     .header-top
-      %img{href: "", alt: "メルカリマーク", src: "//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?2482339763", width: "134", height: "36"}
+      = link_to root_path do
+        = image_tag '/logo.svg', width: "134", height: "36"
       %form{action: "", method: "post", class: "search-form"}
         %input{name: "search", placeholder: "何かお探しですか？", type: "search", class: "search-input"}
           = fa_icon "search", class: "icon-search"
