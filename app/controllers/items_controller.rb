@@ -2,7 +2,7 @@ class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update, :destroy]
 
   def index
-    @ladies_items = Item.extract_by_category(1)
+    @ladies_items = Item.extract_by_category(1..10)
     @mens_items = Item.extract_by_category(2)
     @home_appliance_items = Item.extract_by_category(3)
     @toy_items = Item.extract_by_category(4)

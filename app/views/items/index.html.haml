@@ -3,7 +3,8 @@
 
   .main-wrapper
     .srider
-      = image_tag "//www-mercari-jp.akamaized.net/assets/img/featured/camp/index/index_keyvisual.png?2482339763"
+      %img#mypic{height: "300", src: "top-banner-1.jpg", width: "100%"}
+      -# = image_tag "//www-mercari-jp.akamaized.net/assets/img/featured/camp/index/index_keyvisual.png?2482339763"
     .popularity
       %h2
         人気のカテゴリー
@@ -38,9 +39,12 @@
                 - item.images.each do |image|
                   = image_tag image.image.url
               .category-items__erea__list__item__box__price
-                = number_to_currency(item.price, :unit => "￥", :precision => 0)
+                = number_to_currency(item.shipping_cost, :unit => "￥", :precision => 0)
               .category-items__erea__list__item__box__caption
                 = item.name
+              - unless item.trade_status_id == 1
+                .item-sold-out-badge
+                  %div SOLD
       .category-items__erea
         .category-items__erea__header
           %h3.new-item
@@ -56,7 +60,7 @@
                 - item.images.each do |image|
                   = image_tag image.image.url
               .category-items__erea__list__item__box__price
-                = number_to_currency(item.price, :unit => "￥", :precision => 0)
+                = number_to_currency(item.shipping_cost, :unit => "￥", :precision => 0)
               .category-items__erea__list__item__box__caption
                 = item.name
       .category-items__erea
