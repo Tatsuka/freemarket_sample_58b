@@ -68,7 +68,7 @@
             %th 配送元地域
             %td
               %a
-                -# = @item.prefecture.name
+                = @item.prefecture.name
           %tr
             %th 発送日の目安
             %td
@@ -125,7 +125,7 @@
                 = user_items.name
               .users-item-box__content__item-data__body__num
                 .users-item-box__content__item-data__body__num__price
-                  = number_to_currency(user_items.price, unit: "￥", precision: 0)
+                  = number_to_currency(user_items.shipping_cost, unit: "￥", precision: 0)
                 %span
                   = fa_icon "heart", class: "icon-heart"
     %h2.users-item-box__head
