@@ -16,6 +16,7 @@ class ItemsController < ApplicationController
       redirect_to new_user_session_path
     end
   end
+  
   def create
     @item = Item.new(item_params)
       params[:images][:image].each do |i|
