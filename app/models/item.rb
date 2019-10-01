@@ -22,4 +22,3 @@ class Item < ApplicationRecord
 
   
 end
-

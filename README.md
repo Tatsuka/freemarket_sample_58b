@@ -171,10 +171,10 @@
 ### Association
 - belongs_to :buyer, class_name: 'User', foreign_key: 'buyer_id'
 - belongs_to :seller, class_name: 'User', foreign_key: 'seller_id'
-- has_many :transactions
+- has_many :trades
 
 
-## transactionsテーブル
+## tradesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |status|bigint|null:false, foreign_key: true|
