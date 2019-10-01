@@ -40,7 +40,6 @@
 
       &__listing-content{
         border-left: 1px solid #f5f5f5;
-        text-align: center;
         width: 85%;
         height: 78px;
         padding: 0 4%;
@@ -51,9 +50,26 @@
         .status-listing__listing-content__1{
           width: 70px;
           height: 70px;
-          margin: 4px 16px;
+          margin: 4px 17px;
           display: inline-block;
           border: 1px solid #f5f5f5;
+          overflow:hidden;
+
+          &__1-imege{
+            width:100%;
+            height:auto;
+            max-width:100%;
+            max-height:100%;
+            
+            img {
+              width:100%;
+              height:auto;
+              max-width:100%;
+              max-height:100%;
+              object-fit: contain;
+              margin:auto;
+            }
+          }
         }
         .status-listing__listing-content__2{
           @extend .status-listing__listing-content__1;

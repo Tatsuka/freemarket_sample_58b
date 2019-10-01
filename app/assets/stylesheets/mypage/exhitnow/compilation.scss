@@ -41,28 +41,40 @@
         max-width: 300px;
         min-height: 375px;
         margin: 0 auto;
-        background: rgb(245, 245, 245);
+        background: white;
 
         &__top {
-          background: pink;
           width: 300px;
           height: 300px;
           position: relative;
           overflow: hidden;
+
+          img {
+            width: 100%;
+            object-fit: contain;
+          }
         }
 
         &__dots {
-          line-height: 0;
+          height: 120px;
+          width: 300px;
           font-size:0;
+          overflow: hidden;
 
           &__dot {
-            background: olivedrab;
             width: 60px;
             height: 60px;
-            max-height: none;
-            position: relative;
-            overflow: hidden;
-            display: inline-block;
+            max-width:100%;
+            max-height:100%;
+            
+            img {
+              width: auto;
+              height: auto;
+              max-width:100%;
+              max-height:100%;
+              object-fit: contain;
+              margin:auto;
+            }
           }
         }
       }

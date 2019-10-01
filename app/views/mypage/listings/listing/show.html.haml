@@ -10,13 +10,16 @@
   .compilation-details-wrapper
     .compilation-details-main
       %h1.compilation-details-main__title
-        ☆ここに商品名が表示されます☆
+        = @item.name
       .compilation-details-main__content
         .compilation-details-main__content__image
           .compilation-details-main__content__image__top
+            = image_tag @item.images.first.image.url if @item.images
           .compilation-details-main__content__image__dots
-            - (1..10).each do |i|
-              .compilation-details-main__content__image__dots__dot
+            - if @item.images
+              - @item.images.each do |image|
+                .compilation-details-main__content__image__dots__dot
+                  = image_tag image.image.url
         %table.compilation-details-main__content__table
           %tbody
             %tr
@@ -37,7 +40,7 @@
               %th ブランド
               %td
                 %a 
-                  -# = @item.category.name if @item.brand.name
+                  **
             %tr
               %th 商品のサイズ
               %td
@@ -46,11 +49,12 @@
               %th 商品の状態
               %td
                 %a 
-                  = @item.condition_id if @item.condition_id
+                  = @item.condition_id
             %tr
               %th 配送料の負担
               %td
-                %a 送料込み
+                %a 
+                  = @item.shipping_fee_charge_to
             %tr
               %th 配送方法
               %td
@@ -59,7 +63,7 @@
               %th 配送元地域
               %td
                 %a 
-                  = @item.shipping_from if @item.shipping_from
+                  **
             %tr
               %th 発送日の目安
               %td
