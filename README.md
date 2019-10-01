@@ -105,7 +105,7 @@
 ### Association
 - has_many :images dependent: :destroy
 - has_many :comments dependent: :destroy
-- has_one :transaction
+- has_one :trade
 - belongs_to_active_hash :condition
 - belongs_to :category
 - belongs_to :brand

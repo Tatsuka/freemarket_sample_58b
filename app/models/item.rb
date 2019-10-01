@@ -4,8 +4,7 @@ class Item < ApplicationRecord
   has_many :comments , dependent: :destroy
   belongs_to :category
   belongs_to :user
-  #transactionテーブル作成時記述
-  has_one :transaction
+  has_one :trade
 
   belongs_to_active_hash :trade_status
   belongs_to_active_hash :prefecture
