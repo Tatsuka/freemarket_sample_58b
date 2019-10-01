@@ -36,10 +36,12 @@
                 = @item.category.parent.parent.name
               %br
               %a
-                >#{@item.category.parent.name}
+                %i.fas.fa-chevron-right
+                #{@item.category.parent.name}
               %br
               %a
-                >#{@item.category.name}
+                %i.fas.fa-chevron-right
+                #{@item.category.name}
           %tr
             %th ブランド
             %td
@@ -68,7 +70,7 @@
             %th 配送元地域
             %td
               %a
-                = @item.prefecture.name
+                = @item.prefecture_id
           %tr
             %th 発送日の目安
             %td
@@ -92,7 +94,7 @@
     .product-details-main__item-button
       .product-details-main__item-button__left
         .product-details-main__item-button__left__like
-          = fa_icon "heart", class: "icon-heart"
+          = icon 'far fa-lg', 'heart'
           いいね！
         .product-details-main__item-button__left__report
           ！ 不適切な商品の報告
@@ -106,11 +108,11 @@
   .sns-box
     %ul
       %li
-        = fa_icon "facebook-square 3x", class: "icon-facebook-square"
+        %i.fab{class: "fa-facebook-square fa-3x"}
       %li
-        = fa_icon "twitter-square 3x", class: "icon-twitter-square"
+        %i.fab{class: "fa-twitter-square fa-3x"}
       %li
-        = fa_icon "pinterest 3x", class: "icon-pinterest"
+        %i.fab{class: "fa-pinterest fa-3x"}
   .users-item-box
     %h2.users-item-box__head
       #{@item.user.nickname}さんのその他の出品
@@ -127,7 +129,7 @@
                 .users-item-box__content__item-data__body__num__price
                   = number_to_currency(user_items.shipping_cost, unit: "￥", precision: 0)
                 %span
-                  = fa_icon "heart", class: "icon-heart"
+                  = icon 'far fa-lg', 'heart'
     %h2.users-item-box__head
       #{@item.category.name}その他の出品
     .users-item-box__content
@@ -143,7 +145,7 @@
                 .users-item-box__content__item-data__body__num__price
                   = number_to_currency(category_items.shipping_cost, unit: "￥", precision: 0)
                 %span
-                  = fa_icon "heart", class: "icon-heart"
+                  = icon 'far fa-lg', 'heart'
   .bottom-image
     = image_tag '/bottom-image.jpg', class: "bottom-image-banner"
   = render 'shared/footer'

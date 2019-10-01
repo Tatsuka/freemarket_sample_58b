@@ -76,6 +76,7 @@
 
       &__right {
         display: flex;
+        position: relative;
 
         &__signup {
           text-align: center;
@@ -112,22 +113,29 @@
             transition: all 0.3s ease-out 0s;
           }
         }
+        ul {
+          display: flex;
+          position: relative;
+          margin-block-start: initial;
 
-        &__news {
-          padding-left: 0px;
-          height: 44px;
-          padding: 0px 7px;
-        }
+          li {
+            display: block;
+            font-size: 14px;
+            color: #333333;
+            height: 24px;
+            padding: 0px 7px;
+          }
 
-        &__todo {
-          height: 44px;
-          padding: 0px 7px;
-        }
+          &__news {
+            padding-left: 0px;
+          }
 
-        &__mypage {
-          padding-right: 0px;
-          height: 44px;
-          padding: 0px 7px;
+          &__todo {
+          }
+
+          &__mypage {
+            padding-right: 0px;
+          }
         }
       }
     }

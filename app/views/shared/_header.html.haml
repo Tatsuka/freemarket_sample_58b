@@ -18,9 +18,9 @@
         .header-bottom__right
           %ul
             %li.header-bottom__likes
-            = link_to "" do
-              = icon 'far fa-lg', 'heart'
-              %span いいね一覧
+              = link_to "" do
+                = icon 'far fa-lg', 'heart'
+              %span いいね！一覧
             %li.header-bottom__notification
               = link_to destroy_user_session_path, method: :delete do
                 = icon 'far fa-lg', 'bell'
@@ -30,7 +30,7 @@
               %span やることリスト
             %li.header-bottom__right__mypage
               = link_to mypage_top_path do
-                = current_user.profile.avatar
+                -# = current_user.profile.avatar
                 %span マイページ
       - else
         .header-bottom__right
