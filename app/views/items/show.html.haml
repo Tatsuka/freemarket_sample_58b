@@ -153,7 +153,7 @@
                   = number_to_currency(category_items.shipping_cost, unit: "￥", precision: 0)
                 %span
                   = icon 'far fa-lg', 'heart'
-            - unless user_items.trade_status_id == 1
+            - unless category_items.trade_status_id == 1
               .item-sold-out-badge
                 %div SOLD
   .bottom-image
