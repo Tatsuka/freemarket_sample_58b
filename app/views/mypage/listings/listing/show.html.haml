@@ -71,10 +71,10 @@
           = number_to_currency(@item.shipping_cost, unit: "￥", precision: 0)
         %span.item-tax (税込)
         %span.item-shipping-fee 送料込み
-    
     .compilation-item-box
-      .compilation-item-box__btn-default-btn-red
-        = link_to '商品の編集', edit_item_path(@item)
+      = link_to edit_item_path(@item) do
+        .compilation-item-box__btn-default-btn-red
+          商品の編集
       .compilation-item-box__text-center
         or
       .compilation-item-box__btn-default-btn-red-and-gray
@@ -82,9 +82,10 @@
           出品を再開する
         .compilation-item-box__btn-default-btn-red-and-gray__btn-gray
           出品を停止する
-      .compilation-item-box__btn-default-btn-gray
-        - if @item.user_id == current_user.id
-          = link_to 'この商品を削除する', item_path(@item), method: :delete
+      = link_to item_path(@item), method: :delete do
+        .compilation-item-box__btn-default-btn-gray
+          - if @item.user_id == current_user.id
+            この商品を削除する
     .bottom-image
       = image_tag '/bottom-image.jpg', class: "bottom-image-banner"
 .footer
