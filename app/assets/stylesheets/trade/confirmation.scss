@@ -1,4 +1,5 @@
-.confirmation-page{
+// 購入内容の確認ページ show.html.haml対応
+.confirmation-page {
   position: relative;
   min-height: 100%;
   background: rgb(245, 245, 245);
@@ -8,36 +9,44 @@
   line-height: 1;
   display: block;
 
-  &__confirmation-main{
+  &__pay {
+    text-align: center;
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+
+  &__confirmation-main {
     display: block;
-  
-    &__buy-item-area{
+
+    &__buy-item-area {
       width: 700px;
       margin: 0 auto;
       background: #fff;
       display: block;
    
-      &__buy-item-area-head{
+      &__buy-item-area-head {
         padding: 16px;
         font-size: 22px;
         line-height: 1.5;
         text-align: center;
         font-weight: bold;
       }
-      &__buy-item-area-buy-item{
+
+      &__buy-item-area-buy-item {
         padding: 24px 12.5% 0;
         border-top: 1px solid rgb(245, 245, 245);
         width: 100%;
         height: 300px;
-        
-        &__confirmation-inner{
+
+        &__confirmation-inner {
           height: 100%;
           display: flex;
           flex-wrap: wrap;
           max-width: 320px;
           margin: 0 auto;
 
-          &__confirmation-buy-item-image{
+          &__confirmation-buy-item-image {
             font-size: 22px;
             width: 64px;
             height: 48px;
@@ -49,34 +58,37 @@
             }
           }
 
-          &__confirmation-buy-item-name{
+          &__confirmation-buy-item-name {
             width: calc(100% - 80px);
             margin: 0 0 0 16px;
             text-align: left;
           }
-          &__confirmation-buy-item-form{
+
+          &__confirmation-buy-item-form {
             width: 100%;
             display: block;
             height: 100%;
 
-            &__confirmation-buy-item-form-box{
+            &__confirmation-buy-item-form-box {
               width: 100%;
               display: block;
               margin: 8px auto 0;
               line-height: 1.5;
               text-align: center;
 
-              &__confirmation-buy-price{
+              &__confirmation-buy-price {
                 font-size: 22px;
                 font-weight: 600;
                 display: inline-block;
               }
-              &__confirmation-item-shipping{
+
+              &__confirmation-item-shipping {
                 display: inline-block;
                 margin: 0 0 0 10px;
               }
             }
-            &__confirmation-buy-accordion{
+
+            &__confirmation-buy-accordion {
               width: 320px;
               height: 48px;
               background: rgb(245, 245, 245);
@@ -84,11 +96,11 @@
               list-style: none;
               text-align: center;
 
-              &__confirmation-user-point{
+              &__confirmation-user-point {
                 width: 100%;
                 height: 100%;
 
-                &__confirmation-user-consume-point{
+                &__confirmation-user-consume-point {
                   width: 100%;
                   height: 100%;
                   cursor: default;
@@ -98,8 +110,8 @@
                 }
               }
             }
-          
-            &__confirmation-buy-price-table{
+
+            &__confirmation-buy-price-table {
               display: table;
               border-collapse: collapse;
               height: 60px;
@@ -107,12 +119,12 @@
               font-size: 18px;
               display: table-row;
               font-weight: 600;
-  
-              &__confirmation-buy-price-row{
+
+              &__confirmation-buy-price-row {
                 width: 320px;
                 height: 60px;
-              
-                &__buy-price-cell-left{
+
+                &__buy-price-cell-left {
                   widows: 50%;
                   height: 60px;
                   text-align: left;
@@ -120,7 +132,8 @@
                   padding: 16px 0;
                   display: inline-block;
                 }
-                &__buy-price-cell-right{
+
+                &__buy-price-cell-right {
                   widows: 50%;
                   height: 60px;
                   display: table-cell;
@@ -129,7 +142,8 @@
                 }
               }
             }
-            &__confirmation-buy-btn-red,#payjp_checkout_box input[type=button]{
+
+            &__confirmation-buy-btn-red,#payjp_checkout_box input[type=button] {
               width: 100%;
               margin: 8px 0 0;
               background: #ea352d;
@@ -147,7 +161,7 @@
           }
         }
       }
-      &__buy-item-area-buy-user-info{
+      &__buy-item-area-buy-user-info {
         width: 100%;
         height: 130px;
         margin: 40px 0 0;
@@ -155,16 +169,17 @@
         border-top: 1px solid #f5f5f5;
         display: block;
 
-        &__confirmation-buy-content-inner{
+        &__confirmation-buy-content-inner {
           max-width: 320px;
           margin: 0 auto;
           display: block;
 
-          &__confirmation-inner-shipping-address{
+          &__confirmation-inner-shipping-address {
             font-size: 14px;
             font-weight: bold;
           }
-          &__confirmation-inner-user-address{
+
+          &__confirmation-inner-user-address {
             width: 100%;
             height: 18px;
             display: block;
@@ -172,16 +187,19 @@
             font-size: 14px;
             line-height: 1.4;
 
-            &__confirmation-inner-postal-code{
+            &__confirmation-inner-postal-code {
               width: 100%;
             }
-            &__confirmation-inner-address{
+
+            &__confirmation-inner-address {
               width: 100%;
             }
-            &__confirmation-inner-user-name{
+
+            &__confirmation-inner-user-name {
               width: 100%;
             }
-            &__confirmation-inner-buy-user-info-text{
+
+            &__confirmation-inner-buy-user-info-text {
               display: block;
               text-align: right;
               color: #0099e8;
@@ -190,7 +208,7 @@
           }
         }
       }
-      &__buy-item-area-buy-pay-method{
+      &__buy-item-area-buy-pay-method {
         width: 100%;
         height: 130px;
         margin: 40px 0 0;
@@ -198,16 +216,17 @@
         border-top: 1px solid #f5f5f5;
         display: block;
 
-        &__confirmation-buy-content-inner{
+        &__confirmation-buy-content-inner {
           max-width: 320px;
           margin: 0 auto;
           display: block;
 
-          &__confirmation-inner-shipping-address{
+          &__confirmation-inner-shipping-address {
             font-size: 14px;
             font-weight: bold;
           }
-          &__confirmation-method-buy-user-info-text{
+
+          &__confirmation-method-buy-user-info-text {
             width: 100%;
             height: 100%;
             display: block;
@@ -215,21 +234,23 @@
             font-size: 14px;
             line-height: 1.4;
 
-            &__confirmation-card-no{
+            &__confirmation-card-no {
               width: 100%;
               display: block;
             }
-            &__confirmation-card-time{
+
+            &__confirmation-card-time {
               width: 100%;
               display: block;
             }
-            &__confirmation-card-icon{
+
+            &__confirmation-card-icon {
               width: 26px;
               height: 20px;
               background: red;
             }
           }
-          &__confirmation-inner-buy-user-info-text{
+          &__confirmation-inner-buy-user-info-text {
             display: block;
             text-align: right;
             color: #0099e8;

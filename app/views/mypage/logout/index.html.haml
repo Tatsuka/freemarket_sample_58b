@@ -1,89 +1,12 @@
+-# ログアウト画面
 .wrapper
-  .header-area
-    .header-area__wrapper
-      .header-top
-        = link_to root_path do
-          = image_tag '/logo.svg', width: "134", height: "36"
-        %form{action: "", method: "post", class: "search-form"}
-          %input{name: "search", placeholder: "何かお探しですか？", type: "search", class: "search-input"}
-            = fa_icon "search", class: "icon-search"
-        -# 検索機能実装時記述
-        -# %input{name: "submit", type: "submit", value: "検索"}/
-      .header-bottom
-        .header-bottom__left
-          .header-bottom__left__category
-            カテゴリーから探す
-          .header-bottom__left__brand
-            ブランドから探す
-        .header-bottom__right
-        -# ログイン中の表示
-        %ul.header-bottom__right
-          %li.header-bottom__right__news
-            お知らせ
-          %li.header-bottom__right__todo
-            やることリスト
-          %li.header-bottom__right__mypage
-            マイページ
+  = render 'shared/header'
   .header-bottom__bread__crumbs
     .bread-crumbs 
       - breadcrumb :logout
       = breadcrumbs separator: " ＞ "
   .content-area
-    .content__left
-      .content__left__list
-        .content__left__mypage
-          .list__mypage
-            = link_to 'マイページ'
-          .list__news
-            = link_to 'お知らせ'
-          .list__todolist
-            = link_to 'やることリスト'
-          .list__goodjob
-            = link_to 'いいね！一覧'
-          .list__exhibit
-            = link_to '出品する'
-          .list__exhibitnow
-            = link_to '出品した商品 - 出品中'
-          .clist__transactionnow
-            = link_to '出品した商品 - 取引中'
-          .list__transactionend
-            = link_to '出品した商品 - 売却済み'
-          .list__buynow
-            = link_to '購入した商品 - 取引中'
-          .list__buyend
-            = link_to '購入した商品 - 過去の取引'
-          .clist__newslist
-            = link_to 'ニュース一覧'
-          .list__evaluation
-            = link_to '評価一覧'
-          .list__guide
-            = link_to 'ガイド'
-          .list__contact
-            = link_to 'お問い合わせ'
-        .content__left__merpay
-          メルペイ
-        .merpay__list
-          .merpay__transfer
-            = link_to '売上・振込申請'
-          .merpay__point
-            = link_to 'ポイント'
-        .content__left__config
-          設定
-        .config__lisut
-          .config__profile
-            = link_to 'プロフィール'
-          .config__address
-            = link_to '発送元・お届け先住所変更'
-          .config__payment
-            = link_to '支払い方法'
-          .config__passmail
-            = link_to 'メール/パスワード'
-          .config__person
-            = link_to '本人情報'
-          .config__tell
-            = link_to '電話番号の確認'
-          .config__logout
-            = link_to "ログアウト", mypage_logout_path, method: :get
+    = render 'shared/left-area'
     .content__right__logout__area
       %form.content__right__logout__area__form{action: "", method: "POST", novalidate: "novalidate"}
         .content__right__logout__area__form__btn
