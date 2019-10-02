@@ -12,7 +12,7 @@
       .list__exhibit
         出品する
       .list__exhibitnow
-        = link_to '出品した商品 - 出品中', mypage_listings_listing_of_items_in_progress_path
+        = link_to '出品した商品 - 出品中', mypage_listings_listing_of_items_on_sale_path(@user)
       .clist__transactionnow
         出品した商品
       .list__transactionend
@@ -40,16 +40,16 @@
       設定
     .config__lisut
       .config__profile
-        プロフィール
+        = link_to 'プロフィール', mypage_profile_path
       .config__address
         発送元・お届け先住所変更
       .config__payment
-        支払い方法
+        = link_to '支払い方法', mypage_credit_index_path
       .config__passmail
         メール/パスワード
       .config__person
-        本人情報
+        = link_to '本人情報', mypage_identification_path
       .config__tell
         電話番号の確認
       .config__logout
-        = link_to "ログアウト", destroy_user_session_path, method: :delete
+        = link_to "ログアウト", mypage_logout_path

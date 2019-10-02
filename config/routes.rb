@@ -21,7 +21,7 @@ Rails.application.routes.draw do
 
       #出品中商品の編集
       namespace :listings do
-        get 'listing/:id',           to: 'listing#index',                 as: :listing_of_items_on_sale
+        get 'listing',               to: 'listing#index',                 as: :listing_of_items_on_sale
         get 'in_progress',           to: 'in_progress#index',             as: :listing_of_items_in_progress
         get 'completed',             to: 'completed#index',               as: :listing_of_items_completed
         get ':id',                   to: 'listing#show',                  as: :show_listing_of_items_on_sale
