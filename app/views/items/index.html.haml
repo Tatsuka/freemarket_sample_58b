@@ -1,3 +1,4 @@
+-# トップページのビュー item.scss対応
 .wrapper
   = render 'shared/header'
   .main-wrapper
@@ -26,7 +27,7 @@
           %h3.new-item
             レディース新着アイテム
           .category-more
-            = link_to "もっと見る", class: "more"
+            もっと見る
             = fa_icon "angle-right", class: "angle-right"
       .category-items__erea__list
         - @ladies_items.each do |item|
@@ -36,7 +37,7 @@
                 - item.images.each do |image|
                   = image_tag image.image.url
               .category-items__erea__list__item__box__price
-                = number_to_currency(item.shipping_cost, :unit => "￥", :precision => 0)
+                = number_to_currency(item.shipping_cost, unit: "￥", precision: 0)
               .category-items__erea__list__item__box__caption
                 = item.name
               - unless item.trade_status_id == 1
@@ -47,7 +48,7 @@
           %h3.new-item
             メンズ新着アイテム
           .category-more
-            = link_to "もっと見る", class: "more"
+            もっと見る
             = fa_icon "angle-right", class: "angle-right"
       .category-items__erea__list
         - @mens_items.each do |item|
@@ -57,7 +58,7 @@
                 - item.images.each do |image|
                   = image_tag image.image.url
               .category-items__erea__list__item__box__price
-                = number_to_currency(item.shipping_cost, :unit => "￥", :precision => 0)
+                = number_to_currency(item.shipping_cost, unit: "￥", precision: 0)
               .category-items__erea__list__item__box__caption
                 = item.name
       .category-items__erea
@@ -65,7 +66,7 @@
           %h3.new-item
             家電・スマホ・カメラ新着アイテム
           .category-more
-            = link_to "もっと見る", class: "more"
+            もっと見る
             = fa_icon "angle-right", class: "angle-right"
       .category-items__erea__list
         - @home_appliance_items.each do |item|
@@ -75,7 +76,7 @@
                 - item.images.each do |image|
                   = image_tag image.image.url
               .category-items__erea__list__item__box__price
-                = number_to_currency(item.shipping_cost, :unit => "￥", :precision => 0)
+                = number_to_currency(item.shipping_cost, unit: "￥", precision: 0)
               .category-items__erea__list__item__box__caption
                 = item.name
       .category-items__erea
@@ -83,7 +84,7 @@
           %h3.new-item
             おもちゃ・ホビー・グッズ新着アイテム
           .category-more
-            = link_to "もっと見る", class: "more"
+            もっと見る
             = fa_icon "angle-right", class: "angle-right"
       .category-items__erea__list
         - @toy_items.each do |item|
@@ -93,7 +94,7 @@
                 - item.images.each do |image|
                   = image_tag image.image.url
               .category-items__erea__list__item__box__price
-                = number_to_currency(item.price, :unit => "￥", :precision => 0)
+                = number_to_currency(item.price, unit: "￥", precision: 0)
               .category-items__erea__list__item__box__caption
                 = item.name
     .bottom-image
