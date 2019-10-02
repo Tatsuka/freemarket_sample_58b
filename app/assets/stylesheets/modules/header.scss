@@ -1,5 +1,7 @@
+// メインのヘッダー部分 _header.html.haml
 .header-area {
   background: white;
+
   &__wrapper {
     width: 1020px;
     margin: 0 auto;
@@ -33,7 +35,6 @@
           justify-content: center;
           width: 40px;
           height: 40px;
-          cursor: pointer;
         }
       }
     }
@@ -52,7 +53,6 @@
         white-space: nowrap;
 
         &__category::before {
-          cursor: pointer;
           height: 44px;
           position: relative;
           z-index: 3;
@@ -63,7 +63,6 @@
         }
 
         &__brand::before {
-          cursor: pointer;
           height: 44px;
           position: relative;
           z-index: 3;
@@ -134,9 +133,6 @@
             padding-left: 0px;
           }
 
-          &__todo {
-          }
-
           &__mypage {
             padding-right: 0px;
           }
@@ -145,4 +141,3 @@
     }
   }
 }
-

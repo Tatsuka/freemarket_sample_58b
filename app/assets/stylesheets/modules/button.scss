@@ -1,21 +1,24 @@
+// 出品ボタン _button.html.haml対応
 .sell-btn {
-width: 160px;
-height: 160px;
-padding-top: 24px;
-text-align: center;
-color: white;
-background-color: rgb(234, 53, 45);
-border-radius: 50%;
-position: fixed;
-right: 28px;
-bottom: 28px;
+  width: 160px;
+  height: 160px;
+  padding-top: 24px;
+  text-align: center;
+  color: white;
+  background-color: rgb(234, 53, 45);
+  border-radius: 50%;
+  position: fixed;
+  right: 28px;
+  bottom: 28px;
+
   &__link {
+
     &__font {
       font-size: 22px;
     }
+
     &__camera {
       text-align: center;
     }
   }
 }
-

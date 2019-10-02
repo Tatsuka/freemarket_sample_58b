@@ -5,9 +5,10 @@
   margin: 0;
   overflow: hidden;
   width: 100%;
-  
+
+
   .header-bottom__right{
-    position: relative;  
+    position: relative;
     margin: auto 0; 
   }
     .header-bottom__right__goodjob{
@@ -45,6 +46,7 @@
 
   .content__right{
     background: red;
+    position: absolute;
     float: right;
     width: 700px;
     height: 1027px;

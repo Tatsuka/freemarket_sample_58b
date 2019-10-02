@@ -1,3 +1,4 @@
+-# アイテム詳細ページのビュー items-show.scss対応
 .product-details-wrapper
   = render 'shared/header'
   .product-details-main
@@ -136,7 +137,6 @@
             - unless user_items.trade_status_id == 1
               .item-sold-out-badge
                 %div SOLD
-
     %h2.users-item-box__head
       #{@item.category.name}その他の出品
     .users-item-box__content
@@ -156,7 +156,6 @@
             - unless user_items.trade_status_id == 1
               .item-sold-out-badge
                 %div SOLD
-
   .bottom-image
     = image_tag '/bottom-image.jpg', class: "bottom-image-banner"
   = render 'shared/footer'
