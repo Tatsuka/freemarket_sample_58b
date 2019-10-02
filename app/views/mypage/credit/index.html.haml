@@ -1,12 +1,11 @@
 .wrapper
-  = render 'mypage/mypage-shared/header-area'
-
+  = render 'shared/header'
   .header-bottom__bread__crumbs
     .bread-crumbs 
       - breadcrumb :credit
       = breadcrumbs separator: " ＞ "
   .content-area
-    = render 'mypage/mypage-shared/left-area'
+    = render 'shared/left-area'
     .right-container-card-info
       .right-container-card-info-head 支払い方法
       .right-container-card-info-inner
@@ -30,7 +29,6 @@
       .card-info-guidance
         = link_to "支払い方法について"
         = fa_icon "angle-right"
-
 .footer
   = render 'shared/footer'
   = render 'shared/button'

@@ -1,0 +1,56 @@
+.content-area
+  .content__left
+    .content__left__list
+      .content__left__mypage
+        .list__mypage
+          = link_to 'マイページ'
+        .list__news
+          お知らせ
+        .list__todolist
+          やることリスト
+        .list__goodjob
+          いいね！一覧
+        .list__exhibit
+          出品する
+        .list__exhibitnow
+          = link_to '出品した商品 - 出品中', mypage_listings_listing_of_items_in_progress_path
+        .clist__transactionnow
+          出品した商品
+        .list__transactionend
+          出品した商品 - 売却済み
+        .list__buynow
+          購入した商品 - 取引中
+        .list__buyend
+          購入した商品 - 過去の取引
+        .clist__newslist
+          ニュース一覧
+        .list__evaluation
+          評価一覧
+        .list__guide
+          ガイド
+        .list__contact
+          お問い合わせ
+      .content__left__merpay
+        メルペイ
+      .merpay__list
+        .merpay__transfer
+          売上・振込申請
+        .merpay__point
+          ポイント
+      .content__left__config
+        設定
+      .config__lisut
+        .config__profile
+          プロフィール
+        .config__address
+          発送元・お届け先住所変更
+        .config__payment
+          支払い方法
+        .config__passmail
+          メール/パスワード
+        .config__person
+          本人情報
+        .config__tell
+          電話番号の確認
+        .config__logout
+          = link_to "ログアウト", destroy_user_session_path, method: :delete

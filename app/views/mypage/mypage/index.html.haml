@@ -1,132 +1,52 @@
+-# ユーザーのマイページ
 .wrapper
-  .header-area
-    .header-area__wrapper
-      .header-top
-        = link_to root_path do
-          = image_tag '/logo.svg', width: "134", height: "36"
-        %form{action: "", method: "post", class: "search-form"}
-          %input{name: "search", placeholder: "何かお探しですか？", type: "search", class: "search-input"}
-            = fa_icon "search", class: "icon-search"
-      .header-bottom
-        .header-bottom__left
-          .header-bottom__left__brand
-            %a
-              カテゴリーから探す
-          .header-bottom__left__category
-            %a
-              ブランドから探す
-        .header-bottom__right
-          .header-bottom__right__goodjob
-            = link_to 'いいね！一覧'
-          .header-bottom__right__news
-            = link_to 'お知らせ'
-          .header-bottom__right__todolist
-            = link_to 'やることリスト'
-          .header-bottom__right__mypage
-            = link_to 'マイページ', mypage_top_path
+  = render 'shared/header'
   .header-bottom__bread__crumbs
-    .bread-crumbs 
+    .bread-crumbs
       - breadcrumb :mypage
       = breadcrumbs separator: " ＞ "
-  .content-area
-    .content__left
-      .content__left__list
-        .content__left__mypage
-          .list__mypage
-            = link_to 'マイページ', mypage_top_path
-          .list__news
-            = link_to 'お知らせ'
-          .list__todolist
-            = link_to 'やることリスト'
-          .list__goodjob
-            = link_to 'いいね！一覧'
-          .list__exhibit
-            = link_to '出品する'
-          .list__exhibitnow
-            = link_to '出品した商品 - 出品中', mypage_listings_listing_of_items_on_sale_path(@user.id)
-          .clist__transactionnow
-            = link_to '出品した商品 - 取引中'
-          .list__transactionend
-            = link_to '出品した商品 - 売却済み'
-          .list__buynow
-            = link_to '購入した商品 - 取引中'
-          .list__buyend
-            = link_to '購入した商品 - 過去の取引'
-          .clist__newslist
-            = link_to 'ニュース一覧'
-          .list__evaluation
-            = link_to '評価一覧'
-          .list__guide
-            = link_to 'ガイド'
-          .list__contact
-            = link_to 'お問い合わせ'
-        .content__left__merpay
-          メルペイ
-        .merpay__list
-          .merpay__transfer
-            = link_to '売上・振込申請'
-          .merpay__point
-            = link_to 'ポイント'
-        .content__left__config
-          設定
-        .config__lisut
-          .config__profile
-            = link_to 'プロフィール'
-          .config__address
-            = link_to '発送元・お届け先住所変更'
-          .config__payment
-            = link_to '支払い方法'
-          .config__passmail
-            = link_to 'メール/パスワード'
-          .config__person
-            = link_to '本人情報'
-          .config__tell
-            = link_to '電話番号の確認'
-          .config__logout
-            = link_to "ログアウト", mypage_logout_path, method: :get
-    .content__right
-      .mypage-user-icon__area
-        .user-icon__zone
-          = current_user.nickname
-          .user__icon         
-          .user__name
-          .mypage-number
-            .user__evaluation
-              評価
-            .user__exhibits
-              出品数
-      .mypage-tab-container-notification-todo
-        .mypage-tabs
-          .mypage-news
-            お知らせ
-          .mypage-todo
-            やることリスト
-        .tab-content
-          .mypage-news-list
-            .mypage-news-link
-              .mypage-news-body
-                .mypage-item-text
-                  = link_to '事務局から個別メッセージ「ログイン通知」'
-            .mypage-news-link2
-              .mypage-news-body
-                .mypage-item-text
-                  = link_to '事務局から個別メッセージ「ログイン通知」'
-            .mypage-go-link
-              .mypage-go-link-text
-                = link_to '一覧を見る'
-          .mypage-todo-list
-            .mypage-todo-link
-      .purchased-product
-        .purchased-product-head
-          購入した商品
-        .purchased-product-list
-          .purchased-product-now
-            = link_to '取引中'
-          .purchased-product-old
-            = link_to '過去の取引'
-        .purchased-product-content
-          .purchased-product-content-active
-          .purchased-product-content-old
-
-  .app-banner
-  .global-footer
+  = render 'shared/left-area'
+  .content__right
+    .mypage-user-icon__area
+      .user-icon__zone
+        = current_user.nickname
+        .user__icon
+        .user__name
+        .mypage-number
+          .user__evaluation
+            評価
+          .user__exhibits
+            出品数
+    .mypage-tab-container-notification-todo
+      .mypage-tabs
+        .mypage-news
+          お知らせ
+        .mypage-todo
+          やることリスト
+      .tab-content
+        .mypage-news-list
+          .mypage-news-link
+            .mypage-news-body
+              .mypage-item-text
+                事務局から個別メッセージ「ログイン通知」
+          .mypage-news-link2
+            .mypage-news-body
+              .mypage-item-text
+                事務局から個別メッセージ「ログイン通知」
+          .mypage-go-link
+            .mypage-go-link-text
+              一覧を見る
+        .mypage-todo-list
+          .mypage-todo-link
+    .purchased-product
+      .purchased-product-head
+        購入した商品
+      .purchased-product-list
+        .purchased-product-now
+          取引中
+        .purchased-product-old
+          過去の取引
+      .purchased-product-content
+        .purchased-product-content-active
+        .purchased-product-content-old
+  = render 'shared/footer'
