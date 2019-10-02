@@ -1,3 +1,4 @@
+-# メインのヘッダー部分 header.scss対応
 .header-area
   .header-area__wrapper
     .header-top
@@ -6,8 +7,6 @@
       %form{action: "", method: "post", class: "search-form"}
         %input{name: "search", placeholder: "何かお探しですか？", type: "search", class: "search-input"}
           = fa_icon "search", class: "icon-search"
-      -# 検索機能実装時記述
-      -# %input{name: "submit", type: "submit", value: "検索"}/
     .header-bottom
       .header-bottom__left
         .header-bottom__left__category
@@ -18,8 +17,7 @@
         .header-bottom__right
           %ul
             %li.header-bottom__likes
-              = link_to "" do
-                = icon 'far fa-lg', 'heart'
+              = icon 'far fa-lg', 'heart'
               %span いいね！一覧
             %li.header-bottom__notification
               = link_to destroy_user_session_path, method: :delete do

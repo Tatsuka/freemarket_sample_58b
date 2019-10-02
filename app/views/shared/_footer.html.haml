@@ -1,3 +1,4 @@
+// メインのフッター部分 footer.scss
 .fotter__contents
   .fotter__contents__main
     .fotter__contents__main__about
@@ -14,8 +15,8 @@
           公式ブログ
         %li.fotter-font
           メルカリロゴ利用ガイドライン
-        %i.fab{class: "fa-twitter-square fa-2x"}
-        %i.fab{class: "fa-facebook-square fa-2x"}
+        %i.fab{class: "fa-twitter-square fa-3x"}
+        %i.fab{class: "fa-facebook-square fa-3x"}
     .fotter__contents__main__help
       %h2
         ヘルプ＆ガイド
@@ -65,6 +66,5 @@
         %li.fotter-font
           United States
   .fotter__contents__bottom
-    %img.mercari-bw{href: "",alt: "メルカリマーク白黒", src: "https://web-jp-assets.mercdn.net/_next/static/images/logo-white-1a0696cf557ee1ed6f3c3444661d21ad.svg"}
+    = image_tag '/mercari-bw.svg', class: "mercari-bw"
     %span © 2019 Mercari
-
