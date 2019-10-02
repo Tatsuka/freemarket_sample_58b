@@ -1,4 +1,4 @@
--# ログアウト画面
+-# ログアウト画面 user.scss対応
 .wrapper
   = render 'shared/header'
   .header-bottom__bread__crumbs
@@ -8,9 +8,10 @@
   .content-area
     = render 'shared/left-area'
     .content__right__logout__area
-      %form.content__right__logout__area__form{action: "", method: "POST", novalidate: "novalidate"}
+      .content__right__logout__area__form
         .content__right__logout__area__form__btn
-          = link_to "ログアウト", destroy_user_session_path, method: :delete
+          = link_to destroy_user_session_path, method: :delete do
+            %button ログアウト
   .bottom-image
     %img{src: "//web-jp-assets.mercdn.net/_next/static/images/download_app_bg-b57d6f1a32f2aebd89cf6f43bc2e4b39.jpg"}
   = render 'shared/footer'
