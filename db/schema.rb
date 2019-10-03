@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_01_083149) do
+ActiveRecord::Schema.define(version: 2019_10_02_090034) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -94,20 +94,6 @@ ActiveRecord::Schema.define(version: 2019_10_01_083149) do
     t.bigint "prefecture_id", null: false
   end
 
-  create_table "profiles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "avatar", null: false
-    t.string "first_name_kana", null: false
-    t.string "last_name_kana", null: false
-    t.string "first_name_kanji", null: false
-    t.string "last_name_kanji", null: false
-    t.bigint "user_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.date "birthday", null: false
-    t.text "introduction"
-    t.string "phone_number", null: false
-  end
-
   create_table "shipping_addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "first_name_kana", null: false
     t.string "last_name_kana", null: false
@@ -126,8 +112,8 @@ ActiveRecord::Schema.define(version: 2019_10_01_083149) do
 
   create_table "sns_credentials", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id", null: false
-    t.integer "uid", null: false
-    t.integer "provider", null: false
+    t.string "uid", null: false
+    t.string "provider", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -172,6 +158,13 @@ ActiveRecord::Schema.define(version: 2019_10_01_083149) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "nickname", null: false
+    t.string "first_name_kana", null: false
+    t.string "last_name_kana", null: false
+    t.string "first_name_kanji", null: false
+    t.string "last_name_kanji", null: false
+    t.date "birthday", null: false
+    t.text "introduction"
+    t.string "phone_number", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
