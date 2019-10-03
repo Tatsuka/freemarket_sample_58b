@@ -1,3 +1,4 @@
+-# アイテム編集ページ new.scss対応
 .single-container
   = render 'shared/signup-header'
   .single-main
@@ -22,17 +23,15 @@
                     .visible-pc
                       ドラッグアンドドロップ
                       またはクリックしてファイルをアップロード
-                    .icon-camera
                   - @item.images.each do |image|
-                    .sell-upload-items-have-item-0
+                    .sell-upload-items-have-item
                       %ul
                         %li.sell-upload-item
                           .sell-upload-figure.square
                             = image_tag image.image.url
                           .sell-upload-button
-                            %a.sell-upload-edit{href: ""} 編集
-                            %a{href: ""} 削除
-
+                            %p 編集
+                            %p 削除
           .sell-content
             .sell-content-product-nam
               .sell-content-label
@@ -55,9 +54,7 @@
                 カテゴリー
               .sell-upload-required
                 必須
-
               = f.collection_select :category_id, Category.all, :id, :name
-
               .sell-content-blank
               .sell-content-label
                 商品の状態
@@ -68,7 +65,7 @@
             .sell-sub-details-head
               配送について
             .form-question
-              = link_to '?'
+              ?
             .sell-form-delivery-box
               .sell-content-label
                 配送料の負担
@@ -80,9 +77,7 @@
                 発送元の地域
               .sell-upload-required
                 必須
-
               = f.collection_select :prefecture_id, Prefecture.all, :id, :name
-
               .sell-content-blank
               .sell-content-label
                 発送までの日数
@@ -93,7 +88,7 @@
             .sell-sub-details-head
               販売価格(300〜9,999,999)
             .form-question
-              = link_to '?'
+              ?
             .sell-form-income-box
               .sell-price
                 .income-form-group
@@ -120,25 +115,25 @@
             .sell-content-sell-btn-box-text-area
               .sell-content-sell-btn-box-text-area-line
                 .sell-content-sell-btn-box-text-area1-1
-                  = link_to '禁止されている出品'
+                  禁止されている出品
                 .sell-content-sell-btn-box-text-area1-2
                   、
                 .sell-content-sell-btn-box-text-area1-3
-                  = link_to '行為'
+                  行為
                 .sell-content-sell-btn-box-text-area1-2
                   を必ずご確認ください。
               .sell-content-sell-btn-box-text-area-line
                 .sell-content-sell-btn-box-text-area1-2
                   またブランド品でシリアルナンバー等がある場合はご記載ください。
                 .sell-content-sell-btn-box-text-area1-4
-                  = link_to '偽ブランドの販売'
+                  偽ブランドの販売
                 .sell-content-sell-btn-box-text-area1-2
                   は犯罪であり処罰される可能性があります。
               .sell-content-sell-btn-box-text-area-line
                 .sell-content-sell-btn-box-text-area1-2
                   また、出品をもちまして
                 .sell-content-sell-btn-box-text-area1-5
-                  = link_to '加盟店規約'
+                  加盟店規約
                 .sell-content-sell-btn-box-text-area1-2
                   に同意したことになります。
               = f.submit "変更する", class: "sell-content-sell-btn-default-btn-red"

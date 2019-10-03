@@ -80,19 +80,18 @@ ActiveRecord::Schema.define(version: 2019_10_02_090034) do
 
   create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
-    t.integer "price", null: false
     t.text "detail", null: false
     t.integer "shipping_cost", null: false
     t.integer "shipping_fee_charge_to", null: false
-    t.integer "shipping_from", null: false
     t.integer "shipping_days", null: false
     t.bigint "condition_id", null: false
     t.bigint "category_id", null: false
-    t.bigint "trade_status_id", null: false
+    t.bigint "trade_status_id", default: 1, null: false
     t.bigint "brand_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id", null: false
+    t.bigint "prefecture_id", null: false
   end
 
   create_table "shipping_addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -119,17 +118,17 @@ ActiveRecord::Schema.define(version: 2019_10_02_090034) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "transaction_partners", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "buyer_id", null: false
-    t.bigint "seller_id", null: false
+  create_table "trades", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "status_id", null: false
+    t.bigint "item_id", null: false
+    t.bigint "transaction_partner_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "transactions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "status_id", null: false
-    t.bigint "item_id", null: false
-    t.bigint "transaction_partner_id", null: false
+  create_table "transaction_partners", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "buyer_id", null: false
+    t.bigint "seller_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

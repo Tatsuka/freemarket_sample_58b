@@ -1,12 +1,12 @@
+-# カード情報登録画面 user.scss対応
 .wrapper
-  = render 'mypage/mypage-shared/header-area'
-
-  .header-bottom__bread__crumbs      
+  = render 'shared/header'
+  .header-bottom__bread__crumbs
     .bread-crumbs 
       - breadcrumb :credit
       = breadcrumbs separator: " ＞ "
   .content-area
-    = render 'mypage/mypage-shared/left-area'
+    = render 'shared/left-area'
     .right-container-card-info
       .right-container-card-info-head 支払い方法
       .right-container-card-info-inner
@@ -28,9 +28,8 @@
                 = fa_icon "credit-card"
                 クレジットカードを追加する
       .card-info-guidance
-        = link_to "支払い方法について"
+        支払い方法について
         = fa_icon "angle-right"
-
 .footer
   = render 'shared/footer'
   = render 'shared/button'

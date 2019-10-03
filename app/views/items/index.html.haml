@@ -1,34 +1,33 @@
+-# トップページのビュー item.scss対応
 .wrapper
   = render 'shared/header'
-
   .main-wrapper
     .srider
-      = image_tag "//www-mercari-jp.akamaized.net/assets/img/featured/camp/index/index_keyvisual.png?2482339763"
+      %img#mypic{height: "300", src: "top-banner-1.jpg", width: "100%"}
     .popularity
       %h2
         人気のカテゴリー
       .popularity__category
         %ul.popularity__category__list
           %li.popularity__category__list__name
-            %a
+            %p
               レディース
           %li.popularity__category__list__name
-            %a
+            %p
               メンズ
           %li.popularity__category__list__name
-            %a
+            %p
               家電・スマホ・カメラ
           %li.popularity__category__list__name
-            %a
+            %p
               おもちゃ・ホビー・グッズ
-
     .category-items
       .category-items__erea
         .category-items__erea__header
           %h3.new-item
             レディース新着アイテム
           .category-more
-            = link_to "もっと見る", class: "more"
+            もっと見る
             = fa_icon "angle-right", class: "angle-right"
       .category-items__erea__list
         - @ladies_items.each do |item|
@@ -38,15 +37,18 @@
                 - item.images.each do |image|
                   = image_tag image.image.url
               .category-items__erea__list__item__box__price
-                = number_to_currency(item.price, :unit => "￥", :precision => 0)
+                = number_to_currency(item.shipping_cost, unit: "￥", precision: 0)
               .category-items__erea__list__item__box__caption
                 = item.name
+              - unless item.trade_status_id == 1
+                .item-sold-out-badge
+                  %div SOLD
       .category-items__erea
         .category-items__erea__header
           %h3.new-item
             メンズ新着アイテム
           .category-more
-            = link_to "もっと見る", class: "more"
+            もっと見る
             = fa_icon "angle-right", class: "angle-right"
       .category-items__erea__list
         - @mens_items.each do |item|
@@ -56,7 +58,7 @@
                 - item.images.each do |image|
                   = image_tag image.image.url
               .category-items__erea__list__item__box__price
-                = number_to_currency(item.price, :unit => "￥", :precision => 0)
+                = number_to_currency(item.shipping_cost, unit: "￥", precision: 0)
               .category-items__erea__list__item__box__caption
                 = item.name
       .category-items__erea
@@ -64,7 +66,7 @@
           %h3.new-item
             家電・スマホ・カメラ新着アイテム
           .category-more
-            = link_to "もっと見る", class: "more"
+            もっと見る
             = fa_icon "angle-right", class: "angle-right"
       .category-items__erea__list
         - @home_appliance_items.each do |item|
@@ -74,16 +76,15 @@
                 - item.images.each do |image|
                   = image_tag image.image.url
               .category-items__erea__list__item__box__price
-                = number_to_currency(item.price, :unit => "￥", :precision => 0)
+                = number_to_currency(item.shipping_cost, unit: "￥", precision: 0)
               .category-items__erea__list__item__box__caption
                 = item.name
-
       .category-items__erea
         .category-items__erea__header
           %h3.new-item
             おもちゃ・ホビー・グッズ新着アイテム
           .category-more
-            = link_to "もっと見る", class: "more"
+            もっと見る
             = fa_icon "angle-right", class: "angle-right"
       .category-items__erea__list
         - @toy_items.each do |item|
@@ -93,11 +94,10 @@
                 - item.images.each do |image|
                   = image_tag image.image.url
               .category-items__erea__list__item__box__price
-                = number_to_currency(item.price, :unit => "￥", :precision => 0)
+                = number_to_currency(item.shipping_cost, unit: "￥", precision: 0)
               .category-items__erea__list__item__box__caption
                 = item.name
     .bottom-image
       = image_tag "//web-jp-assets.mercdn.net/_next/static/images/download_app_bg-b57d6f1a32f2aebd89cf6f43bc2e4b39.jpg"
   = render 'shared/footer'
   = render 'shared/button'
-

@@ -1,3 +1,4 @@
+-# 購入内容の確認ページ confirmation.scss対応
 .confirmation-page
   = render 'shared/signup-header'
   .confirmation-page__confirmation-main
@@ -26,7 +27,7 @@
                   支払い金額
                 .confirmation-page__confirmation-main__buy-item-area__buy-item-area-buy-item__confirmation-inner__confirmation-buy-item-form__confirmation-buy-price-table__confirmation-buy-price-row__buy-price-cell-right
                   = number_to_currency(@item.shipping_cost, unit: "￥", precision: 0)
-              = form_with(url: transaction_pay_path, method: :post) do
+              = form_with(url: trade_pay_path, method: :post) do
                 %script.payjp-button{src: "https://checkout.pay.jp", type: "text/javascript" ,"data-text" => "購入する" ,"data-key" => "pk_test_51c5f45241e67536b95811bf"}
       .confirmation-page__confirmation-main__buy-item-area__buy-item-area-buy-user-info
         .confirmation-page__confirmation-main__buy-item-area__buy-item-area-buy-user-info__confirmation-buy-content-inner
@@ -40,7 +41,7 @@
             .confirmation-page__confirmation-main__buy-item-area__buy-item-area-buy-user-info__confirmation-buy-content-inner__confirmation-inner-user-address__confirmation-inner-user-name
               赤城太郎
             .confirmation-page__confirmation-main__buy-item-area__buy-item-area-buy-user-info__confirmation-buy-content-inner__confirmation-inner-user-address__confirmation-inner-buy-user-info-text
-              = link_to '変更する  >'
+              変更する  >
       .confirmation-page__confirmation-main__buy-item-area__buy-item-area-buy-pay-method
         .confirmation-page__confirmation-main__buy-item-area__buy-item-area-buy-pay-method__confirmation-buy-content-inner
           .confirmation-page__confirmation-main__buy-item-area__buy-item-area-buy-pay-method__confirmation-buy-content-inner__confirmation-inner-shipping-address
@@ -53,5 +54,5 @@
             .confirmation-page__confirmation-main__buy-item-area__buy-item-area-buy-pay-method__confirmation-buy-content-inner__confirmation-method-buy-user-info-text__confirmation-card-icon
           .confirmation-page__confirmation-main__buy-item-area__buy-item-area-buy-pay-method__confirmation-buy-content-inner__confirmation-figure
           .confirmation-page__confirmation-main__buy-item-area__buy-item-area-buy-pay-method__confirmation-buy-content-inner__confirmation-inner-buy-user-info-text
-            = link_to '変更する  >'
+            変更する  >
   = render 'shared/signup-footer'

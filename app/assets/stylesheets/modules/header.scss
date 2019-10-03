@@ -1,5 +1,7 @@
+// メインのヘッダー部分 _header.html.haml
 .header-area {
   background: white;
+
   &__wrapper {
     width: 1020px;
     margin: 0 auto;
@@ -33,7 +35,6 @@
           justify-content: center;
           width: 40px;
           height: 40px;
-          cursor: pointer;
         }
       }
     }
@@ -52,7 +53,6 @@
         white-space: nowrap;
 
         &__category::before {
-          cursor: pointer;
           height: 44px;
           position: relative;
           z-index: 3;
@@ -63,7 +63,6 @@
         }
 
         &__brand::before {
-          cursor: pointer;
           height: 44px;
           position: relative;
           z-index: 3;
@@ -76,6 +75,7 @@
 
       &__right {
         display: flex;
+        position: relative;
 
         &__signup {
           text-align: center;
@@ -112,25 +112,32 @@
             transition: all 0.3s ease-out 0s;
           }
         }
+        ul {
+          display: flex;
+          position: relative;
+          margin-block-start: initial;
 
-        &__news {
-          padding-left: 0px;
-          height: 44px;
-          padding: 0px 7px;
-        }
+          li {
+            display: block;
+            font-size: 14px;
+            color: #333333;
+            height: 24px;
+            padding: 0px 7px;
+          }
 
-        &__todo {
-          height: 44px;
-          padding: 0px 7px;
-        }
+          .fa-heart {
+            color: rgb(204, 204, 204);
+          }
 
-        &__mypage {
-          padding-right: 0px;
-          height: 44px;
-          padding: 0px 7px;
+          &__news {
+            padding-left: 0px;
+          }
+
+          &__mypage {
+            padding-right: 0px;
+          }
         }
       }
     }
   }
 }
-

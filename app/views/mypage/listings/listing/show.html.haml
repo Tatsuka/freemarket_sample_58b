@@ -1,22 +1,23 @@
 .icon::before
 .wrapper
-  = render 'mypage/_mypage-shared/header-area'
-
+  = render 'shared/header'
   .header-bottom__bread__crumbs
     .bread-crumbs 
       - breadcrumb :compilation
       = breadcrumbs separator: " ＞ "
-
   .compilation-details-wrapper
     .compilation-details-main
       %h1.compilation-details-main__title
-        ☆ここに商品名が表示されます☆
+        = @item.name
       .compilation-details-main__content
         .compilation-details-main__content__image
           .compilation-details-main__content__image__top
+            = image_tag @item.images.first.image.url if @item.images
           .compilation-details-main__content__image__dots
-            - (1..10).each do |i|
-              .compilation-details-main__content__image__dots__dot
+            - if @item.images
+              - @item.images.each do |image|
+                .compilation-details-main__content__image__dots__dot
+                  = image_tag image.image.url
         %table.compilation-details-main__content__table
           %tbody
             %tr
@@ -28,7 +29,7 @@
               %th カテゴリー
               %td
                 %a 
-                  = @item.category.name if @item.category.name
+                  = @item.category.name
                 %br
                 %a ""
                 %br
@@ -37,7 +38,7 @@
               %th ブランド
               %td
                 %a 
-                  -# = @item.category.name if @item.brand.name
+                  **
             %tr
               %th 商品のサイズ
               %td
@@ -46,11 +47,12 @@
               %th 商品の状態
               %td
                 %a 
-                  = @item.condition_id if @item.condition_id
+                  = @item.condition_id
             %tr
               %th 配送料の負担
               %td
-                %a 送料込み
+                %a 
+                  = @item.shipping_fee_charge_to
             %tr
               %th 配送方法
               %td
@@ -59,20 +61,20 @@
               %th 配送元地域
               %td
                 %a 
-                  = @item.shipping_from if @item.shipping_from
+                  **
             %tr
               %th 発送日の目安
               %td
                 #{@item.shipping_days}日で発送
       .compilation-details-main__item-price
         %span.item-total-price 
-          = number_to_currency(@item.price, unit: "￥", precision: 0)
+          = number_to_currency(@item.shipping_cost, unit: "￥", precision: 0)
         %span.item-tax (税込)
         %span.item-shipping-fee 送料込み
-    
     .compilation-item-box
-      .compilation-item-box__btn-default-btn-red
-        商品の編集
+      = link_to edit_item_path(@item) do
+        .compilation-item-box__btn-default-btn-red
+          商品の編集
       .compilation-item-box__text-center
         or
       .compilation-item-box__btn-default-btn-red-and-gray
@@ -80,11 +82,12 @@
           出品を再開する
         .compilation-item-box__btn-default-btn-red-and-gray__btn-gray
           出品を停止する
-      .compilation-item-box__btn-default-btn-gray
-        = link_to 'この商品を削除する', item_path(@item), method: :delete
+      = link_to item_path(@item), method: :delete do
+        .compilation-item-box__btn-default-btn-gray
+          - if @item.user_id == current_user.id
+            この商品を削除する
     .bottom-image
       = image_tag '/bottom-image.jpg', class: "bottom-image-banner"
-
 .footer
   = render 'shared/footer'
   = render 'shared/button'

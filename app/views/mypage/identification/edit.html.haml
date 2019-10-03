@@ -1,14 +1,12 @@
+-# ユーザー本人確認ページ identification.scss対応
 .wrapper
-  = render 'mypage/_mypage-shared/header-area'
-
+  = render 'shared/header'
   .header-bottom__bread__crumbs
     .bread-crumbs 
       - breadcrumb :identification
       = breadcrumbs separator: " ＞ "
-    
   .content-area
-    = render 'mypage/_mypage-shared/left-area'
-
+    = render 'shared/left-area'
     .identification-area
       .right-chapter-head
         本人情報の登録
@@ -19,7 +17,7 @@
           .personal-information-text2
             登録されたお名前・生年月日を変更する場合、本人確認書類の提出が必要になります。
           .personal-information-text-right
-            = link_to '本人確認書類のアップロードについて＞'
+            本人確認書類のアップロードについて＞
         .registered-personal-information
           .registered-personal-information-top
             お名前
@@ -75,7 +73,7 @@
         .new-personal-information-text-bottom
           .blank-margin
           .personal-information-text-bottom
-            = link_to '本人情報の登録について＞'
+            本人情報の登録について＞
 .footer
   = render 'shared/footer'
   = render 'shared/button'

@@ -46,7 +46,7 @@ Rails.application.routes.draw do
     resources :category, only: [:index, :show]
   
     #取引関連
-    namespace :transaction do
+    namespace :trade do
       resources :buy, only: [:show, :create]
       resources :order_status, only: :show
       post 'pay/:id' => 'buy#pay', as: 'pay'

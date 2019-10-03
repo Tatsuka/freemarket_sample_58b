@@ -1,6 +1,3 @@
-// Place all the styles related to the mypage/listing/compilation controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
 .icon::before {
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
@@ -41,28 +38,40 @@
         max-width: 300px;
         min-height: 375px;
         margin: 0 auto;
-        background: rgb(245, 245, 245);
+        background: white;
 
         &__top {
-          background: pink;
           width: 300px;
           height: 300px;
           position: relative;
           overflow: hidden;
+
+          img {
+            width: 100%;
+            object-fit: contain;
+          }
         }
 
         &__dots {
-          line-height: 0;
+          height: 120px;
+          width: 300px;
           font-size:0;
+          overflow: hidden;
 
           &__dot {
-            background: olivedrab;
             width: 60px;
             height: 60px;
-            max-height: none;
-            position: relative;
-            overflow: hidden;
-            display: inline-block;
+            max-width:100%;
+            max-height:100%;
+            
+            img {
+              width: auto;
+              height: auto;
+              max-width:100%;
+              max-height:100%;
+              object-fit: contain;
+              margin:auto;
+            }
           }
         }
       }
@@ -168,7 +177,6 @@
       width: 100%;
       line-height: 48px;
       font-size: 14px;
-      cursor: pointer;
       text-align: center;
     }
     &__text-center{
@@ -190,7 +198,6 @@
         height: 100%;
         background: #ea352d;
         color: #fff;
-        cursor: pointer;
         text-align: center;
         width: 48%;
         font-size: 14px;
@@ -200,7 +207,6 @@
         height: 100%;
         background: #aaa;
         color: #fff;
-        cursor: pointer;
         text-align: center;
         width: 48%;
         font-size: 14px;
@@ -218,7 +224,6 @@
       line-height: 48px;
       font-size: 14px;
       transition: all ease-out .3s;
-      cursor: pointer;
       text-align: center;
       }
 

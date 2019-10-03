@@ -2,20 +2,21 @@ class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update, :destroy]
 
   def index
-    @ladies_items = Item.extract_by_category(1)
-    @mens_items = Item.extract_by_category(2)
-    @home_appliance_items = Item.extract_by_category(3)
-    @toy_items = Item.extract_by_category(4)
+    @ladies_items = Item.extract_by_category(1..10)
+    @mens_items = Item.extract_by_category(11..20)
+    @home_appliance_items = Item.extract_by_category(21..30)
+    @toy_items = Item.extract_by_category(31..40)
   end
   
   def new
     if user_signed_in?
-      redirect_to new_user_login_session_path
-    else
       @item = Item.new
       @item.images.build
+    else
+      redirect_to new_user_session_path
     end
   end
+  
   def create
     @item = Item.new(item_params)
       params[:images][:image].each do |i|
@@ -41,12 +42,12 @@ class ItemsController < ApplicationController
   end
   
   def update
-    item.update(item_params)
-    redirect_to item_path(item.id)
+    @item.update(item_params)
+    redirect_to item_path(@item.id)
   end
   
   def destroy
-    if item.user_id == current_user.id
+    if @item.user_id == current_user.id
       @item.destroy
       redirect_to mypage_listings_listing_of_items_on_sale_path
     end
@@ -66,7 +67,7 @@ class ItemsController < ApplicationController
       :brand_id,
       :prefecture_id,
       images_attributes: [:image, :item_id]
-    ).merge(user_id: 1)
+    ).merge(user_id: current_user.id)
   end
 
   def set_item
