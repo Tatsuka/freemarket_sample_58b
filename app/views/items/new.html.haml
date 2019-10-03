@@ -47,7 +47,7 @@
               .sell-upload-required
                 必須
               = f.collection_select :category_id, Category.all, :id, :name
-              = f.select :brand_id, Item.brand_ids.keys
+              -# = f.select :brand_id, Item.brand_ids.keys
               .sell-content-blank
               .sell-content-label
                 商品の状態
