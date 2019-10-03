@@ -24,7 +24,7 @@
       .registration-main__box__title
         %b
           電話番号の確認
-      = form_for @profile, url: sms_confirmation_signup_index_path, method: :post do |f|
+      = form_for @user, url: address_signup_index_path, method: :post do |f|
         .registration-main__box__form-area
           .registration-main__box__form-area__content
             .registration-main__box__form-area__content__group

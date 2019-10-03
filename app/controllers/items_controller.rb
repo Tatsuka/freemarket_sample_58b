@@ -10,7 +10,7 @@ class ItemsController < ApplicationController
   
   def new
     if user_signed_in?
-      redirect_to new_user_session_path
+      redirect_to new_user_login_session_path
     else
       @item = Item.new
       @item.images.build

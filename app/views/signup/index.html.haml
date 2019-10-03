@@ -12,11 +12,13 @@
               = fa_icon "envelope ", class: "icon"
               メールアドレスで登録する
           %button.signup-main__box__form-area__content__facebook
-            = fa_icon "facebook-square ", class: "icon"
-            Facebookで登録する
+            = link_to user_facebook_omniauth_authorize_path, method: :post do
+              = fa_icon "facebook-square ", class: "icon"
+              Facebookで登録する
           %button.signup-main__box__form-area__content__google
-            = fa_icon "google", class: "icon"
-            googleで登録する
+            = link_to user_google_oauth2_omniauth_authorize_path, method: :post do
+              = fa_icon "google", class: "icon"
+              googleで登録する
   = render 'shared/signup-footer'  
 -# 新規登録確認時に使用する
 -# %h2 Sign up

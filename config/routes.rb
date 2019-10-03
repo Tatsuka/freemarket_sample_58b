@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
 
-  devise_for :users, skip: :all
+  devise_for :users,
+    controllers: {
+      omniauth_callbacks: 'users/omniauth_callbacks',
+      registrations:      'users/registrations',
+      sessions:      'users/sessions'
+    }
   
     get 'items'         =>    'items#index'
     get 'items/product_details' => 'items#product_details'
@@ -49,12 +54,12 @@ Rails.application.routes.draw do
   
     devise_scope :user do
       # session
-      get     'login',                    to: 'devise/sessions#new',             as: :new_user_session
-      post    'login',                    to: 'devise/sessions#create',          as: :user_session
-      delete  'logout',                   to: 'devise/sessions#destroy',         as: :destroy_user_session
+      get     'login',                    to: 'users/sessions#new',             as: :new_user_login_session
+      post    'login',                    to: 'users/sessions#create',          as: :user_login_session
+      delete  'logout',                   to: 'users/sessions#destroy',         as: :logout_user_session
       # password
-      get     'password/reset',           to: 'users/passwords#new',            as: :new_user_password
-      get     'password/edit',            to: 'users/passwords#edit',           as: :edit_user_password
+      # get     'password/reset',           to: 'users/passwords#new',            as: :new_user_password
+      # get     'password/edit',            to: 'users/passwords#edit',           as: :edit_user_password
       patch   'usres/password',           to: 'users/passwords#update'
       put     'users/password',           to: 'users/passwords#update'
       post    'users/password',           to: 'users/passwords#create'
@@ -63,13 +68,10 @@ Rails.application.routes.draw do
       resources :signup ,only: [:index,:create] do
         collection do
           get 'registration'
-          post 'registration' => 'signup#validates_for_registration'
           get 'sms_confirmation' 
-          post 'sms_confirmation' => 'signup#validates_for_confirmation'
+          post 'address' => 'signup#validates_for_confirmation'
           get 'address' 
-          post 'address' => 'signup#validates_for_address'
           get 'payment'
-          post 'payment' => 'signup#validates_for_payment'
           get 'complete'
         end
       end
