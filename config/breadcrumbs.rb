@@ -28,7 +28,7 @@ crumb :logout do
 end
 
 crumb :listing do
-  link "出品した商品 - 出品中",  mypage_listings_listing_of_items_in_progress_path
+  link "出品した商品 - 出品中",  mypage_listings_listing_of_items_on_sale_path
   parent :mypage
 end
 
