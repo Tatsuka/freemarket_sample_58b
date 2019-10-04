@@ -93,6 +93,9 @@
                 = number_to_currency(item.shipping_cost, unit: "￥", precision: 0)
               .category-items__erea__list__item__box__caption
                 = item.name
+              - unless item.trade_status_id == 1
+                .item-sold-out-badge
+                  %div SOLD
     .bottom-image
       = image_tag "//web-jp-assets.mercdn.net/_next/static/images/download_app_bg-b57d6f1a32f2aebd89cf6f43bc2e4b39.jpg"
   = render 'shared/footer'
