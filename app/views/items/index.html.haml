@@ -59,6 +59,9 @@
                 = number_to_currency(item.shipping_cost, unit: "￥", precision: 0)
               .category-items__erea__list__item__box__caption
                 = item.name
+              - unless item.trade_status_id == 1
+                .item-sold-out-badge
+                  %div SOLD
       .category-items__erea
         .category-items__erea__header
           %h3.new-item
@@ -76,6 +79,9 @@
                 = number_to_currency(item.shipping_cost, unit: "￥", precision: 0)
               .category-items__erea__list__item__box__caption
                 = item.name
+              - unless item.trade_status_id == 1
+                .item-sold-out-badge
+                  %div SOLD
       .category-items__erea
         .category-items__erea__header
           %h3.new-item
