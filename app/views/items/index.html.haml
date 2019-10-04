@@ -34,8 +34,7 @@
           = link_to "/items/#{item.id}", method: :get, class: "category-items__erea__list__item" do
             .category-items__erea__list__item__box
               .category-items__erea__list__item__box__image
-                - item.images.each do |image|
-                  = image_tag image.image.url
+                = image_tag item.images.first.image.url
               .category-items__erea__list__item__box__price
                 = number_to_currency(item.shipping_cost, unit: "￥", precision: 0)
               .category-items__erea__list__item__box__caption
@@ -55,26 +54,7 @@
           = link_to "/items/#{item.id}", method: :get, class: "category-items__erea__list__item" do
             .category-items__erea__list__item__box
               .category-items__erea__list__item__box__image
-                - item.images.each do |image|
-                  = image_tag image.image.url
-              .category-items__erea__list__item__box__price
-                = number_to_currency(item.shipping_cost, unit: "￥", precision: 0)
-              .category-items__erea__list__item__box__caption
-                = item.name
-      .category-items__erea
-        .category-items__erea__header
-          %h3.new-item
-            家電・スマホ・カメラ新着アイテム
-          .category-more
-            もっと見る
-            = fa_icon "angle-right", class: "angle-right"
-      .category-items__erea__list
-        - @home_appliance_items.each do |item|
-          = link_to "/items/#{item.id}", method: :get, class: "category-items__erea__list__item" do
-            .category-items__erea__list__item__box
-              .category-items__erea__list__item__box__image
-                - item.images.each do |image|
-                  = image_tag image.image.url
+                = image_tag item.images.first.image.url
               .category-items__erea__list__item__box__price
                 = number_to_currency(item.shipping_cost, unit: "￥", precision: 0)
               .category-items__erea__list__item__box__caption
@@ -87,12 +67,28 @@
             もっと見る
             = fa_icon "angle-right", class: "angle-right"
       .category-items__erea__list
+        - @home_appliance_items.each do |item|
+          = link_to "/items/#{item.id}", method: :get, class: "category-items__erea__list__item" do
+            .category-items__erea__list__item__box
+              .category-items__erea__list__item__box__image
+                = image_tag item.images.first.image.url
+              .category-items__erea__list__item__box__price
+                = number_to_currency(item.shipping_cost, unit: "￥", precision: 0)
+              .category-items__erea__list__item__box__caption
+                = item.name
+      .category-items__erea
+        .category-items__erea__header
+          %h3.new-item
+            家電・スマホ・カメラ新着アイテム
+          .category-more
+            もっと見る
+            = fa_icon "angle-right", class: "angle-right"
+      .category-items__erea__list
         - @toy_items.each do |item|
           = link_to "/items/#{item.id}", method: :get, class: "category-items__erea__list__item" do
             .category-items__erea__list__item__box
               .category-items__erea__list__item__box__image
-                - item.images.each do |image|
-                  = image_tag image.image.url
+                = image_tag item.images.first.image.url
               .category-items__erea__list__item__box__price
                 = number_to_currency(item.shipping_cost, unit: "￥", precision: 0)
               .category-items__erea__list__item__box__caption
