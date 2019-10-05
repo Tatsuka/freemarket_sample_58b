@@ -68,9 +68,9 @@ Rails.application.routes.draw do
       resources :signup ,only: [:index,:create] do
         collection do
           get 'registration'
-          get 'sms_confirmation' 
+          get 'sms_confirmation'
           post 'address' => 'signup#validates_for_confirmation'
-          get 'address' 
+          get 'address'
           get 'payment'
           get 'complete'
         end
