@@ -71,5 +71,5 @@
               %span.any
                 任意
               = f.phone_field :phone_number, placeholder: "例）09012345678", value:"#{session[:phone_number]}"
-              = f.submit "次へ進む", class: 'next-btn'
+            = f.submit "次へ進む", class: 'next-btn'
   = render 'shared/signup-footer'
