@@ -35,15 +35,6 @@
             %td
               %a
                 = @item.category.name
-                -# = @item.category.parent.parent.name
-              %br
-              %a
-                %i.fas.fa-chevron-right
-                -# #{@item.category.parent.name}
-              %br
-              %a
-                %i.fas.fa-chevron-right
-                -# #{@item.category.name}
           %tr
             %th ブランド
             %td
@@ -72,7 +63,7 @@
             %th 配送元地域
             %td
               %a
-                = @item.prefecture
+                = @item.prefecture.name
           %tr
             %th 発送日の目安
             %td
