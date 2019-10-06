@@ -50,7 +50,7 @@
               = f.label :prefecture, '都道府県'
               %span
                 必須
-              = f.collection_select :prefecture_id, Prefecture.all, :id, :name, {prompt: "--", selected: session["prefecture_id"]}
+              = f.collection_select :prefecture_id, Prefecture.all, :id, :name, {prompt: "--", selected: session["prefecture_id"]}, class: "prefecture"
             .registration-main__box__form-area__content__group
               = f.label :city, '市町村'
               %span
