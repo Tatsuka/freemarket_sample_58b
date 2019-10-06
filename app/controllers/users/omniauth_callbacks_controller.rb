@@ -13,9 +13,9 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     @omniauth = request.env['omniauth.auth']
     info = User.find_oauth(@omniauth)
     @user = info[:user]
-    if @user.persisted? 
+    if @user.persisted?
       sign_in_and_redirect @user
-    else 
+    else
       @sns = info[:sns]
       session[:provider] = @sns[:provider]
       session[:uid] = @sns[:uid]

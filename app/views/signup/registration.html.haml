@@ -27,6 +27,7 @@
           
       .registration-main__box__form-area
         = form_for @user, url:  sms_confirmation_signup_index_path, method: :get do |f|
+        
           .registration-main__box__form-area__content
             .registration-main__box__form-area__content__group
               = f.label :nickname, 'ニックネーム'
@@ -43,6 +44,8 @@
               = f.label :password, 'パスワード'
               %span
                 必須
+              %p.text-right
+              英数含めた７文字以上で設定してください。
               = f.password_field :password, autocomplete: "new-password", placeholder: "7文字以上"
             .registration-main__box__form-area__content__group
               = f.label :password_confimation, 'パスワード(確認)'
@@ -80,7 +83,7 @@
               .birthday-select
                 != sprintf(f.date_select(:birthday, start_year: Time.now.year, end_year: Time.now.year - 119, prompt: "--", use_month_numbers: true, date_separator:'%s'),'年 ','月 ')+'日'
               %p.form-info-text
-                ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。              
+                ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
             .registration-main__box__form-area__content__group
               %p
                 「次へ進む」のボタンを押すことにより、利用規約に同意したものとみなします
