@@ -70,10 +70,10 @@ class SignupController < ApplicationController
       if session[:provider].present? && session[:uid].present?
         password = Devise.friendly_token.first(7)
         @user = User.create(
-          nickname:session[:nickname], 
-          email: session[:email], 
-          password: "password", 
-          password_confirmation: "password", 
+          nickname:session[:nickname],
+          email: session[:email],
+          password: "password",
+          password_confirmation: "password",
           phone_number: session[:phone_number],
           last_name_kanji: session[:last_name_kanji],
           first_name_kanji: session[:first_name_kanji],
