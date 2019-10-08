@@ -1,5 +1,5 @@
 class SnsCredential < ApplicationRecord
-  belongs_to :user, optional: true # userのバリデーション外す
+  belongs_to :user, optional: true
 
   validates :user_id, presence: true
   validates :uid, presence: true
