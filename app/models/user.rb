@@ -5,8 +5,6 @@ class User < ApplicationRecord
   has_many :sns_credentials , dependent: :destroy
   has_one :credit_card , dependent: :destroy
   has_one :user_address , dependent: :destroy
-# Include default devise modules. Others available are:
-# :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
 
 devise :database_authenticatable, :registerable,
        :recoverable, :rememberable, :validatable, :omniauthable, omniauth_providers: %i[facebook google_oauth2]
