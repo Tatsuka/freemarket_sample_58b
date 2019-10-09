@@ -83,9 +83,11 @@
         = number_to_currency(@item.shipping_cost, unit: "￥", precision: 0)
       %span.item-tax (税込)
       %span.item-shipping-fee 送料込み
-    -# ユーザー登録が正常になったら使います
-    -# - if @item.user_id != current_user.id
-    - if @item.trade_status_id == 1
+    - if @item.user_id == current_user.id
+      = link_to edit_item_path(@item) do
+        %button.buy-btn
+          編集する
+    - elsif @item.trade_status_id == 1
       = link_to trade_buy_path(@item) do
         %button.buy-btn{type: "submit"}
           購入画面に進む
