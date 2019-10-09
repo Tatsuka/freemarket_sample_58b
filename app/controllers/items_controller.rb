@@ -43,6 +43,11 @@ class ItemsController < ApplicationController
   end
   
   def edit
+    if @item.user_id == current_user.id
+      redirect_to item_path(@item.id)
+    else
+      redirect_to item_path(@item.id), notice: "この商品は編集できません"
+    end
   end
   
   def update

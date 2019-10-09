@@ -1,4 +1,8 @@
 -# アイテム詳細ページのビュー items-show.scss対応
+.notice-bar
+  - if flash[:notice]
+    %p
+      = flash[:notice]
 .product-details-wrapper
   = render 'shared/header'
   .product-details-main
