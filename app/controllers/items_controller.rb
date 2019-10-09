@@ -33,9 +33,13 @@ class ItemsController < ApplicationController
   end
   
   def show
-    other_items = Item.where.not(id: params[:id])
-    @user_items = other_items.where(user_id: @item.user.id).limit(6)
-    @category_items = other_items.where(category_id: @item.category_id).limit(6)
+    if user_signed_in?
+      other_items = Item.where.not(id: params[:id])
+      @user_items = other_items.where(user_id: @item.user.id).limit(6)
+      @category_items = other_items.where(category_id: @item.category_id).limit(6)
+    else
+      redirect_to new_user_session_path
+    end
   end
   
   def edit
