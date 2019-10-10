@@ -1,4 +1,5 @@
 class ItemsController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :show]
   before_action :set_item, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -9,12 +10,8 @@ class ItemsController < ApplicationController
   end
   
   def new
-    if user_signed_in?
       @item = Item.new
       @item.images.build
-    else
-      redirect_to new_user_session_path
-    end
   end
   
   def create
@@ -22,7 +19,7 @@ class ItemsController < ApplicationController
       params[:images][:image].each do |i|
         @item.images.build(image: i, item_id: @item.id)
       end
-      if @item.save
+    if @item.save
       redirect_to root_path
     else
       redirect_to new_item_path
@@ -33,13 +30,9 @@ class ItemsController < ApplicationController
   end
   
   def show
-    if user_signed_in?
       other_items = Item.where.not(id: params[:id])
       @user_items = other_items.where(user_id: @item.user.id).limit(6)
       @category_items = other_items.where(category_id: @item.category_id).limit(6)
-    else
-      redirect_to new_user_session_path
-    end
   end
   
   def edit
