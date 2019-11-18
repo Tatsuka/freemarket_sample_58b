@@ -27,7 +27,7 @@ production:
   <<: *default
   database: freemarket_sample_58b_production
   username: root
-  password: <%= ENV['DATABASE_PASSWORD'] %>
+  password:
  # socket: に続く部分を先ほど調べたパスに置き換える 
   socket: /var/lib/mysql/mysql.sock
   
