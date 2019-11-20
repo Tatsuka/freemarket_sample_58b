@@ -25,7 +25,7 @@ test:
 
 production:
   <<: *default
-  database: freemarket_sample_58b_test_production
-  username: root
-  password:
-  
+  database: <%= ENV['DB_NAME'] %>
+  username: <%= ENV['DB_USERNAME'] %>
+  password: <%= ENV['DB_PASSWORD'] %>
+  host: <%= ENV['DB_HOSTNAME'] %>
