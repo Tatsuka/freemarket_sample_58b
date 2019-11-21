@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   # 〜ベーシック認証に関する記述〜
-  before_action :basic_auth, if: :production?
+  # before_action :basic_auth, if: :production?
   protect_from_forgery with: :exception
   before_action :configure_permitted_parameters, if: :devise_controller?
 
